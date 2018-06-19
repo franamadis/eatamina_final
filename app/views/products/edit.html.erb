@@ -11,14 +11,12 @@
       </div>
       <div class="message-status text-center">
         <div class="form-group">
-          <%= render 'form', request: request %>
+          <%= render 'form2', request: request %>
         </div>
       </div>
     </div>
   <% end %>
-  <% @requests.each do |request| %>
-    <% if policy(request).edit? %>
-      <%= link_to "Update", edit_product_path(product) %>
-    <% end %>
-  <% end %>
+  <%= link_to "Delete", product_path(@product),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
 </div>

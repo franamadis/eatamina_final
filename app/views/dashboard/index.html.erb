@@ -1,0 +1,6 @@
+<div class="container">
+  <% @requests.each do |request| %>
+    <h2><%= request.name %></h2>
+    <p><%= request.status %></p>
+  <% end %>
+</div>
