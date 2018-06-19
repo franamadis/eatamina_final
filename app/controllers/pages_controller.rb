@@ -12,7 +12,7 @@ class PagesController < ApplicationController
       @product[:sku] = params[:query]
       url = "https://world.openfoodfacts.org/api/v0/product/#{@product[:sku]}.json"
       response_serialized = open(url).read
-      response = JSON.parse(response_serialized).flatten(100)
+      response = JSON.parse(response_serialized).flatten
       if response['status_verbose'] == "product found"
         new_product = Product.create(sku: params[:query], status: "accepeted", name: response['product_name'], photo:response['image_url']  )
         redirect_to product_path(new_product)
