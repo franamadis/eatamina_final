@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
-  has_many :product_additives;
-  has_many :queries;
+  has_many :additives, through: :product_additives
+  has_many :users, through: :queries
   validates :name, uniqueness: true, presence: true
   validates :sku, uniqueness: true, presence: true
   mount_uploader :photo, PhotoUploader
