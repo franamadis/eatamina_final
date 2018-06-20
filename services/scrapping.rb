@@ -1,4 +1,3 @@
-
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
@@ -11,7 +10,11 @@ def secondpage(chemical)
 
   blocks = html_doc.search('blockquote')
     description = blocks[0].text.strip
-    effect = blocks[5].text.strip
+      if blocks[5] == "Baja" || "Media" || "Alta"
+        effect = blocks[4].text.strip
+      else
+      effect = blocks[5].text.strip
+    end
 
   detail_hash = {
     description: description,
