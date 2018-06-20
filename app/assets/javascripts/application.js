@@ -181,7 +181,7 @@ $(function() {
                 
                 console.log(result.codeResult.code);
                 $('#scanner_input').val(result.codeResult.code);
-                const form = document.querySelector("form")
+                var form = document.querySelector("form")
                 console.log("asfasdfasdasdfasd")
                 window.form = form
                 eventFire(form, "submit");
@@ -215,7 +215,7 @@ function eventFire(el, etype) {
     if (el.fireEvent) {
         el.fireEvent('on' + etype);
     } else {
-        const evObj = document.createEvent('Events');
+        var evObj = document.createEvent('Events');
         evObj.initEvent(etype, true, false);
         el.dispatchEvent(evObj);
     }
