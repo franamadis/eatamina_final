@@ -1,3 +1,3 @@
 class Additive < ApplicationRecord
-  has_many :product_additives;
+  has_many :products, through: :product_additives
 end
