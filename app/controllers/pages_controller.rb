@@ -8,9 +8,6 @@ class PagesController < ApplicationController
 
   def home
     if params[:query].present?
-      puts "AEFAEGSRGAGARGARG"
-      # @product = {}
-      # @product[:sku] = params[:query]
       url = "https://world.openfoodfacts.org/api/v0/product/#{
       params[:query]}.json"
       response_serialized = open(url).read
@@ -18,16 +15,27 @@ class PagesController < ApplicationController
       response2 = response.find {|item| item.class == Hash}
 
       if response.include?("product found")
-        puts "AEFAEGS1111111111111111111RGARG"
-        @new_product = Product.create!(sku: params[:query], status: "accepted", name: response2['product_name'], photo: response2['image_url'])
-        p @new_product
+        if check_product?
+          @new_product = Product.where(sku: params[:query]).first
+        else
+          @new_product = Product.create!(sku: params[:query], status: "accepted", name: response2['product_name'], photo: response2['image_url'])
+        end
         redirect_to product_path(@new_product)
       else
-        puts "AEFAEGSRGA222222222222222222222GARGARG"
-        @new_product = Product.create!(sku:params[:query])
-
+        @new_product = Product.create!(sku: params[:query], status: "pending")
         render new_product_path
       end
+    end
+  end
+
+  private
+
+  def check_product?
+    product = Product.where(sku: params[:query])
+    if product != nil
+      return true
+    else
+      return false
     end
   end
 
