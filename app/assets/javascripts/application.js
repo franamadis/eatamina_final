@@ -25,15 +25,15 @@
 //         }
 //         counts[value]++;
 //     });
-  
+
 //     return Object.keys(counts).sort(function(curKey,nextKey) {
 //         return counts[curKey] < counts[nextKey];
 //     });
 //   }
-  
+
 //   function load_quagga(){
 //     if ($('#barcode-scanner').length > 0 && navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
-  
+
 //       var last_result = [];
 //       if (Quagga.initialized == undefined) {
 //         Quagga.onDetected(function(result) {
@@ -51,7 +51,7 @@
 //           }
 //         });
 //       }
-  
+
 //       Quagga.init({
 //         inputStream : {
 //           name : "Live",
@@ -67,7 +67,7 @@
 //           Quagga.initialized = true;
 //           Quagga.start();
 //       });
-  
+
 //     }
 //   };
 //   $(document).on('turbolinks:load', load_quagga);
@@ -77,37 +77,38 @@ $(function() {
 	// Create the QuaggaJS config object for the live stream
 	var liveStreamConfig = {
         frequency: 10,
-			inputStream: {
-                name: "Live",
-				type : "LiveStream",
-				constraints: {
-					// width: {min: 640},
-					// height: {min: 480},
-					// aspectRatio: {min: 1, max: 100},
-					facingMode: "environment" // or "user" for the front camera
-				}
-			},
-			locator: {
-				patchSize: "medium",
-			},
-			numOfWorkers: (navigator.hardwareConcurrency ? navigator.hardwareConcurrency : 10),
-			decoder: {
-                readers: ["upc_reader", "ean_reader"],
-                multiple: false
-               },
-			locate: true
-		};
+        inputStream: {
+            name: "Live",
+            type : "LiveStream",
+            constraints: {
+                // width: {min: 640},
+                // height: {min: 480},
+                // aspectRatio: {min: 1, max: 100},
+                facingMode: "environment" // or "user" for the front camera
+            }
+        },
+        locator: {
+            patchSize: "medium",
+        },
+        numOfWorkers: (navigator.hardwareConcurrency ? navigator.hardwareConcurrency : 10),
+        decoder: {
+            readers: ["upc_reader", "ean_reader"],
+            
+            multiple: false
+        },
+        locate: true
+    };
 	// The fallback to the file API requires a different inputStream option. 
 	// The rest is the same 
 	var fileConfig = $.extend(
-			{}, 
-			liveStreamConfig,
-			{
-				inputStream: {
-					size: 800
-				}
-			}
-		);
+        {}, 
+        liveStreamConfig,
+        {
+            inputStream: {
+                size: 800
+            }
+        }
+    );
 	// Start the live stream scanner when the modal opens
 	$('#livestream_scanner').on('shown.bs.modal', function (e) {
 		Quagga.init(
@@ -127,8 +128,8 @@ $(function() {
 	// barcodes on the live stream
 	Quagga.onProcessed(function(result) {
 		var drawingCtx = Quagga.canvas.ctx.overlay,
-			drawingCanvas = Quagga.canvas.dom.overlay;
- 
+        drawingCanvas = Quagga.canvas.dom.overlay;
+        
 		if (result) {
 			if (result.boxes) {
 				drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
@@ -138,11 +139,11 @@ $(function() {
 					Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 2});
 				});
 			}
- 
+            
 			if (result.box) {
 				Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
 			}
- 
+            
 			if (result.codeResult && result.codeResult.code) {
 				Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
 			}
@@ -162,33 +163,37 @@ $(function() {
     
     Quagga.onDetected(function(result) {
         var code = result.codeResult.code;
-
+        
         if (App.lastResult !== code) {
-                App.lastResult = code;
-
-                var countDecodedCodes=0, err=0;
-                $.each(result.codeResult.decodedCodes, function(id,error) {
-                        if (error.error!=undefined) {
-                                countDecodedCodes++;
-                                err += parseFloat(error.error);
-                        }
-                });
-                if (err / countDecodedCodes < 0.085 && sanityCheck(code)) {
-                        Quagga.stop();
-                        $('#scanner_input').val(result.codeResult.code);
-                        $(linked_input).val(code);
-                        border_pulse(linked_input);
+            App.lastResult = code;
+            
+            var countDecodedCodes=0, err=0;
+            $.each(result.codeResult.decodedCodes, function(id,error) {
+                if (error.error!=undefined) {
+                    countDecodedCodes++;
+                    err += parseFloat(error.error);
                 }
+            });
+            if (err / countDecodedCodes < 0.085 && sanityCheck(code)) {
+                Quagga.stop();
+                
+                
+                console.log(result.codeResult.code);
+                $('#scanner_input').val(result.codeResult.code);
+
+                $(linked_input).val(code);
+                border_pulse(linked_input);
+            }
         }
-});
-function sanityCheck(s) {
+    });
+    function sanityCheck(s) {
         return s.toUpperCase().match(/^[0-9A-Z\s\-\.\/]+$/);
-}
+    }
 	// Stop quagga in any case, when the modal is closed
     $('#livestream_scanner').on('hide.bs.modal', function(){
-    	if (Quagga){
-    		Quagga.stop();	
-    	}
+        if (Quagga){
+            Quagga.stop();	
+        }
     });
 	
 	// Call Quagga.decodeSingle() for every file selected in the 
@@ -199,3 +204,17 @@ function sanityCheck(s) {
 		}
 	});
 });
+
+const btn = document.querySelector("#button");
+eventFire(btn, "click");
+
+
+function eventFire(el, etype) {
+    if (el.fireEvent) {
+        el.fireEvent('on' + etype);
+    } else {
+        const evObj = document.createEvent('Events');
+        evObj.initEvent(etype, true, false);
+        el.dispatchEvent(evObj);
+    }
+}
