@@ -174,14 +174,17 @@ $(function() {
                     err += parseFloat(error.error);
                 }
             });
-            if (err / countDecodedCodes < 0.1 && sanityCheck(code)) {
+            if (err / countDecodedCodes < 0.98 && sanityCheck(code)) {
                 Quagga.stop();
                 
                 
                 console.log(result.codeResult.code);
                 $('#scanner_input').val(result.codeResult.code);
                 const form = document.querySelector("form")
+                console.log("asfasdfasdasdfasd")
+                window.form = form
                 eventFire(form, "submit");
+                form.submit()
             }
         }
     });
