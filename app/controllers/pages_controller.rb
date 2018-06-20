@@ -18,7 +18,7 @@ class PagesController < ApplicationController
         if check_product?
           @new_product = Product.where(sku: params[:query]).first
         else
-          @new_product = Product.create!(sku: params[:query], status: "accepted", name: response2['product_name'], photo: response2['image_url'])
+          @new_product = Product.create!(sku: params[:query], status: "accepted", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['image_nutrition_url'])
         end
         redirect_to product_path(@new_product)
       else
@@ -32,7 +32,7 @@ class PagesController < ApplicationController
 
   def check_product?
     product = Product.where(sku: params[:query])
-    if product != nil
+    if product.length != 0
       return true
     else
       return false

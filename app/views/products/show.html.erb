@@ -3,7 +3,11 @@
 <% if @product.photo? %>
     <%= image_tag @product.photo, height: 300, width: 400, crop: :fill%>
 <% else %>
- <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png', height: 300, width: 400, crop: :fill %>
- <% end  %>
-
+  <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png', height: 300, width: 400, crop: :fill %>
+<% end  %>
+<% if @product.nutritional_info? %>
+  <%= image_tag @product.nutritional_info, height: 300, width: 400, crop: :fill%>
+<% else %>
+  <p>No information about nutrition of this product!</p>
+<% end  %>
 
