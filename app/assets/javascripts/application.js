@@ -174,7 +174,7 @@ $(function() {
                     err += parseFloat(error.error);
                 }
             });
-            if (err / countDecodedCodes < 0.98 && sanityCheck(code)) {
+            if (err / countDecodedCodes < 0.1 && sanityCheck(code)) {
                 Quagga.stop();
                 
                 
