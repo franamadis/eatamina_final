@@ -1,50 +1,83 @@
-<h2>Product:<%= @product.name %></h2>
-<p>Bar-code:<%= @product.sku %></p>
-<% if @product.brand? %>
-<p>Brand:<%= @product.brand %></p>
-<% end %>
-<% if @product.nutrition_grade? %>
-  <p>Nutrition Grade:<%= @product.nutrition_grade %></p>
-<% end %>
-<% if @product.photo? %>
-    <%= image_tag @product.photo, height: 300, width: 400, crop: :fill%>
-<% else %>
-  <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png', height: 300, width: 400, crop: :fill %>
-<% end  %>
-<p>Nutritional Information:</p>
-<% if @product.nutritional_info? %>
-  <% nutritional = eval(@product.nutritional_info) %>
-  <p>Fat/100g: <%= nutritional['fat_100g'] %> g</p>
-  <p>Sugars/100g: <%= nutritional['sugars_100g'] %> g</p>
-  <p>Proteins/100g: <%= nutritional['proteins_100g'] %> g</p>
-  <p>Salt/100g: <%= nutritional['salt_100g'] %> g</p>
-  <p>Energy/100g: <%= nutritional['energy_100g'] %> calories</p>
-<% else %>
-  <p>No information about nutrition of this product!</p>
-<% end  %>
-<p>Additives Information:</p>
-<% if @product.prod_add != nil %>
-  <ul>
-    <% JSON[@product.prod_add].each do |additive| %>
-      <% @additive = additive[3..6].capitalize %>
-      <% if Additive.find_by_chemical(@additive) == nil %>
-        <li><%= @additive %></li>
-      <% else %>
-        <li><%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %></li>
-      <% end %>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No additives!</p>
-<% end  %>
+
+<div class="detail-page">
+
+  <div class="banner-detail" style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
+    <div class="row">
+      <div class="col-sm-6">
+         <% if @product.photo? %>
+            <%= image_tag @product.photo, height: 300, width: 400, crop: :fill%>
+        <% else %>
+          <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png', height: 300, width: 400, crop: :fill %>
+        <% end  %>
+
+      </div> <!-- 1 row - picture end of column -->
+
+      <div class="col-sm-6">
+        <h4>Product:<%= @product.name %></h4>
+        <p>Bar-code:<%= @product.sku %></p>
+        <% if @product.brand? %>
+          <p>Brand:<%= @product.brand %></p>
+        <% end %>
+        <% if @product.nutrition_grade? %>
+          <p>Nutrition Grade:<%= @product.nutrition_grade %></p>
+        <% end %>
+      </div> <!-- 2nd column product info -->
+    </div><!-- end of 1 row -->
+
+    <div class="row">
+       <div class="col-sm-12">
+         <p>ADITIVOS ALIMENTARIOS:</p>
+
+          <% if @product.prod_add != nil %>
+            <ul>
+              <% JSON[@product.prod_add].each do |additive| %>
+                <% @additive = additive[3..6].capitalize %>
+                <% if Additive.find_by_chemical(@additive) == nil %>
+                  <li><%= @additive %></li>
+                <% else %>
+                  <li><%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %></li>
+                <% end %>
+              <% end %>
+            </ul>
+          <% else %>
+            <p>No additives!</p>
+          <% end  %>
+      </div>
+
+    </div>
 
 
-<%= link_to like_product_path(@product), method: :put do %>
-  <i class="fa fa-thumbs-up"></i>
-  <%= @product.get_upvotes.size %>
-<% end %>
+  </div> <!-- banner-detail -->
+</div>
 
-<%= link_to dislike_product_path(@product), method: :put do %>
-  <i class="fa fa-thumbs-down"></i>
-  <%= @product.get_downvotes.size %>
-<% end %>
+
+ <!-- <a class="btn btn-primary btn-lg">Start now
+      </a> -->
+
+        <p>Nutritional Information:</p>
+          <% if @product.nutritional_info? %>
+            <% nutritional = eval(@product.nutritional_info) %>
+            <p>Fat/100g: <%= nutritional['fat_100g'] %> g</p>
+            <p>Sugars/100g: <%= nutritional['sugars_100g'] %> g</p>
+            <p>Proteins/100g: <%= nutritional['proteins_100g'] %> g</p>
+            <p>Salt/100g: <%= nutritional['salt_100g'] %> g</p>
+            <p>Energy/100g: <%= nutritional['energy_100g'] %> calories</p>
+          <% else %>
+            <p>No information about nutrition of this product!</p>
+          <% end  %>
+
+          <p> '''''''''''''''''''''''''''''''''''''''''''</p>
+
+
+
+
+        <%= link_to like_product_path(@product), method: :put do %>
+          <i class="fa fa-thumbs-up"></i>
+          <%= @product.get_upvotes.size %>
+        <% end %>
+
+        <%= link_to dislike_product_path(@product), method: :put do %>
+          <i class="fa fa-thumbs-down"></i>
+          <%= @product.get_downvotes.size %>
+        <% end %>
+

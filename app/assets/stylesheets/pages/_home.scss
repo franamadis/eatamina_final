@@ -35,10 +35,12 @@ div {
     height: 85vh;
     /* if you have a 70px navbar => height: calc(100vh - 70px); */
     background-size: cover !important;
+
     background: #B0F37B;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #70E474, #B0F37B);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #70E474, #B0F37B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,6 +70,7 @@ div {
     top: 10px;
     right: 10px;
 }
+
 
 .fake-footer {
     position: relative;
@@ -111,3 +114,4 @@ div {
     line-height: 0;
     border-radius: 45px;
   }
+
