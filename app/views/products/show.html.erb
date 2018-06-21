@@ -13,7 +13,11 @@
 <% end  %>
 <p>Nutritional Information:</p>
 <% if @product.nutritional_info? %>
-  <p>Puts that information below here</p>
+  <p>Fat/100g<%= @product.nutritional_info['fat_100g'] %></p>
+  <p>Sugars/100g:<%= @product.nutritional_info['sugars_100g'] %></p>
+  <p>Proteins/100g:<%= @product.nutritional_info['proteins_100g'] %></p>
+  <p>Salt/100g<%= @product.nutritional_info['salt_100g'] %></p>
+  <p>Energy/100g<%= @product.nutritional_info['energy_100g'] %></p>
 <% else %>
   <p>No information about nutrition of this product!</p>
 <% end  %>
