@@ -10,7 +10,8 @@ def secondpage(chemical)
 
   blocks = html_doc.search('blockquote')
     description = blocks[0].text.strip
-      if blocks[5] == "Baja" || "Media" || "Alta"
+    if ["Baja", "Media", "Alta"].include?(blocks[5])
+      # if blocks[5] == "Baja" || "Media" || "Alta"
         effect = blocks[4].text.strip
       else
       effect = blocks[5].text.strip
