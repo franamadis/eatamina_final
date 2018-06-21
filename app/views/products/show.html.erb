@@ -1,3 +1,26 @@
-<h2><%= @product.name %></h2>
-<p><%= @product.sku %></p>
-<%= cl_image_tag @product.photo, height: 300, width: 400, crop: :fill %>
+<h2>Product:<%= @product.name %></h2>
+<p>Bar-code:<%= @product.sku %></p>
+<% if @product.brand? %>
+<p>Brand:<%= @product.brand %></p>
+<% end %>
+<% if @product.nutrition_grade? %>
+  <p>Nutrition Grade:<%= @product.nutrition_grade %></p>
+<% end %>
+<% if @product.photo? %>
+    <%= image_tag @product.photo, height: 300, width: 400, crop: :fill%>
+<% else %>
+  <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png', height: 300, width: 400, crop: :fill %>
+<% end  %>
+<p>Nutritional Information:</p>
+<% if @product.nutritional_info? %>
+  <p>Puts that information below here</p>
+<% else %>
+  <p>No information about nutrition of this product!</p>
+<% end  %>
+<p>Additives Information:</p>
+<% if @product.prod_add? %>
+  <p>Puts that information below here</p>
+<% else %>
+  <p>No additives!</p>
+<% end  %>
+

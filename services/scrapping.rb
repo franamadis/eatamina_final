@@ -1,29 +1,31 @@
-
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
 require 'json'
 
-class Scraper
-  def secondpage(chemical)
-    pages = "http://www.aditivos-alimentarios.com/2016/01/" + chemical + ".html"
-    html_file = open(pages).read
-    html_doc = Nokogiri::HTML(html_file)
+def secondpage(chemical)
+  pages = "http://www.aditivos-alimentarios.com/2016/01/" + chemical + ".html"
+  html_file = open(pages).read
+  html_doc = Nokogiri::HTML(html_file)
 
-    blocks = html_doc.search('blockquote')
-      description = blocks[0].text.strip
-      if ["Baja", "Media", "Alta"].include?(blocks[5])
+  blocks = html_doc.search('blockquote')
+    description = blocks[0].text.strip
+      if blocks[5] == "Baja" || "Media" || "Alta"
         effect = blocks[4].text.strip
       else
-        effect = blocks[5].text.strip
-      end
+      effect = blocks[5].text.strip
+    end
 
-    detail_hash = {
-      description: description,
-      effect: effect
-    }
-    return detail_hash
-  end
+  detail_hash = {
+    description: description,
+    effect: effect
+  }
+  return detail_hash
+
+# Daves code not hashes of arrays
+  # secondpagecontents = { secondpagecontents: [] }
+  # descripts = html_doc.search('.post-body blockquote').text
+end
 
   def scrapping
     puts "working...."

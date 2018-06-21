@@ -1,21 +1,22 @@
 <p>Hello</p>
 
 <!-- <render 'form', product: @product %> -->
-<%= form_for(@product) do |f| %>
+<%= form_for(@new_product) do |f| %>
   <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
+    <%= f.text_field :name, placeholder: "Puts the name of the product here", class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= f.label :sku %>
     <%= f.text_field :sku, class: 'form-control' %>
+
   </div>
 
   <div class="form-group">
     <%= f.label :photo %>
 
-    <%= f.file_field :photo_cache, as: :hidden %>
+    <%= f.text_field :photo, placeholder: "Puts the URL of one photo here", class: 'form-control' %>
   </div>
 
   <%= f.submit class: 'btn btn-primary' %>
