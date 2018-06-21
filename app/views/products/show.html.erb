@@ -13,7 +13,12 @@
 <% end  %>
 <p>Nutritional Information:</p>
 <% if @product.nutritional_info? %>
-  <p>Puts that information below here</p>
+  <% nutritional = eval(@product.nutritional_info) %>
+  <p>Fat/100g: <%= nutritional['fat_100g'] %> g</p>
+  <p>Sugars/100g: <%= nutritional['sugars_100g'] %> g</p>
+  <p>Proteins/100g: <%= nutritional['proteins_100g'] %> g</p>
+  <p>Salt/100g: <%= nutritional['salt_100g'] %> g</p>
+  <p>Energy/100g: <%= nutritional['energy_100g'] %> calories</p>
 <% else %>
   <p>No information about nutrition of this product!</p>
 <% end  %>
