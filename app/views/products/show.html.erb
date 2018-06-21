@@ -1,4 +1,4 @@
-<h2>Product:<%= @product.name %></h2>
+<!-- <h2>Product:<%= @product.name %></h2>
 <p>Bar-code:<%= @product.sku %></p>
 <% if @product.brand? %>
 <p>Brand:<%= @product.brand %></p>
@@ -38,6 +38,7 @@
   <p>No additives!</p>
 <% end  %>
 
+
 <%= link_to like_product_path(@product), method: :put do %>
   <i class="fa fa-thumbs-up"></i>
   <%= @product.get_upvotes.size %>
@@ -47,4 +48,3 @@
   <i class="fa fa-thumbs-down"></i>
   <%= @product.get_downvotes.size %>
 <% end %>
-
