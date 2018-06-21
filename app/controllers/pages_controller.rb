@@ -19,7 +19,7 @@ class PagesController < ApplicationController
           @new_product = Product.where(sku: params[:query]).first
         else
           @new_product = Product.create!(sku: params[:query], status: "accepted", response: response, name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'] )
-          raise
+
         end
         redirect_to product_path(@new_product)
       else
