@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :product, through: :queries
   has_many :queries
+  acts_as_voter
 end
