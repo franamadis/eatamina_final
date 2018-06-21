@@ -28,30 +28,30 @@ def secondpage(chemical)
   # descripts = html_doc.search('.post-body blockquote').text
 end
 
+  def scrapping
+    puts "working...."
+    puts "😯"
+    url = "http://www.aditivos-alimentarios.com/p/lista.html"
+    html_file = open(url).read
+    html_doc = Nokogiri::HTML(html_file)
+    enumbers = { enumbers: []}
+    rows = html_doc.search('tbody tr')
 
-def scrapping
-  puts "working...."
-  puts "😯"
-  url = "http://www.aditivos-alimentarios.com/p/lista.html"
-  html_file = open(url).read
-  html_doc = Nokogiri::HTML(html_file)
-  enumbers = { enumbers: []}
-  rows = html_doc.search('tbody tr')
+    rows.each do |r|
 
-  rows.each do |r|
+      chemical = r.children[1].text.strip
+      p chemical
+      name = r.children[3].text.strip
+      risk = r.children[5].text.strip
+      description = secondpage(chemical)
+      enumbers[:enumbers] << {chemical: chemical, name: name, risk: risk, description: description[:description], effect: description[:effect]}
 
-    chemical = r.children[1].text.strip
-    p chemical
-    name = r.children[3].text.strip
-    risk = r.children[5].text.strip
-    description = secondpage(chemical)
-    enumbers[:enumbers] << {chemical: chemical, name: name, risk: risk, description: description[:description], effect: description[:effect]}
-  # binding.pry
-  end
+      a = Additive.create!(chemical: chemical, name: name, risk: risk, description: description[:description], effect: description[:effect])
 
-  File.open('enumbers.json', 'wb') do |file|
-    file.write(JSON.pretty_generate(enumbers))
+    end
+
+    File.open('enumbers.json', 'wb') do |file|
+      file.write(JSON.pretty_generate(enumbers))
+    end
   end
 end
-
-scrapping

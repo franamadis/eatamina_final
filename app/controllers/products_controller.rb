@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :show, :update, :edit]
   # before_action :check_if_admin, only: [:edit, :update, :destroy]
+  def index
+    @liked_products = current_user.get_up_voted(Product)
+  end
 
   def new
     @product = Product.new
@@ -47,6 +50,18 @@ class ProductsController < ApplicationController
   #     redirect_to root_path
   #   end
   # end
+
+  def upvote
+    @product = Product.find(params[:id])
+    @product.upvote_by current_user
+    render :show
+  end
+
+  def downvote
+    @product = Product.find(params[:id])
+    @product.downvote_by current_user
+    render :show
+  end
 
   private
 
