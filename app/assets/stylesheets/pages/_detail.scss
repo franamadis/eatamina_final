@@ -44,27 +44,16 @@ div {
 
 .photo {
   width: 50%;
+  margin:10px;
 }
 
-.product {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+// .product {
+//   text-align: center;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+// }
 
-#brand {
-  font-size: 14px;
-}
-
-#grade {
-  border-radius: 50%;
-  border: 1px solid #C13144;
-}
-
-#heart {
-  width: 8%;
-}
 
 .separator {
 //   text-align: center;
@@ -78,7 +67,7 @@ div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 40px;
+  padding: 20px;
 }
 
 
@@ -99,10 +88,10 @@ div {
 
 }
 
-ul li {
-  list-style: none;
-  margin-right: 20px;
-}
+// ul li {
+//   list-style: none;
+//   margin-right: 20px;
+// }
 
 // .display-line {
 //   display: flex;
@@ -148,3 +137,49 @@ ul li {
 //     opacity: 0.6;
 //     margin-bottom: 30px;
 // }
+
+
+.box {
+  position: relative;
+  height:130px;
+}
+
+.product-name {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding-top: 5px;
+}
+
+#brand {
+  font-size: 14px;
+}
+
+.grade {
+
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.grade-circle {
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 10px;
+  border: 1px solid #C13144;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+
+}
+
+.flex {
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 120px;
+}
+
+#heart-icon {
+  width: 15px;
+}
