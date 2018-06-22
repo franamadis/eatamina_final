@@ -77,6 +77,11 @@ div {
     right: 10px;
 }
 
+.gradient-fill {
+    background: #B0F37B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #70E474, #B0F37B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #70E474, #B0F37B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 .fake-footer {
     position: relative;
