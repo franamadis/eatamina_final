@@ -1,0 +1,46 @@
+.width-wrapper {
+  background-color: white;
+  padding: 30px;
+}
+.container-index {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+.title-header {
+  text-align: left;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+.title-header2{
+  text-align: left;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+.container-cards{
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-itemchild {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+

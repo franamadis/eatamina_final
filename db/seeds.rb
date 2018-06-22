@@ -8,6 +8,11 @@ require 'json'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Destroy old database"
+Additive.destroy_all
+AdminUser.destroy_all
+
+puts "Old database destroyed"
 
   filepath = 'services/enumbers.json'
 
@@ -27,8 +32,8 @@ require 'json'
     description = element["description"]
     effect = element["effect"]
 # raise
-   additive = Additive.create!(name: name, chemical: chemical, description: description, effect: effect)
+   additive = Additive.create!(name: name, chemical: chemical, description: description, risk: risk, effect: effect)
   end
 
 puts "Additives created"
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: 'hbs003', password_confirmation: 'hbs003') if Rails.env.development?
