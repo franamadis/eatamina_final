@@ -4,6 +4,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    line-height: 0;
     border-width: 0;
 }
 /* a <div> is already 100% wide,
@@ -45,6 +46,11 @@ div {
     align-items: center;
     justify-content: center;
 }
+
+.banner-container {
+    position: absolute;
+    top: 140px;
+}
 .banner h1 {
     font-size: 50px;
     font-weight: bold;
@@ -67,8 +73,8 @@ div {
 
 .button-navbar {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 18px;
+    right: 10px;
 }
 
 
