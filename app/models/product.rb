@@ -10,4 +10,20 @@ class Product < ApplicationRecord
     Product.where(status: 'pending')
   end
 
+  def presentable_grade
+    case nutrition_grade.upcase
+    when "A"
+      return 100
+    when "B"
+      return 80
+    when "C"
+      return 60
+    when "D"
+      return 40
+    when "E"
+      return 20
+    else
+      return "No grade!"
+    end
+  end
 end
