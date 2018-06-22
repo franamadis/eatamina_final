@@ -30,7 +30,7 @@
 
             <div id="grade">
                <% if @product.nutrition_grade? %>
-                <p><%= @product.nutrition_grade.capitalize %></p>
+                <p><%= @product.presentable_grade %></p>
               <% end %>
             </div>
 
