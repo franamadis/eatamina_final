@@ -1,10 +1,38 @@
-<h1>Welcome to Eatamina: be smart, eat well!</h1>
-<p>Improve your life, eat better!</p>
 
 
-    <div class="row">
+<div class="button-navbar" style="color: white;font-size: medium;text-decoration: none;">
+  <%= link_to "LOG IN", user_session_path, style: "color: white;font-size: medium;text-decoration: none;" %>
+</div>
+<div class="banner">
+
+  <div class="banner-content banner-container">
+	<%= image_tag("logo.png", height: 100, crop: :fill)%>
+    <h1>eatamina</h1>
+    <p>¡Descrifra lo que comes en un click!</p>
+		
+  </div>
+</div>
+<div class="gradient-fill">
+	<div class="button-topfooter">
+		<p style="color: #686868;font-size: small;">ESCANEA EL CODIGO DE BARRAS</p>
+	</div>
+</div>
+<div class="gradient-fill">
+	<div class="button-footer">
+ 	 	<span class="input-group-btn">
+			<button class="btn-circle" type="button" data-toggle="modal" data-target="#livestream_scanner">
+				<i class="fa fa-camera" style="font-size:25px;color:#686868"></i>
+
+			</button>
+		</span>
+	</div>
+</div>
+
+
+
+    <div class="row gradient-fill" style="margin-left: 0px;margin-right: 0px;">
     	<div class="col-lg-6">
-    		<div class="input-group">
+    		<div class="input-group hidden" >
     			<%= form_tag root_path, method: :get do %>
             <%= text_field_tag :query,
               params[:query],
@@ -13,41 +41,20 @@
               placeholder: "Write a barcode"
             %>
           <% end %>
-    			<span class="input-group-btn">
-    				<button class="btn btn-default" type="button" data-toggle="modal" data-target="#livestream_scanner">
-    					<i class="fa fa-barcode"></i>
-    				</button>
-    			</span>
     		</div><!-- /input-group -->
     	</div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
     <div class="modal" id="livestream_scanner">
-    	<div class="modal-dialog">
-    		<div class="modal-content">
-    			<div class="modal-header">
-    				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    					<span aria-hidden="true">&times;</span>
-    				</button>
-    				<h4 class="modal-title">Barcode Scanner</h4>
+    	<div>
+    		<div>
+    				<div class="modal-body" style="position: absolute;top: -8px;left: calc(50%);transform: translateX(-50%);">
+    					<div id="interactive" class="viewport"></div>
     			</div>
-    			<div class="modal-body" style="position: static">
-    				<div id="interactive" class="viewport"></div>
-    				<div class="error"></div>
-    			</div>
-    			<div class="modal-footer">
-    				<label class="btn btn-default pull-left">
-    					<i class="fa fa-camera"></i> Use camera app
-    					<input type="file" accept="image/*;capture=camera" capture="camera" class="hidden" action="/" name="query" method="GET" />
-
-    				</label>
-    				<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-    			</div>
+    		
     		</div><!-- /.modal-content -->
     	</div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
 
-<div class="buttons">
-  <%= link_to "Sign In", user_session_path %>
-</div>
+
 

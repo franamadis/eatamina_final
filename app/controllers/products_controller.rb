@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :show, :update, :edit]
   # before_action :check_if_admin, only: [:edit, :update, :destroy]
+  def index
+    @liked_products = current_user.get_up_voted(Product)
+  end
 
   def new
     @product = Product.new
@@ -18,6 +21,16 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    if @product.prod_add != nil
+      JSON[@product.prod_add].each do |additive|
+        additive_adj = additive[3..6].capitalize
+        if Additive.find_by_chemical(additive_adj) == nil
+          @risk = nil
+        else
+          @risk = Additive.find_by_chemical(additive_adj).risk
+        end
+      end
+    end
   end
 
   def edit
@@ -47,6 +60,19 @@ class ProductsController < ApplicationController
   #     redirect_to root_path
   #   end
   # end
+
+  def upvote
+    @product = Product.find(params[:id])
+    @product.upvote_by current_user
+    render :show
+  end
+
+  def downvote
+    @product = Product.find(params[:id])
+    @product.downvote_by current_user
+    render :show
+  end
+
 
   private
 

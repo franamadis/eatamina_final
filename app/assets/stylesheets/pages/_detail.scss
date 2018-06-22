@@ -1,0 +1,150 @@
+/* Removing padding and margin from
+the specified elements: */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    color: #686868;
+    text-transform: uppercase;
+}
+/* a <div> is already 100% wide,
+so we specify only the height,
+and ensure that any lengths
+are calculated to include
+border-width, padding and margin
+using the box-sizing property: */
+
+.fullpage {
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+div {
+    // min-height: 2em;
+    margin: 0;
+    padding: 0;
+}
+
+
+.banner-detail {
+    color: #686868;
+    // text-align: center;
+    height: 100vh;
+    /* if you have a 70px navbar => height: calc(100vh - 70px); */
+    background-size: cover !important;
+    // background: rgba(200, 223, 240, 0.74) 90%;  /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+}
+
+.photo {
+  width: 50%;
+}
+
+.product {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#brand {
+  font-size: 14px;
+}
+
+#grade {
+  border-radius: 50%;
+  border: 1px solid #C13144;
+}
+
+#heart {
+  width: 8%;
+}
+
+.separator {
+//   text-align: center;
+//   background-color: #686868;
+  color: white;
+  padding-top: -20px;
+//   padding-top: 10px;
+}
+
+.chemical-click {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+
+.button-chemical {
+    // display: block;
+    // width: 94.5px;
+    // height: 34px;
+    width: 20%;
+    background: #74E575;
+    padding: 8px;
+    // text-align: center;
+    margin: 10px 5px;
+
+    border-radius: 5px;
+    box-shadow:  -2px 2px 2px rgba(0, 0, 0, 0.25), 2px 4px 1px rgba(0, 0, 0, 0.25);
+    color: #686868;
+    font-weight: 400;
+
+}
+
+ul li {
+  list-style: none;
+  margin-right: 20px;
+}
+
+// .display-line {
+//   display: flex;
+//   // justify-content: space-between;
+//   align-items: center;
+// }
+
+#valor {
+  font-size: 12px;
+  text-align: center;
+}
+
+.underlined li {
+  border-bottom: 1px solid #949494;
+}
+
+.icons {
+  width: 18px;
+  height: 18px;
+}
+
+.icons-bottom {
+  width: 39px;
+  height: 39px;
+}
+
+.foot-flex {
+   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+// .banner h2 {
+//     font-size: 50px;
+//     font-weight: bold;
+//     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+// }
+// .banner p {
+//     font-size: 16px;
+//     font-weight: lighter;
+//     color: rgb(255, 255, 255);
+//     opacity: 0.6;
+//     margin-bottom: 30px;
+// }
