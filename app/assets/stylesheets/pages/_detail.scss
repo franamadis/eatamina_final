@@ -1,4 +1,3 @@
-
 /* Removing padding and margin from
 the specified elements: */
 html,
@@ -43,6 +42,39 @@ div {
     justify-content: center;
 }
 
+.photo {
+  width: 50%;
+}
+
+.product {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#brand {
+  font-size: 14px;
+}
+
+#grade {
+  border-radius: 50%;
+  border: 1px solid #C13144;
+}
+
+#heart {
+  width: 8%;
+}
+
+.separator {
+  text-align: center;
+}
+
+.chemical-click {
+
+}
+
+
 .button-chemical {
     // display: block;
     width: 94.5px;
@@ -75,13 +107,15 @@ ul li {
   border-bottom: 1px solid #949494;
 }
 
-// .icons {
+.icons {
+  width: 18px;
+  height: 18px;
+}
 
-// }
-
-// .icons-bottom {
-
-// }
+.icons-bottom {
+  width: 39px;
+  height: 39px;
+}
 
 // .banner h2 {
 //     font-size: 50px;
