@@ -49,50 +49,36 @@
 
         <div class="row">
           <div class="col-xs-12">
+
             <div class="separator">
               <p>ADITIVOS ALIMENTARIOS:</p>
             </div>
 
             <div class="chemical-click">
-
                <% if @product.prod_add != nil %>
-                <ul class="display-line">
+
+              <!--   <ul class=""> -->
                   <% JSON[@product.prod_add].each do |additive| %>
                     <% @additive = additive[3..6].capitalize %>
-
                     <% if Additive.find_by_chemical(@additive) == nil %>
 
     <!-- adding button link -->
-                      <li class="button-chemical"> <%= @additive %></li>
+                      <div class="button-chemical"> <%= @additive %>
+                      </div>
                    <!-- link to detail of particular additive (chemical) -->
                     <% else %>
 
     <!-- adding button link with redirection -->
-                      <li class="button-chemical"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </li>
+                      <div class="button-chemical"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
                     <% end %>
                   <% end %>
-                </ul>
 
+                <!-- </ul> -->
               <% else %>
-    <!-- adding button to display something when no chemical found -->
-                <ul class="chemical-click display-line">
-                  <li class="button-chemical">No E!</li>
-                  <li class="button-chemical">E100</li>
-                  <li class="button-chemical">E500</li>
-
-                </ul>
+                  <!-- <p>No chemicals</p> -->
               <% end  %>
             </div>
 <!-- end of chemicals buttons part -->
-
-
-
-
-
-            <div class="separator">
-              <p>INFORMACION NUTRICIONAL</p>
-            </div>
-
           </div>
           <!-- end of column 12  -->
         </div>
@@ -100,6 +86,13 @@
 
 
       <div class="row">
+
+              <div class="separator">
+              <p>INFORMACION NUTRICIONAL</p>
+            </div>
+
+
+
         <div class="col-xs-6">
           <p id="valor">VALORES POR 100G DE PRODUCTO</p>
 <!-- has to be finished LAYOUT AND ICONS-->
