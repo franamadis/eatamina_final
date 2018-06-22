@@ -50,9 +50,10 @@
         <div class="row">
           <div class="col-xs-12">
 
-            <div class="separator">
-              <p>ADITIVOS ALIMENTARIOS:</p>
-            </div>
+            <div class="separator" style='background-image: url( <%= image_path "separator.svg" %> )'>
+              <p>  ADITIVOS ALIMENTARIOS </p>
+<!--               <p>ADITIVOS ALIMENTARIOS</p>
+ -->            </div>
 
             <div class="chemical-click">
                <% if @product.prod_add != nil %>
@@ -86,76 +87,48 @@
 
 
       <div class="row">
-
-              <div class="separator">
-              <p>INFORMACION NUTRICIONAL</p>
-            </div>
-
-
-
-        <div class="col-xs-6">
-          <p id="valor">VALORES POR 100G DE PRODUCTO</p>
-<!-- has to be finished LAYOUT AND ICONS-->
-          <ul class="underlined">
-            <li> <%= image_tag "calories.png", class: "icons" %> GRASAS </li>
-            <li> <%= image_tag "calories.png", class: "icons" %> AZUCARES</li>
-            <li> <%= image_tag "calories.png", class: "icons" %> PROTEINAS</li>
-            <li> <%= image_tag "calories.png", class: "icons" %> SAL</li>
-            <li> <%= image_tag "calories.png", class: "icons" %> CALORIAS</li>
-          </ul>
+        <div class="separator">
+          <p>INFORMACION NUTRICIONAL</p>
         </div>
-        <!-- end of column 2nd column with data -->
 
-<!-- has to be finished LAYOUT-->
-
-        <div class="col-xs-6">
-          <!-- <p>Nutritional Information:</p> -->
-         <% if @product.nutritional_info? %>
-            <% nutritional = eval(@product.nutritional_info) %>
-          <ul class="underlined">
-            <li> <%= nutritional['fat_100g'] %> g </li>
-            <li> <%= nutritional['sugars_100g'] %> g </li>
-            <li> <%= nutritional['proteins_100g'] %> g </li>
-            <li> <%= nutritional['salt_100g'] %> g </li>
-            <li> <%= nutritional['energy_100g'] %> Kcal </li>
-          </ul>
-           <% else %>
-            <!-- <p>Sorry no data!</p> -->
-          <% end  %>
-        </div>
-        <!-- end of 2nd column nutrition's data -->
-
+        <p id="valor">VALORES POR 100G DE PRODUCTO</p>
       </div>
-<!-- end of calories row -->
 
-<!-- FOOTER STARTS HERE -->
-   <div class="row">
-      <div class="col-xs-12">
+<!-- new style -->
+    <div class="row">
+      <div class="col-xs-5 col-xs-offset-1">
+         <p> <%= image_tag "calories.png", class: "icons" %> GRASAS </p>
 
+          <p> <%= image_tag "calories.png", class: "icons" %> AZUCARES</p>
+          <p> <%= image_tag "calories.png", class: "icons" %> PROTEINAS</p>
+          <p> <%= image_tag "calories.png", class: "icons" %> SAL</p>
+          <p> <%= image_tag "calories.png", class: "icons" %> CALORIAS</p>
+      </div>
 
-          <!-- favorites -->
-          <%= image_tag "camera.jpg", class: "icons-bottom" %>
-          <%= link_to like_product_path(@product), method: :put do %>
-                <i class="fa fa-thumbs-up"></i>
-          <% end %>
-          <!-- scanner -->
-          <%= image_tag "camera.jpg", class: "icons-bottom" %>
-
-          <!-- history -->
-          <%= image_tag "camera.jpg", class: "icons-bottom" %>
-
-      </div> <!-- end of column -->
-    </div> <!-- end of row of footer -->
-
-
+      <div class="col-xs-6">
+         <% if @product.nutritional_info? %>
+                <% nutritional = eval(@product.nutritional_info) %>
+            <p> <%= nutritional['fat_100g'] %> g </p>
+            <p> <%= nutritional['sugars_100g'] %> g </p>
+            <p> <%= nutritional['proteins_100g'] %> g </p>
+            <p> <%= nutritional['salt_100g'] %> g </p>
+            <p> <%= nutritional['energy_100g'] %> Kcal </p>
+           <% else %>
+                <!-- <p>Sorry no data!</p> -->
+              <% end  %>
+      </div>
     </div>
 
-
-
-  </div> <!-- banner-detail -->
-
-
+    </div> <!-- banner content -->
+  </div>
+  <!-- banner-detail -->
 </div>
+<!-- detail page close div -->
+
+
+
+
+
 
 
        <!--  <%= link_to dislike_product_path(@product), method: :put do %>

@@ -33,7 +33,7 @@ div {
     height: 100vh;
     /* if you have a 70px navbar => height: calc(100vh - 70px); */
     background-size: cover !important;
-    background: rgba(200, 223, 240, 0.74) 90%;  /* fallback for old browsers */
+    // background: rgba(200, 223, 240, 0.74) 90%;  /* fallback for old browsers */
     // background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
     // background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
@@ -67,7 +67,11 @@ div {
 }
 
 .separator {
-  text-align: center;
+//   text-align: center;
+//   background-color: #686868;
+  color: white;
+  padding-top: -20px;
+//   padding-top: 10px;
 }
 
 .chemical-click {
@@ -80,7 +84,6 @@ div {
 
 .button-chemical {
     // display: block;
-
     // width: 94.5px;
     // height: 34px;
     width: 20%;
@@ -109,6 +112,7 @@ ul li {
 
 #valor {
   font-size: 12px;
+  text-align: center;
 }
 
 .underlined li {
@@ -123,6 +127,13 @@ ul li {
 .icons-bottom {
   width: 39px;
   height: 39px;
+}
+
+.foot-flex {
+   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px;
 }
 
 // .banner h2 {
