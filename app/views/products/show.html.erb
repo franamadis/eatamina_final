@@ -1,57 +1,133 @@
 <div class="detail-page">
 
   <div class="banner-detail" style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
-    <div class="row">
-      <div class="col-sm-6">
-         <% if @product.photo? %>
-            <%= image_tag @product.photo, height: 300, width: 400, crop: :fill%>
-        <% else %>
-          <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png', height: 300, width: 400, crop: :fill %>
-        <% end  %>
 
-      </div> <!-- 1 row - picture end of column -->
+    <div class="banner-content">
 
-      <div class="col-sm-6">
-        <h4>Product:<%= @product.name %></h4>
-        <p>Bar-code:<%= @product.sku %></p>
-        <% if @product.brand? %>
-          <p>Brand:<%= @product.brand %></p>
+        <div class="row">
+          <div class="col-sx-6">
+             <% if @product.photo? %>
+                <%= image_tag @product.photo, height: 170, width: 170, crop: :fill%>
+            <% else %>
+              <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png', height: 170, width: 170, crop: :fill %>
+            <% end  %>
+
+          </div>
+          <!-- 1 row - picture end of column -->
+
+          <div class="col-sx-6">
+            <p><%= @product.name %></p>
+
+            <% if @product.brand? %>
+              <p><%= @product.brand %></p>
+            <% end %>
+            <% if @product.nutrition_grade? %>
+              <p><%= @product.nutrition_grade.capitalize %></p>
+            <% end %>
+<!-- has to be finished -->
+
+        <!-- heart icon link to favorites -->
+            <%= link_to like_product_path(@product), method: :put do %>
+              <i class="fa fa-thumbs-up"></i>
+              <%= @product.get_upvotes.size %>
         <% end %>
-        <% if @product.nutrition_grade? %>
-          <p>Nutrition Grade:<%= @product.nutrition_grade %></p>
-        <% end %>
-      </div> <!-- 2nd column product info -->
-    </div><!-- end of 1 row -->
 
-    <div class="row">
-       <div class="col-sm-12">
-         <p>ADITIVOS ALIMENTARIOS:</p>
 
-          <% if @product.prod_add != nil %>
-            <ul>
-              <% JSON[@product.prod_add].each do |additive| %>
-                <% @additive = additive[3..6].capitalize %>
-                <% if Additive.find_by_chemical(@additive) == nil %>
-                  <li><%= @additive %></li>
-                <% else %>
-                  <li><%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %></li>
-                <% end %>
-              <% end %>
-            </ul>
-          <% else %>
-            <p>No additives!</p>
+          </div> <!-- 2nd column product info -->
+        </div>
+        <!-- end of 1 row -->
+
+        <div class="row">
+          <div class="col-sx-12">
+             <p>ADITIVOS ALIMENTARIOS:</p>
+
+            <div class="chemical-click">
+               <% if @product.prod_add != nil %>
+                <ul class="display-line">
+                  <% JSON[@product.prod_add].each do |additive| %>
+                    <% @additive = additive[3..6].capitalize %>
+
+                    <% if Additive.find_by_chemical(@additive) == nil %>
+
+    <!-- adding button link -->
+                      <li class="button-chemical"> <%= @additive %></li>
+                   <!-- link to detail of particular additive (chemical) -->
+                    <% else %>
+
+    <!-- adding button link with redirection -->
+     -->                  <li class="button-chemical"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </li>
+                    <% end %>
+                  <% end %>
+                </ul>
+
+              <% else %>
+    <!-- adding button to display something when no chemical found -->
+                <ul class="chemical-click display-line">
+                  <li class="button-chemical">No E!</li>
+                  <li class="button-chemical">E100</li>
+                </ul>
+              <% end  %>
+            </div>
+            <!-- end of chemicals button -->
+             <p>INFORMACION NUTRICIONAL</p>
+          </div>
+          <!-- end of column 12  -->
+        </div>
+        <!-- end of row middle body -->
+
+
+      <div class="row">
+       <p id="valor">VALORES POR 100G DE PRODUCTO</p>
+
+        <div class="col-sx-6">
+
+<!-- has to be finished LAYOUT AND ICONS-->
+
+          <ul class="underlined">
+            <li> <%= image_tag "", class: "icons" %> GRASAS </li>
+            <li> <%= image_tag "", class: "icons" %> AZUCARES</li>
+            <li> <%= image_tag "", class: "icons" %> PROTEINAS</li>
+            <li> <%= image_tag "", class: "icons" %> SAL</li>
+            <li> <%= image_tag "", class: "icons" %> CALORIAS</li>
+          </ul>
+        </div>
+        <!-- end of column 2nd column with data -->
+
+<!-- has to be finished LAYOUT-->
+
+        <div class="col-sx-6">
+          <!-- <p>Nutritional Information:</p> -->
+
+         <% if @product.nutritional_info? %>
+            <% nutritional = eval(@product.nutritional_info) %>
+          <ul class="underlined">
+            <li> <%= nutritional['fat_100g'] %> g </li>
+            <li> <%= nutritional['sugars_100g'] %> g </li>
+            <li> <%= nutritional['proteins_100g'] %> g </li>
+            <li> <%= nutritional['salt_100g'] %> g </li>
+            <li> <%= nutritional['energy_100g'] %> Kcal </li>
+          </ul>
+
+           <% else %>
+            <!-- <p>Sorry no data!</p> -->
           <% end  %>
+        </div>
+        <!-- end of 2nd column nutrition's data -->
       </div>
+    <!-- end of calories row -->
 
     </div>
-
-
   </div> <!-- banner-detail -->
-</div>
 
+  <div class="row">
+    <div class="col-sx-12">
+      <footer>
 
- <!-- <a class="btn btn-primary btn-lg">Start now
-      </a> -->
+        <!-- favorites -->
+        <%= image_tag "", class: "icons-bottom" %>
+        <%= link_to like_product_path(@product), method: :put do %>
+              <i class="fa fa-thumbs-up"></i>
+        <% end %>
 
         <p>Nutritional Information:</p>
           <% if @product.nutritional_info? %>
@@ -65,14 +141,21 @@
             <p>No information about nutrition of this product!</p>
           <% end  %>
 
-          <p> '''''''''''''''''''''''''''''''''''''''''''</p>
 
 
+        <!-- history -->
+        <%= image_tag "", class: "icons-bottom" %>
+
+      </footer>
+    </div> <!-- end of column -->
+  </div> <!-- end of row of footer -->
+
+
+</div>
 
         < link_to dislike_product_path(@product), method: :put do %>
           <i class="fa fa-thumbs-down"></i>
           < @product.get_downvotes.size %>
         < end %>
         <%= render 'shared/footer' %>
-
 
