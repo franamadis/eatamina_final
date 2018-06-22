@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
       JSON[@product.prod_add].each do |additive|
         additive_adj = additive[3..6].capitalize
         if Additive.find_by_chemical(additive_adj) == nil
-          @risk = "test"
+          @risk = nil
         else
           @risk = Additive.find_by_chemical(additive_adj).risk
         end
@@ -72,6 +72,7 @@ class ProductsController < ApplicationController
     @product.downvote_by current_user
     render :show
   end
+
 
   private
 

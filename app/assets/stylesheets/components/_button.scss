@@ -1,0 +1,31 @@
+.button-login {
+  color: white;
+  text-align:center;
+  font-weight: bold;
+  background: #408305;
+  transition: background 0.3s ease;
+  box-shadow: 5px 3px 10px grey;
+  padding: 10px 40px;
+  position: center;
+  text-align: center;
+}
+
+.button-login:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
+}
+
+
+#lower-button {
+  text-align: center;
+  padding: 15px 0px;
+  width: 100%;
+}
+
+.form-inputs {
+  box-shadow: 5px 3px 10px grey;
+
+
+}
