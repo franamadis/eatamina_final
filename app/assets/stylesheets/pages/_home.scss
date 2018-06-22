@@ -4,7 +4,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    line-height: 0;
+    line-height: 1;
     border-width: 0;
 }
 /* a <div> is already 100% wide,
@@ -49,7 +49,7 @@ div {
 
 .banner-container {
     position: absolute;
-    top: 140px;
+    top: 108px;
 }
 .banner h1 {
     font-size: 50px;
