@@ -3,14 +3,14 @@
 
     <!-- Sign-in and Log-in toggler -->
     <div class="row">
-      <div class="col-xs-5 col-xs-offset-1">
+      <div class="col-xs-5 col-xs-offset-1" id="adjust-margin">
         <div class="login-tab">
           LOG IN
         </div>
       </div>
       <div class="col-xs-5">
         <div class="login-tab" id="adjust-margin">
-          SIGN IN
+         SIGN UP
         </div>
       </div>
     </div>
@@ -26,13 +26,13 @@
           <%= f.error_notification %>
           <%= f.input :name, required: true, autofocus: true, placeholder: "Username", label: false %>
         </div>
-        <div class="form-inputs">
+        <div class="form-style">
           <%= f.input :email, required: true, placeholder: "Email", label: false, autofocus: true %>
         </div>
-        <div class="form-inputs">
+        <div class="form-style">
           <%= f.input :password, required: true, placeholder: "Password", label: false %>
         </div>
-        <div class="form-inputs">
+        <div class="form-style">
           <%= f.input :password_confirmation, required: true, placeholder: "Confirm Password", label: false %>
         </div>
       </div>

@@ -1,3 +1,7 @@
+.container-form {
+  height: 100vh;
+}
+
 .body{
   margin: 0;
   padding: 0;
@@ -22,5 +26,17 @@
 }
 
 #adjust-margin {
-  margin-left: -30px;
+text-align: center;
+}
+
+
+
+.form-control{
+  border-radius: 5px !important;
+}
+
+
+.titles{
+  text-align: center;
+  margin-left: 88px;
 }
