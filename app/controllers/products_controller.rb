@@ -21,6 +21,16 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    if @product.prod_add != nil
+      JSON[@product.prod_add].each do |additive|
+        additive_adj = additive[3..6].capitalize
+        if Additive.find_by_chemical(additive_adj) == nil
+          @risk = "test"
+        else
+          @risk = Additive.find_by_chemical(additive_adj).risk
+        end
+      end
+    end
   end
 
   def edit
