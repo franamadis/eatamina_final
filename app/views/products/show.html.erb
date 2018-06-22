@@ -1,4 +1,3 @@
-
 <div class="detail-page">
 
   <div class="banner-detail" style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
@@ -61,7 +60,7 @@
             <p>Sugars/100g: <%= nutritional['sugars_100g'] %> g</p>
             <p>Proteins/100g: <%= nutritional['proteins_100g'] %> g</p>
             <p>Salt/100g: <%= nutritional['salt_100g'] %> g</p>
-            <p>Energy/100g: <%= nutritional['energy_100g'] %> calories</p>
+            <p>Energy/100g: <%= nutritional['energy_value'] %> kcal</p>
           <% else %>
             <p>No information about nutrition of this product!</p>
           <% end  %>
@@ -70,14 +69,10 @@
 
 
 
-
-        <%= link_to like_product_path(@product), method: :put do %>
-          <i class="fa fa-thumbs-up"></i>
-          <%= @product.get_upvotes.size %>
-        <% end %>
-
-        <%= link_to dislike_product_path(@product), method: :put do %>
+        < link_to dislike_product_path(@product), method: :put do %>
           <i class="fa fa-thumbs-down"></i>
-          <%= @product.get_downvotes.size %>
-        <% end %>
+          < @product.get_downvotes.size %>
+        < end %>
+        <%= render 'shared/footer' %>
+
 
