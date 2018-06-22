@@ -1,0 +1,26 @@
+.body{
+  margin: 0;
+  padding: 0;
+}
+
+.form-login {
+  border-radius: 10px;
+  width: 100vw;
+  height: 100%;
+  padding-top: 150px;
+  padding-bottom: 40px;
+  box-shadow: 5px 5px 10px grey;
+  background: linear-gradient(to right, white, #DCDCDC);
+
+}
+
+.form-style {
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  box-shadow: 5px 5px 10px grey;
+}
+
+#adjust-margin {
+  margin-left: -30px;
+}
