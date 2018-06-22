@@ -4,6 +4,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    line-height: 1;
     border-width: 0;
 }
 /* a <div> is already 100% wide,
@@ -35,13 +36,20 @@ div {
     height: 100vh;
     /* if you have a 70px navbar => height: calc(100vh - 70px); */
     background-size: cover !important;
-    background: #a8ff78;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    background: #B0F37B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #70E474, #B0F37B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #70E474, #B0F37B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.banner-container {
+    position: absolute;
+    top: 108px;
 }
 .banner h1 {
     font-size: 50px;
@@ -58,13 +66,66 @@ div {
 
 .fake-navbar {
     position: relative;
-    background: #a8ff78;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #B0F37B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #70E474, #B0F37B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #70E474, #B0F37B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .button-navbar {
     position: absolute;
-    top: 10px;
+    top: 18px;
     right: 10px;
 }
+
+.gradient-fill {
+    background: #B0F37B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #70E474, #B0F37B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #70E474, #B0F37B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.fake-footer {
+    position: relative;
+    background: #B0F37B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #70E474, #B0F37B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #70E474, #B0F37B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.button-footer {
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.fake-topfooter {
+    position: relative;
+    background: #B0F37B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #70E474, #B0F37B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #70E474, #B0F37B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.button-topfooter {
+    text-align: center;
+    position: absolute;
+    bottom: 71px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.login {
+    color: white;
+    font-size: medium;
+    text-decoration: none !important;
+}
+
+.btn-circle {
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 0;
+    border-radius: 45px;
+  }
+

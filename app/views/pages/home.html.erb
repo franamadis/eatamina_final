@@ -1,27 +1,38 @@
 
-<div class="fake-navbar">
-<div class="button-navbar">
-  <%= link_to "Sign In", user_session_path %>
-</div>
+
+<div class="button-navbar" style="color: white;font-size: medium;text-decoration: none;">
+  <%= link_to "LOG IN", user_session_path, style: "color: white;font-size: medium;text-decoration: none;" %>
 </div>
 <div class="banner">
 
-  <div class="banner-content">
+  <div class="banner-content banner-container">
+	<%= image_tag("logo.png", height: 100, crop: :fill)%>
     <h1>eatamina</h1>
-    <p>!Descrifa lo que comes en un click</p>
-			<span class="input-group-btn">
-    				<button class="btn btn-default" type="button" data-toggle="modal" data-target="#livestream_scanner">
-    					<i class="fa fa-barcode"></i>
-    				</button>
-    			</span>
+    <p>¡Descrifra lo que comes en un click!</p>
+		
   </div>
+</div>
+<div class="gradient-fill">
+	<div class="button-topfooter">
+		<p style="color: #686868;font-size: small;">ESCANEA EL CODIGO DE BARRAS</p>
+	</div>
+</div>
+<div class="gradient-fill">
+	<div class="button-footer">
+ 	 	<span class="input-group-btn">
+			<button class="btn-circle" type="button" data-toggle="modal" data-target="#livestream_scanner">
+				<i class="fa fa-camera" style="font-size:25px;color:#686868"></i>
+
+			</button>
+		</span>
+	</div>
 </div>
 
 
 
-    <div class="row">
+    <div class="row gradient-fill" style="margin-left: 0px;margin-right: 0px;">
     	<div class="col-lg-6">
-    		<div >
+    		<div class="input-group hidden" >
     			<%= form_tag root_path, method: :get do %>
             <%= text_field_tag :query,
               params[:query],
@@ -30,11 +41,6 @@
               placeholder: "Write a barcode"
             %>
           <% end %>
-    			<span class="input-group-btn">
-    				<button class="btn btn-default" type="button" data-toggle="modal" data-target="#livestream_scanner">
-    					<i class="fa fa-barcode"></i>
-    				</button>
-    			</span>
     		</div><!-- /input-group -->
     	</div><!-- /.col-lg-6 -->
     </div><!-- /.row -->

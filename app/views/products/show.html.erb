@@ -129,8 +129,18 @@
               <i class="fa fa-thumbs-up"></i>
         <% end %>
 
-        <!-- scanner -->
-        <%= image_tag "", class: "icons-bottom" %>
+        <p>Nutritional Information:</p>
+          <% if @product.nutritional_info? %>
+            <% nutritional = eval(@product.nutritional_info) %>
+            <p>Fat/100g: <%= nutritional['fat_100g'] %> g</p>
+            <p>Sugars/100g: <%= nutritional['sugars_100g'] %> g</p>
+            <p>Proteins/100g: <%= nutritional['proteins_100g'] %> g</p>
+            <p>Salt/100g: <%= nutritional['salt_100g'] %> g</p>
+            <p>Energy/100g: <%= nutritional['energy_value'] %> kcal</p>
+          <% else %>
+            <p>No information about nutrition of this product!</p>
+          <% end  %>
+
 
 
         <!-- history -->
@@ -140,13 +150,12 @@
     </div> <!-- end of column -->
   </div> <!-- end of row of footer -->
 
+
 </div>
 
-
-       <!--  <%= link_to dislike_product_path(@product), method: :put do %>
+        < link_to dislike_product_path(@product), method: :put do %>
           <i class="fa fa-thumbs-down"></i>
-          <%= @product.get_downvotes.size %>
-        <% end %> -->
+          < @product.get_downvotes.size %>
+        < end %>
+        <%= render 'shared/footer' %>
 
-        <!-- We do not need for our detail page  -->
-        <!-- <p>Bar-code:< @product.sku ></p> -->
