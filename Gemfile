@@ -23,6 +23,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 gem "pundit"
 gem 'activeadmin'
+gem 'acts_as_votable', '~> 0.10.0'
 
 # Plus integrations with:
 gem 'devise'
