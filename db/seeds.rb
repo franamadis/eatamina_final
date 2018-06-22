@@ -36,4 +36,5 @@ puts "Old database destroyed"
   end
 
 puts "Additives created"
-AdminUser.create!(email: 'admin@example.com', password: 'hbs003', password_confirmation: 'hbs003') if Rails.env.development?
+AdminUser.create!(email: 'hbs003@hotmail.com', password: 'hbs003', password_confirmation: 'hbs003')
+puts "Admin created"
