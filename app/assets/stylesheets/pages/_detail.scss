@@ -7,6 +7,7 @@ body {
     padding: 0;
     border-width: 0;
     color: #686868;
+    text-transform: uppercase;
 }
 /* a <div> is already 100% wide,
 so we specify only the height,
@@ -21,10 +22,11 @@ using the box-sizing property: */
 }
 
 div {
-    min-height: 2em;
+    // min-height: 2em;
     margin: 0;
     padding: 0;
 }
+
 
 .banner-detail {
     color: #686868;
@@ -32,23 +34,64 @@ div {
     height: 100vh;
     /* if you have a 70px navbar => height: calc(100vh - 70px); */
     background-size: cover !important;
-    background: #FFFFFF;  /* fallback for old browsers */
+    background: rgba(200, 223, 240, 0.74) 90%;  /* fallback for old browsers */
     // background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
     // background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
 }
-.banner h2 {
-    font-size: 50px;
-    font-weight: bold;
-    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+
+.button-chemical {
+    // display: block;
+    width: 94.5px;
+    height: 34px;
+    background: #74E575;
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow:  -2px 2px 2px rgba(0, 0, 0, 0.25), 2px 4px 1px rgba(0, 0, 0, 0.25);
+    color: #686868;
+    font-weight: 400;
 }
-.banner p {
-    font-size: 25px;
-    font-weight: lighter;
-    color: rgb(255, 255, 255);
-    opacity: 0.6;
-    margin-bottom: 30px;
+
+ul li {
+  list-style: none;
+  margin-right: 20px;
 }
+
+.display-line {
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+}
+
+#valor {
+  font-size: 12px;
+}
+
+.underlined li {
+  border-bottom: 1px solid #949494;
+}
+
+// .icons {
+
+// }
+
+// .icons-bottom {
+
+// }
+
+// .banner h2 {
+//     font-size: 50px;
+//     font-weight: bold;
+//     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+// }
+// .banner p {
+//     font-size: 16px;
+//     font-weight: lighter;
+//     color: rgb(255, 255, 255);
+//     opacity: 0.6;
+//     margin-bottom: 30px;
+// }
