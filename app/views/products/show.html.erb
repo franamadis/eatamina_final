@@ -1,71 +1,103 @@
 <div class="detail-page">
 
   <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
-<div class="row">
-  <div class="col-xs-4">
-  <div>
+    <div class="grid-container">
+      <div class="grid-item-a ">
+        <div class="photo-container">
             <% if @product.photo? %>
             <%= image_tag @product.photo, class:"photo" %>
             <% else %>
             <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png',  class:"photo" %>
             <% end  %>
-          </div>
-  </div>
-  <div class="col-xs-2">
-  </div>
-  <div class="col-xs-6" style="text-transform: capitalize;">
-              <div class="product-name" style="text-align: right;">
-                <p><%= @product.name %></p>
-                <p id="brand"> <%= @product.brand if @product.brand?%></p>
-            </div>
-
-             <div class="box">
-
-
-
-                <div class="grade">
-                    <div class="flex">
-                      <div style="padding-top: 8px">
-                      <%= link_to like_product_path(@product), method: :put do %>
-                      <i class="fas fa-heart"></i>
-
-
-                      <% end %>
-                      </div>
-
-
-                      <div class="grade-circle"> <%= @product.nutrition_grade.capitalize if @product.nutrition_grade?  %>
-                      </div>
-
-                    <!--     <p><%= @product.get_upvotes.size %></p> -->
-
-
-                   </div>
-                </div>
-                </div>
-  </div>
-</div>
-
-
- <!--    <div class="banner-content"> -->
-
-    
-        <div class="col-xs-6">
-
-        
-        </div> <!-- end of photo's colum  -->
-
-
-        <div class="col-xs-6">
-         
-
-            </div>
-            </div>
         </div>
       </div>
+ 
+      <div class="grid-item-b">
+      </div>
+  
+      <div class="grid-item-c">
+        <div class="grid-item-c-top">
+          <div class="product-name" style="text-align: right; text-transform: capitalize;">
+          <p><%= @product.name %></p>
+          </div>
+          <div>
+          <p id="brand"> <%= @product.brand if @product.brand?%></p>
+          </div>
+        </div>
+        <div class="grid-item-c-down-left">
+          <div style="padding-top: 8px">
+            <%= link_to like_product_path(@product), method: :put do %>
+            <i class="fas fa-heart"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="grid-item-c-down-right">
+          <% if @product.nutrition_grade.capitalize == "A" %>
+              <img src="<%= image_path 'score100.png'%>" class="grade-image">  
+            <% elsif @product.nutrition_grade.capitalize == "B" %>
+              <img src="<%= image_path 'score80.png'%>" class="grade-image"> 
+            <% elsif @product.nutrition_grade.capitalize == "C" %>
+              <img src="<%= image_path 'score60.png'%>" class="grade-image"> 
+            <% elsif @product.nutrition_grade.capitalize == "D" %>
+              <img src="<%= image_path 'score40.png'%>" class="grade-image">
+            <% elsif @product.nutrition_grade.capitalize == "E" %>
+               <img src="<%= image_path 'score20.png'%>" class="grade-image">
+            <% elsif @product.nutrition_grade.capitalize == "F" %>
+               <img src="<%= image_path 'score0.png'%>" class="grade-image">
+            <% else %>
+                 <img src="<%= image_path 'score_nil.png'%>" class="grade-image">
+          <% end %>       
+                     
+                     
+        </div>
+      </div>  
+
+    </div>
+
+  
+  <%# <div class="container">
+    <div class="row">
+      <div class="col-xs-4">
+        
+      </div>
+      <div class="col-xs-2">
+      </div> %>
+      <div class="col-xs-6" 
+       
+             <div class="box">
+                <div class="grade">
+                    <div class="flex">
+                     
+                     
+
+                    <!--     <p><%= @product.get_upvotes.size %></p> -->
+                     </div>
+                </div>
+              </div>
+      </div>
+     </div>
+    </div>
+
+
+            <!--    <div class="banner-content"> -->
+          <%# 
+              
+                  <div class="col-xs-6">
+
+                  
+                  </div> <!-- end of photo's colum  -->
+
+
+                  <div class="col-xs-6">
+                  
+
+                      </div>
+                      </div> %>
+      </div>
+      <%# </div>
 <!-- second column product info  -->
 </div>
-</div>
+</div> %>
 <!-- end of 1 row -->
 
 <div class="row">
