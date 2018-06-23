@@ -9,7 +9,13 @@
             <% else %>
             <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png',  class:"photo" %>
             <% end  %>
+             <div>
+            <%= link_to like_product_path(@product), method: :put do %>
+            <i class="fas fa-heart" style="position: absolute;bottom: 70px;"></i>
+            <% end %>
+          </div>
         </div>
+          
       </div>
  
       <div class="grid-item-b">
@@ -25,11 +31,7 @@
           </div>
         </div>
         <div class="grid-item-c-down-left">
-          <div style="padding-top: 8px">
-            <%= link_to like_product_path(@product), method: :put do %>
-            <i class="fas fa-heart"></i>
-            <% end %>
-          </div>
+       
         </div>
         <div class="grid-item-c-down-right">
         <%  if @product.nutrition_grade? %>  
@@ -107,8 +109,7 @@
 <div class="row">
   
 
-     <div class="separator" style="margin-top: 0px;     background-color: darkgrey;
-}">
+     <div class="separator" style="margin-top: 0px;">
               <img src="<%= image_path 'separator.png'%>" style="height: 50px;width: 100%;">
               <p style="text-align: center;margin-top: -26px;">  ADITIVOS ALIMENTARIOS </p>
       </div>
@@ -153,8 +154,7 @@
 
 
 <div class="row">
-    <div class="separator" style="margin-top: 30px;     background-color: darkgrey;
-}" >
+    <div class="separator" style="margin-top: 30px;" >
           <img src="<%= image_path 'separator.png'%>" style="height: 50px;width: 100%;">
           <p style="text-align: center;margin-top: -26px;">INFORMACION NUTRICIONAL</p>
     </div>
