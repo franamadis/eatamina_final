@@ -1,29 +1,27 @@
 <div class="detail-page">
 
   <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
-
- <!--    <div class="banner-content"> -->
-
-      <div class="row">
-        <div class="col-xs-6">
-
-          <div>
+<div class="row">
+  <div class="col-xs-4">
+  <div>
             <% if @product.photo? %>
             <%= image_tag @product.photo, class:"photo" %>
             <% else %>
             <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png',  class:"photo" %>
             <% end  %>
           </div>
-        </div> <!-- end of photo's colum  -->
-
-
-        <div class="col-xs-6">
-          <div class="box">
-
-            <div class="product-name">
+  </div>
+  <div class="col-xs-2">
+  </div>
+  <div class="col-xs-6" style="text-transform: capitalize;">
+              <div class="product-name" style="text-align: right;">
                 <p><%= @product.name %></p>
                 <p id="brand"> <%= @product.brand if @product.brand?%></p>
             </div>
+
+             <div class="box">
+
+
 
                 <div class="grade">
                     <div class="flex">
@@ -45,10 +43,24 @@
                    </div>
                 </div>
                 </div>
+  </div>
+</div>
+
+
+ <!--    <div class="banner-content"> -->
+
+    
+        <div class="col-xs-6">
+
+        
+        </div> <!-- end of photo's colum  -->
+
+
+        <div class="col-xs-6">
+         
 
             </div>
             </div>
-          </div>
         </div>
       </div>
 <!-- second column product info  -->
@@ -57,13 +69,14 @@
 <!-- end of 1 row -->
 
 <div class="row">
-  <div class="col-xs-12">
+  
 
-     <div class="separator" style="margin-top: 30px;">
+     <div class="separator" style="margin-top: 0px;     background-color: darkgrey;
+}">
               <img src="<%= image_path 'separator.png'%>" style="height: 50px;width: 100%;">
               <p style="text-align: center;margin-top: -26px;">  ADITIVOS ALIMENTARIOS </p>
       </div>
-
+<div class="col-xs-12">
 <div class="chemical-click">
  <% if @product.prod_add != nil %>
 
@@ -79,7 +92,15 @@
   <% else %>
 
   <!-- adding button link with redirection -->
-  <div class="button-chemical"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+    <% if Additive.find_by_chemical(@additive).risk == "Baja" %>
+      <div class="button-chemical-good"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+      <% elsif Additive.find_by_chemical(@additive).risk == "Media" %>
+      <div class="button-chemical-medium"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+      <% elsif Additive.find_by_chemical(@additive).risk == "Alta" %>
+       <div class="button-chemical-bad"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+       <% else %>
+       <div class="button-chemical-unknown"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+    <% end %>
   <% end %>
   <% end %>
 
@@ -96,7 +117,8 @@
 
 
 <div class="row">
-    <div class="separator" style="margin-top: 30px;">
+    <div class="separator" style="margin-top: 30px;     background-color: darkgrey;
+}" >
           <img src="<%= image_path 'separator.png'%>" style="height: 50px;width: 100%;">
           <p style="text-align: center;margin-top: -26px;">INFORMACION NUTRICIONAL</p>
     </div>
@@ -105,7 +127,7 @@
 </div>
 
 <!-- new style -->
-<div class="row">
+<div class="row" style="margin-bottom: 119px;">
   <div class="col-xs-5 col-xs-offset-1">
    <p> <%= image_tag "calories.png", class: "icons" %> GRASAS </p>
 
@@ -122,7 +144,7 @@
    <p> <%= nutritional['sugars_100g'] %> g </p>
    <p> <%= nutritional['proteins_100g'] %> g </p>
    <p> <%= nutritional['salt_100g'] %> g </p>
-   <p> <%= nutritional['energy_100g'] %> Kcal </p>
+   <p> <%= ((nutritional['energy_100g'].to_i/4.1868).round(1)) %> Kcal </p>
    <% else %>
    <!-- <p>Sorry no data!</p> -->
    <% end  %>
