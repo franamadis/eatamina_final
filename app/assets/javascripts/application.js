@@ -93,7 +93,7 @@ $(function() {
         },
         numOfWorkers: (navigator.hardwareConcurrency ? navigator.hardwareConcurrency : 10),
         decoder: {
-            readers: ["upc_reader", "ean_reader"],
+            readers: ["upc_reader", "ean_reader", "ean_8_reader"],
             
             multiple: false
         },
