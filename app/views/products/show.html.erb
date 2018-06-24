@@ -11,7 +11,7 @@
             <% end  %>
              <div>
             <%= link_to like_product_path(@product), method: :put do %>
-            <i class="fas fa-heart" style="position: absolute;bottom: 70px;"></i>
+            <i class="fas fa-heart" style="position: absolute;top: 5px;"></i>
             <% end %>
           </div>
         </div>
@@ -119,30 +119,30 @@
 
  <!--   <ul class=""> -->
   <% JSON[@product.prod_add].each do |additive| %>
-  <% @additive = additive[3..6].capitalize %>
-  <% if Additive.find_by_chemical(@additive) == nil %>
+    <% @additive = additive[3..6].capitalize %>
+      <% if Additive.find_by_chemical(@additive) == nil %>
 
-  <!-- adding button link -->
-  <div class="button-chemical"> <%= @additive %>
-  </div>
-  <!-- link to detail of particular additive (chemical) -->
-  <% else %>
+        <!-- adding button link -->
+        <div class="button-chemical"> <%= @additive %>
+        </div>
+        <!-- link to detail of particular additive (chemical) -->
+      <% else %>
 
-  <!-- adding button link with redirection -->
-    <% if Additive.find_by_chemical(@additive).risk == "Baja" %>
-      <div class="button-chemical-good"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
-      <% elsif Additive.find_by_chemical(@additive).risk == "Media" %>
-      <div class="button-chemical-medium"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
-      <% elsif Additive.find_by_chemical(@additive).risk == "Alta" %>
-       <div class="button-chemical-bad"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
-       <% else %>
-       <div class="button-chemical-unknown"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+        <!-- adding button link with redirection -->
+          <% if Additive.find_by_chemical(@additive).risk == "Baja" %>
+            <div class="button-chemical-good"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+            <% elsif Additive.find_by_chemical(@additive).risk == "Media" %>
+            <div class="button-chemical-medium"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+            <% elsif Additive.find_by_chemical(@additive).risk == "Alta" %>
+            <div class="button-chemical-bad"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+            <% else %>
+            <div class="button-chemical-unknown"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+          <% end %>
+        <% end %>
     <% end %>
-  <% end %>
-  <% end %>
 
   <!-- </ul> -->
-  <% else %>
+    <% else %>
   <!-- <p>No chemicals</p> -->
   <% end  %>
 </div>
