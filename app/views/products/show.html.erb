@@ -3,42 +3,40 @@
   <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
     <div class="grid-container">
       <div class="grid-item-a ">
-            <% if @product.photo? %>
-            <%= image_tag @product.photo, class:"photo" %>
-            <% else %>
-            <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png',  class:"photo" %>
-            <% end  %>
-             <div>
+        <% if @product.photo? %>
+          <%= image_tag @product.photo, class:"photo" %>
+        <% else %>
+          <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png',  class:"photo" %>
+        <% end  %>
+          <div>
             <%= link_to like_product_path(@product), method: :put do %>
-            <i class="fas fa-heart" style="position: absolute;top: 5px;font-size: 200%;right: -30px;text-shadow: 1px 1px 5px black;"></i>
+            <i class="fas fa-heart" id="heart" style="position: absolute;top: 5px;font-size: 200%;right: -30px;text-shadow: 1px 1px 5px black;"></i>
             <% end %>
-        </div>
-          
-      </div>
- 
+          </div>
+      </div> <!-- end of grid-item-a -->
+
       <div class="grid-item-b">
       </div>
-  
+
       <div class="grid-item-c">
         <div class="grid-item-c-top">
           <div class="product-name" style="text-align: right; text-transform: initial;">
-          <p><%= @product.name %></p>
+            <p><%= @product.name %></p>
           </div>
           <div>
-          <p id="brand"> <%= @product.brand if @product.brand?%></p>
+            <p id="brand"> <%= @product.brand if @product.brand?%></p>
           </div>
-        </div>
-        <div class="grid-item-c-down-left">
-       
-        </div>
+          </div>
+          <div class="grid-item-c-down-left">
+          </div>
         <div class="grid-item-c-down-right">
-        <%  if @product.nutrition_grade? %>  
-          <% if @product.nutrition_grade.capitalize == "A" %>
-              <img src="<%= image_path 'score100.png'%>" class="grade-image">  
+          <%  if @product.nutrition_grade? %>
+            <% if @product.nutrition_grade.capitalize == "A" %>
+              <img src="<%= image_path 'score100.png'%>" class="grade-image">
             <% elsif @product.nutrition_grade.capitalize == "B" %>
-              <img src="<%= image_path 'score80.png'%>" class="grade-image"> 
+              <img src="<%= image_path 'score80.png'%>" class="grade-image">
             <% elsif @product.nutrition_grade.capitalize == "C" %>
-              <img src="<%= image_path 'score60.png'%>" class="grade-image"> 
+              <img src="<%= image_path 'score60.png'%>" class="grade-image">
             <% elsif @product.nutrition_grade.capitalize == "D" %>
               <img src="<%= image_path 'score40.png'%>" class="grade-image">
             <% elsif @product.nutrition_grade.capitalize == "E" %>
@@ -46,155 +44,102 @@
             <% elsif @product.nutrition_grade.capitalize == "F" %>
                <img src="<%= image_path 'score0.png'%>" class="grade-image">
             <% else %>
-                 <img src="<%= image_path 'score_nil.png'%>" class="grade-image">
-          <% end %>       
-           <% else %>
-                 <img src="<%= image_path 'score_nil.png'%>" class="grade-image">
-          <% end %>      
-                     
-                     
-        </div>
-      </div>  
-
-    </div>
-
-  
-  <%# <div class="container">
-    <div class="row">
-      <div class="col-xs-4">
-        
-      </div>
-      <div class="col-xs-2">
-      </div> %>
-      <div class="col-xs-6" 
-       
-             <div class="box">
-                <div class="grade">
-                    <div class="flex">
-                     
-                     
-
-                    <!--     <p><%= @product.get_upvotes.size %></p> -->
-                     </div>
-                </div>
-              </div>
-      </div>
-     </div>
-    </div>
-
-
-            <!--    <div class="banner-content"> -->
-          <%# 
-              
-                  <div class="col-xs-6">
-
-                  
-                  </div> <!-- end of photo's colum  -->
-
-
-                  <div class="col-xs-6">
-                  
-
-                      </div>
-                      </div> %>
-      </div>
-      <%# </div>
-<!-- second column product info  -->
-</div>
-</div> %>
-<!-- end of 1 row -->
-
-<div class="row">
-  
-
-     <div class="separator" style="margin-top: 13px;">
-              <p style="text-align: center;vertical-align: middle;line-height: 40px;color: white;font-size: larger;">  ADITIVOS ALIMENTARIOS </p>
-      </div>
-<div class="col-xs-12">
-<div class="chemical-click">
- <% if @product.prod_add != nil %>
-
- <!--   <ul class=""> -->
-  <% JSON[@product.prod_add].each do |additive| %>
-    <% @additive = additive[3..6].capitalize %>
-      <% if Additive.find_by_chemical(@additive) == nil %>
-
-        <!-- adding button link -->
-        <div class="button-chemical"> <%= @additive %>
-        </div>
-        <!-- link to detail of particular additive (chemical) -->
-      <% else %>
-
-        <!-- adding button link with redirection -->
-          <% if Additive.find_by_chemical(@additive).risk == "Baja" %>
-            <div class="button-chemical-good"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
-            <% elsif Additive.find_by_chemical(@additive).risk == "Media" %>
-            <div class="button-chemical-medium"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
-            <% elsif Additive.find_by_chemical(@additive).risk == "Alta" %>
-            <div class="button-chemical-bad"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
-            <% else %>
-            <div class="button-chemical-unknown"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+               <img src="<%= image_path 'score_nil.png'%>" class="grade-image">
           <% end %>
-        <% end %>
-  <% end %>
+           <% else %>
+            <img src="<%= image_path 'score_nil.png'%>" class="grade-image">
+          <% end %>
+        </div> <!-- end of grid-item-c-down-right -->
+      </div> <!-- end grid-item-c -->
+    </div>
+<!-- END OF GRID CONTAINER -->
 
-  <!-- </ul> -->
-  <% else %>
-  <!-- <p>No chemicals</p> -->
-  <% end  %>
-</div>
-<!-- end of chemicals buttons part -->
-</div>
-<!-- end of column 12  -->
-</div>
+    <div class="row">
+    <div class="separator" style="margin-top: 13px;">
+        <p style="text-align: center;vertical-align: middle;line-height: 40px;color: white;font-size: larger;">  ADITIVOS ALIMENTARIOS </p>
+      </div>
+    <div class="col-xs-12">
+      <div class="chemical-click">
+        <% if @product.prod_add != nil %>
+          <% JSON[@product.prod_add].each do |additive| %>
+            <% @additive = additive[3..6].capitalize %>
+
+            <% if Additive.find_by_chemical(@additive) == nil %>
+      <!-- PRINT CHEMICAL WITHOUT DETAILED LINK TO DESCRIPTION - NOT INCLUDED IN OUR DB -->
+              <div class="button-chemical"> <%= @additive %>
+              </div>
+      <!-- CHEMICAL IS IN OUR DB - PRINT WITH REDIRECTION TO NEXT DESCRIPTION PAGE  -->
+            <% else %>
+
+      <!-- adding button link with redirection -->
+              <% if Additive.find_by_chemical(@additive).risk == "Baja" %>
+                <div class="button-chemical button-chemical-good"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+              <% elsif Additive.find_by_chemical(@additive).risk == "Media" %>
+                <div class="button-chemical button-chemical-medium"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+              <% elsif Additive.find_by_chemical(@additive).risk == "Alta" %>
+                <div class="button-chemical button-chemical-bad" id="redish"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+              <% else %>
+                <div class="button-chemical button-chemical-unknown"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+              <% end %> <!-- end baja alta -->
+            <% end %>
+            <!-- end if for additive if find or not -->
+          <% end %>
+          <!-- end of JSON each method -->
+          <!-- CAN PRINT INFO IF NO CHEMICALS are IN THE PRODUCT -->
+        <% else %>
+        <!-- <p>No chemicals</p> -->
+        <% end  %>
+        <!-- end of chemicals-click class if any E-XXX our in scanned product -->
+      </div>
+      <!-- end of chemicals buttons part -->
+    </div>
+    <!-- end of column 12  -->
+    </div>
 <!-- end of row middle body -->
 
-
-<div class="row">
+    <div class="row">
     <div class="separator" style="margin-top: 0px;" >
-          <p style="text-align: center;vertical-align: middle;line-height: 40px;color: white;font-size: larger;">INFORMACION NUTRICIONAL</p>
+      <p style="text-align: center;vertical-align: middle;line-height: 40px;color: white;font-size: larger;">INFORMACION NUTRICIONAL</p>
+    </div>
+    <p id="valor">VALORES POR 100G DE PRODUCTO</p>
+    </div>
+<!-- NUTRITIONAL INFORMATION -->
+    <div class="row" style="margin-bottom: 100px;">
+    <div class="col-xs-5 col-xs-offset-1">
+      <div class="space">
+       <p> <%= image_tag "fats.svg", class: "icons" %> GRASAS </p>
+       <p> <%= image_tag "sugar.svg", class: "icons" %> AZUCARES</p>
+       <p> <%= image_tag "protein.svg", class: "icons" %> PROTEINAS</p>
+       <p> <%= image_tag "fibre.svg", class: "icons" %> FIBRA</p>
+       <p> <%= image_tag "salt.svg", class: "icons" %> SAL</p>
+       <p> <%= image_tag "kcal.svg", class: "icons" %> CALORIAS</p>
+      </div>
     </div>
 
-  <p id="valor">VALORES POR 100G DE PRODUCTO</p>
-</div>
-
-<!-- new style -->
-<div class="row" style="margin-bottom: 119px;">
-  <div class="col-xs-5 col-xs-offset-1">
-   <p> <%= image_tag "calories.png", class: "icons" %> GRASAS </p>
-
-   <p> <%= image_tag "calories.png", class: "icons" %> AZUCARES</p>
-   <p> <%= image_tag "calories.png", class: "icons" %> PROTEINAS</p>
-   <p> <%= image_tag "calories.png", class: "icons" %> SAL</p>
-   <p> <%= image_tag "calories.png", class: "icons" %> CALORIAS</p>
- </div>
-
- <div class="col-xs-6">
-   <% if @product.nutritional_info? %>
-   <% nutritional = eval(@product.nutritional_info) %>
-   <p> <%= nutritional['fat_100g'] %> g </p>
-   <p> <%= nutritional['sugars_100g'] %> g </p>
-   <p> <%= nutritional['proteins_100g'] %> g </p>
-   <p> <%= nutritional['salt_100g'] %> g </p>
-   <p> <%= ((nutritional['energy_100g'].to_i/4.1868).round(1)) %> Kcal </p>
-   <% else %>
-   <!-- <p>Sorry no data!</p> -->
-   <% end  %>
- </div>
-</div>
-
-</div> <!-- banner content -->
-</div>
+    <div class="col-xs-6">
+      <div class="space">
+       <% if @product.nutritional_info? %>
+         <% nutritional = eval(@product.nutritional_info) %>
+         <p> <%= nutritional['fat_100g'] %> g </p>
+         <p> <%= nutritional['sugars_100g'] %> g </p>
+         <p> <%= nutritional['proteins_100g'] %> g </p>
+         <p> <%= nutritional['fiber_100g'] %> g </p>
+         <p> <%= nutritional['salt_100g'] %> g </p>
+         <p> <%= ((nutritional['energy_100g'].to_i/4.1868).round(1)) %> Kcal </p>
+       <% else %>
+        <!-- <p>Sorry no data!</p> -->
+       <% end  %>
+      </div> <!-- space div -->
+      </div> <!-- end of col-xs-6 -->
+    </div>
+    <!-- END OF NUTRITIONAL INFO BLOCK -->
+    </div> <!-- banner content -->
+  </div>
 <!-- banner-detail -->
 </div>
-<%= render 'shared/footer' %>
 <!-- detail page close div -->
 
-
-
-
-
-
+<%= render 'shared/footer' %>
 
        <!--  <%= link_to dislike_product_path(@product), method: :put do %>
           <i class="fa fa-thumbs-down"></i>
@@ -203,5 +148,3 @@
 
           <!-- We do not need for our detail page  -->
           <!-- <p>Bar-code:< @product.sku ></p> -->
-
-
