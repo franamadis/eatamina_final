@@ -1,5 +1,26 @@
-<p><%= @additive.chemical %></p>
-<h2>Name of Additive: <%= @additive.name %></h2>
-<p>Description: <%= @additive.description %></p>
-<p>Risk to your health:<%= @additive.risk %></p>
-<p>Effects to your health:<%= @additive.effect %></p>
+<div class="detail-page">
+
+  <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+            <% if @additive.risk == "Baja" %>
+            <div class="button-chemical-good"> <p><%= @additive.chemical %></p> </div>
+            <% elsif @additive..risk == "Media" %>
+            <div class="button-chemical-medium"><p><%= @additive.chemical %></p> </div>
+            <% elsif @additive.risk == "Alta" %>
+            <div class="button-chemical-bad"> <p><%= @additive.chemical %></p> </div>
+            <% else %>
+            <div class="button-chemical-unknown"> <p><%= @additive.chemical %></p> </div>
+            </div>
+         </div>
+    </div>
+    <% end %>
+    <%# <p><%= @additive.chemical %></p>
+    <h2><%= @additive.name %></h2>
+    <p>Descripción: <%= @additive.description %></p>
+    <p>Riesgo para la salud:<%= @additive.risk %></p>
+    <p>Efectos para la salud:<%= @additive.effect %></p>
+
+  </div>
+</div>
