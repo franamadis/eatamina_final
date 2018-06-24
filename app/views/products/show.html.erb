@@ -3,7 +3,6 @@
   <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
     <div class="grid-container">
       <div class="grid-item-a ">
-        <div class="photo-container">
             <% if @product.photo? %>
             <%= image_tag @product.photo, class:"photo" %>
             <% else %>
@@ -11,9 +10,8 @@
             <% end  %>
              <div>
             <%= link_to like_product_path(@product), method: :put do %>
-            <i class="fas fa-heart" style="position: absolute;top: 5px;"></i>
+            <i class="fas fa-heart" style="position: absolute;top: 5px;font-size: 200%;right: -30px;text-shadow: 1px 1px 5px black;"></i>
             <% end %>
-          </div>
         </div>
           
       </div>
@@ -23,7 +21,7 @@
   
       <div class="grid-item-c">
         <div class="grid-item-c-top">
-          <div class="product-name" style="text-align: right; text-transform: capitalize;">
+          <div class="product-name" style="text-align: right; text-transform: initial;">
           <p><%= @product.name %></p>
           </div>
           <div>
@@ -109,9 +107,8 @@
 <div class="row">
   
 
-     <div class="separator" style="margin-top: 0px;">
-              <img src="<%= image_path 'separator.png'%>" style="height: 50px;width: 100%;">
-              <p style="text-align: center;margin-top: -26px;">  ADITIVOS ALIMENTARIOS </p>
+     <div class="separator" style="margin-top: 13px;">
+              <p style="text-align: center;vertical-align: middle;line-height: 40px;color: white;font-size: larger;">  ADITIVOS ALIMENTARIOS </p>
       </div>
 <div class="col-xs-12">
 <div class="chemical-click">
@@ -139,10 +136,10 @@
             <div class="button-chemical-unknown"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
           <% end %>
         <% end %>
-    <% end %>
+  <% end %>
 
   <!-- </ul> -->
-    <% else %>
+  <% else %>
   <!-- <p>No chemicals</p> -->
   <% end  %>
 </div>
@@ -154,9 +151,8 @@
 
 
 <div class="row">
-    <div class="separator" style="margin-top: 30px;" >
-          <img src="<%= image_path 'separator.png'%>" style="height: 50px;width: 100%;">
-          <p style="text-align: center;margin-top: -26px;">INFORMACION NUTRICIONAL</p>
+    <div class="separator" style="margin-top: 0px;" >
+          <p style="text-align: center;vertical-align: middle;line-height: 40px;color: white;font-size: larger;">INFORMACION NUTRICIONAL</p>
     </div>
 
   <p id="valor">VALORES POR 100G DE PRODUCTO</p>
