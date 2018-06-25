@@ -1,0 +1,32 @@
+<div class="detail-page">
+  <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
+    <div class="row">
+      <div class="button-chemical-bad"></div>
+        <h2 style="text-align: center;">Product not found!</h2>
+      </div>
+    </div>
+    <div class="separator" style="margin-top: 13px;">
+      <p style="text-align: center;vertical-align: middle;line-height: 40px;color: white;font-size: larger;">
+      Message
+      </p>
+    </div>
+    <div>
+      <p style="text-transform: initial; text-justify: auto;text-align: justify;text-justify: inter-word; margin: 20px; line-height: 1.4;">If you want to help we to improve this amazing feature, provide some data about this product than our team will evaluate the product and we can help together the entire world to be healthy.
+      </p>
+    </div>
+    <div class="separator" style="margin-top: 13px;">
+      <p style="text-align: center;vertical-align: middle;line-height: 40px;color: white;font-size: larger;">
+
+      </p>
+    </div>
+    <div>
+      <p style="text-transform: initial; text-justify: auto;text-align: center;text-justify: inter-word; margin: 20px; line-height: 1.4;">
+        <%= link_to "Create a new product", edit_product_path(session[:new_product]["id"])%></p>
+        <hr>
+        <p style="text-transform: initial; text-justify: auto;text-align: center;text-justify: inter-word; margin: 20px; line-height: 1.4;">
+          <%= link_to "Home Page", root_path %>
+        </p>
+    </div>
+  </div>
+</div>
+<%= render 'shared/footer' %>

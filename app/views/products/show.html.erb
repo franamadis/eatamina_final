@@ -101,15 +101,14 @@
 
     <div class="row">
       <!-- style="margin-top: 0px; -->
-      <div class="separator" " >
-        <!-- <p style="text-align: center;vertical-align: middle;line-height: 40px; color: white;font-size: larger;">INFORMACION NUTRICIONAL</p> -->
+      <div class="separator">
+    <p style="text-align: center;vertical-align: middle;line-height: 40px; color: white;font-size: larger;">INFORMACION NUTRICIONAL</p> 
         <p>INFORMACION NUTRICIONAL</p>
       </div>
 
       <p id="valor">VALORES POR 100G DE PRODUCTO</p>
     </div>
 
-<!-- NUTRITIONAL INFORMATION -->
 
     <div class="row" >
       <div class="nutrient-section">
@@ -206,7 +205,7 @@
             <div class="space">
               <% if @product.nutritional_info? %>
                <% nutritional = eval(@product.nutritional_info) %>
-                <p> <%= nutritional['salt_100g'].round(1) %> g </p>
+                <p> <%= nutritional['salt_100g'].to_i.round(1) %> g </p>
                <% else %>
               <!-- <p>Sorry no data!</p> -->
              <% end  %>
@@ -233,6 +232,8 @@
             </div> <!-- end of space class -->
           </div> <!-- end of 2nd column -->
       </div> <!-- end of 6th energy line -->
+    </div>
+    <div>
     </div>
   <!-- END OF WHOLENUTRITIONAL INFO BLOCK -->
 

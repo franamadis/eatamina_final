@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :show, :update, :edit]
-  # before_action :check_if_admin, only: [:edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:new, :show, :update, :edit, :message]
+
   def index
     @liked_products = current_user.get_up_voted(Product)
   end
@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.status = "pending"
     if @product.save
       redirect_to root_path
     else
@@ -19,8 +18,14 @@ class ProductsController < ApplicationController
     end
   end
 
+  def message
+    @product = session[:new_product]
+  end
+
+
   def show
     @product = Product.find(params[:id])
+
     if @product.prod_add != nil
       JSON[@product.prod_add].each do |additive|
         additive_adj = additive[3..6].capitalize
@@ -34,32 +39,21 @@ class ProductsController < ApplicationController
   end
 
   def edit
-      # authorize @product
-      # redirect_to dashboard_requests_path
+    params[:id] = session[:new_product]["id"]
     @product = Product.find(params[:id])
-    # @requests = Product.requests
   end
 
   def update
-
     @product = Product.find(params[:id])
     @product.update(product_params)
-    if @product.save
-      redirect_to product_path(@product)
-    else
-      redirect_to root_path
-    end
+    redirect_to root_path
   end
 
-  # def destroy
-  #   # authorize @product
-  #   @product = Product.find(params[:id])
-  #   if @product.destroy
-  #     redirect_to root_path
-  #   else
-  #     redirect_to root_path
-  #   end
-  # end
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to root_path
+  end
 
   def upvote
     @product = Product.find(params[:id])
@@ -75,16 +69,6 @@ class ProductsController < ApplicationController
 
 
   private
-
-  # def requests
-  #   @requests = Product.requests
-  # end
-
-  # def check_if_admin
-  #   if not current_user.admin
-  #     redirect_to root_path
-  #   end
-  # end
 
   def product_params
     params.require(:product).permit(:name, :sku, :photo, :status, :response, :nutritional_info, :prod_add, :brand, :nutrition_grade)
