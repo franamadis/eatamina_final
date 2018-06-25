@@ -109,13 +109,13 @@ hr {
 }
 
 .grade-image {
-  max-width:60%;
+  max-width: 35%;
   height:auto;
   overflow: hidden;
   -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(5px 5px 5px #222);
-  position: relative;
-  left: -65px;
+  // position: relative;
+  // left: -65px;
   // width: 50%;
   // margin:10px;
 }
@@ -213,7 +213,7 @@ hr {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 4fr 0.4fr 5fr;
+  grid-template-columns: 1.2fr 0.4fr 5fr;
   padding: 0px  ;
   grid-auto-rows: auto;
   min-height: 0;
