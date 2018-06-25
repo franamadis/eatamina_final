@@ -121,6 +121,7 @@
 <!-- NUTRITIONAL INFORMATION -->
 
     <div class="row" >
+
       <div class="nutrient-section">
           <div class="col-xs-5 col-xs-offset-2">
             <div class="space">
@@ -243,15 +244,20 @@
           </div> <!-- end of 2nd column -->
       </div> <!-- end of 6th energy line -->
     </div>
-    <div class="button-space">
-      <!-- adding space between info and footer -->
     </div>
   <!-- END OF WHOLENUTRITIONAL INFO BLOCK -->
 
+    <div class="row">
+      <div class="line">
+        <hr>
+        <p> <%= link_to "NUTRITIONAL METHOD", root_path %> </p>
+        <hr>
+        <p> <%= link_to "CONTACT US", root_path %> </p>
+        <hr>
+      </div>
     </div>
-    <!-- banner content -->
-  </div>
-<!-- banner-detail -->
+  <!-- END OF CONTACT INFO -->
+
 </div>
 <!-- detail page close div -->
 <% end %>
