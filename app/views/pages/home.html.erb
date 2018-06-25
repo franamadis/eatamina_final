@@ -12,6 +12,20 @@
 		
   </div>
 </div>
+    <div class="row barcode-input" style="margin-left: 0px;margin-right: 0px;">
+    	<div class="col-lg-6">
+    		<div class="input-group" >
+    			<%= form_tag root_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              id: "scanner_input",
+              placeholder: "Write a barcode"
+            %>
+          <% end %>
+    		</div><!-- /input-group -->
+    	</div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
 <div class="gradient-fill">
 	<div class="button-topfooter">
 		<p style="color: #686868;font-size: small;">ESCANEA EL CODIGO DE BARRAS</p>
@@ -30,20 +44,7 @@
 
 
 
-    <div class="row gradient-fill" style="margin-left: 0px;margin-right: 0px;">
-    	<div class="col-lg-6">
-    		<div class="input-group hidden" >
-    			<%= form_tag root_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              id: "scanner_input",
-              placeholder: "Write a barcode"
-            %>
-          <% end %>
-    		</div><!-- /input-group -->
-    	</div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
+
     <div class="modal" id="livestream_scanner">
     	<div>
     		<div>

@@ -10,7 +10,7 @@
         <% end  %>
           <div>
             <%= link_to like_product_path(@product), method: :put do %>
-            <i class="fas fa-heart" id="heart" style="color: white; opacity: 0.8; position: absolute;top: 5px;font-size: 200%;right: -30px;text-shadow: 1px 1px 5px black;"></i>
+            <i class="fas fa-heart" id="heart" style="color: white; position: absolute;top: 5px;font-size: 200%;right: -30px;text-shadow: 1px 1px 5px black;"></i>
             <% end %>
           </div>
       </div> <!-- end of grid-item-a -->
@@ -124,7 +124,7 @@
          <p> <%= nutritional['sugars_100g'] %> g </p>
          <p> <%= nutritional['proteins_100g'] %> g </p>
          <p> <%= nutritional['fiber_100g'] %> g </p>
-         <p> <%= nutritional['salt_100g'].round(1) %> g </p>
+         <p> <%= nutritional['salt_100g'] %> g </p>
          <p> <%= ((nutritional['energy_100g'].to_i/4.1868).round(1)) %> Kcal </p>
        <% else %>
         <!-- <p>Sorry no data!</p> -->
