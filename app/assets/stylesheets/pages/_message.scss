@@ -1,7 +1,64 @@
-.centerphoto {
-  align-item: center;
+
+.message-page {
+  // padding-top: 40%;
   justify-content: center;
-  width: 200px;
-  height: 200px;
-  display:flex;
 }
+
+.message {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.message-photo {
+  width: 50%;
+}
+
+div {
+  margin: 0;
+}
+
+.button-message {
+  margin: 50px 0;
+  // padding-left: 0px;
+}
+
+.button-message a {
+  // background-color: $green;
+  background-color: #3fabc6;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px;
+}
+.button-message a:hover {
+  color: $dark-gray;
+}
+
+.separator-message {
+  margin-top: 0px;
+  background-color: #686868;
+  color: white;
+  height: 40px;
+  box-shadow: 2px 2px 3px black;
+  text-align: center;
+  p {
+    padding-top: 10px;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+  }
+}
+
+.text-message {
+  padding: 30px;
+  text-align: justify;
+
+// .centerphoto {
+//   align-item: center;
+//   justify-content: center;
+//   width: 200px;
+//   height: 200px;
+//   display:flex;
