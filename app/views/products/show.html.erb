@@ -90,7 +90,7 @@
                 <% elsif Additive.find_by_chemical(@additive).risk == "Alta" %>
                   <div class="button-chemical button-chemical-bad" id="redish"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
                 <% else %>
-                  <div class="button-chemical button-chemical-unknown"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+                  <div class="button-chemical button-chemical-unknown" id="add-white"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
                 <% end %> <!-- end baja alta -->
               <% end %>
               <!-- end if for additive if find or not -->
@@ -111,13 +111,14 @@
     <div class="row">
       <!-- style="margin-top: 0px; -->
       <div class="separator">
-    <p style="text-align: center;vertical-align: middle;line-height: 40px; color: white;font-size: larger;">INFORMACION NUTRICIONAL</p> 
+   <!--  <p style="text-align: center;vertical-align: middle;line-height: 40px; color: white;font-size: larger;">INFORMACION NUTRICIONAL</p>  -->
         <p>INFORMACION NUTRICIONAL</p>
       </div>
 
       <p id="valor">VALORES POR 100G DE PRODUCTO</p>
     </div>
 
+<!-- NUTRITIONAL INFORMATION -->
 
     <div class="row" >
       <div class="nutrient-section">
@@ -242,7 +243,8 @@
           </div> <!-- end of 2nd column -->
       </div> <!-- end of 6th energy line -->
     </div>
-    <div>
+    <div class="button-space">
+      <!-- adding space between info and footer -->
     </div>
   <!-- END OF WHOLENUTRITIONAL INFO BLOCK -->
 

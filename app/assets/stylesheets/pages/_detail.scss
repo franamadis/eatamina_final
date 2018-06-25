@@ -58,6 +58,10 @@ a:hover {
   height: 0px;
 }
 
+.button-space {
+  height: 40px;
+}
+
 #heart {
   color: $dark-gray;
 }
@@ -158,6 +162,10 @@ a:hover {
   color: #ffffff;
 }
 
+#add-white {
+  color: white;
+}
+
 // .display-line {
 //   display: flex;
 //   // justify-content: space-between;
@@ -251,6 +259,7 @@ a:hover {
 position:absolute;
 top: 10px;
 }
+
 // .nutritional-flow {
 //   display: flex;
 //   flex-wrap: wrap;
