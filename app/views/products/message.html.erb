@@ -1,13 +1,56 @@
-<div class="width-wrapper">
-  <div class="container-index">
-    <div class="title-header">
-      <h3>This product is not inside our database</h3>
+<div class="message-page">
+
+  <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
+
+      <div class="message">
+        <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png',  class:"message-photo" %>
+      <!-- </div> -->
+
+<!-- button starts here -->
+        <div class="row">
+          <!-- <div class="col-xs-9 col-xs-offset-2"> -->
+          <div class="button-message">
+            <h4> <%= link_to "Product not found!", root_path %> </h4>
+          </div>
+        </div>
+
+      </div>
+<!-- end of message class -->
+
+<!-- button ends here -->
+
+      <div class="row">
+      <!-- style="margin-top: 0px; -->
+        <div class="separator-message">
+          <p>MESSAGE</p>
+        </div>
+        <div class="text-message">
+          <p>If you want to help we to improve this amazing feature, provide some data about this product than our team will evaluate the product and we can help together the entire world to be healthy.
+          </p>
+
+        </div>
+    </div> <!-- end of message row -->
+
+    <div class="row">
+      <div class="separator-message">
+        <p>LINKS</p>
+      </div>
     </div>
-    <div class="title-header2">
-      <p>If you want to help we to improve this amazing feature, provide some data about this product than our team will evaluate the product and we can help together the entiire world to be healthy</p>
-    </div>
-    <%= link_to "Create a new product", edit_product_path(session[:new_product]["id"])%>
-    <%= link_to "Home Page", root_path %>
-  </div>
-</div>
+
+<!-- links to creating product/ home page  -->
+
+    <div class="row">
+      <div class="line">
+        <hr>
+        <p> <%= link_to "Create a new product", edit_product_path(session[:new_product]["id"])%> </p>
+
+        <hr>
+        <p> <%= link_to "Home Page", root_path %> </p>
+        <hr>
+      </div>
+    </div> <!-- end of links row -->
+
+  </div> <!-- end of background style -->
+</div> <!-- end of message page -->
+
 <%= render 'shared/footer' %>
