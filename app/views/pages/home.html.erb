@@ -1,7 +1,11 @@
 
 
 <div class="button-navbar" style="color: white;font-size: medium;text-decoration: none;">
-  <%= link_to "LOG IN", user_session_path, style: "color: white;font-size: medium;text-decoration: none;" %>
+  <% if user_signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, style: "color: white;font-size: medium;text-decoration: none;" %>
+  <% else %>
+    <%= link_to "Sign In", user_session_path, style: "color: white;font-size: medium;text-decoration: none;" %>
+  <% end %>
 </div>
 <div class="banner">
 
@@ -9,7 +13,7 @@
 	<%= image_tag("logo.png", height: 100, crop: :fill)%>
     <h1 style="text-transform: none !important;">eatamina</h1>
     <p style="text-transform: none !important;">¡Descrifra lo que comes en un click!</p>
-		
+
   </div>
 </div>
     <div class="row barcode-input" style="margin-left: 0px;margin-right: 0px;">
@@ -51,7 +55,7 @@
     				<div class="modal-body" style="position: absolute;top: -8px;left: calc(50%);transform: translateX(-50%);">
     					<div id="interactive" class="viewport"></div>
     			</div>
-    		
+
     		</div><!-- /.modal-content -->
     	</div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
