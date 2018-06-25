@@ -2,9 +2,6 @@
 the specified elements: */
 html,
 body {
-    margin: 0;
-    padding: 0;
-    border-width: 0;
     color: $dark-gray;
     // text-transform: uppercase;
 }
@@ -21,14 +18,44 @@ a:hover {
    cursor:pointer;
 }
 
-div {
-    // min-height: 2em;
-    margin: 0;
-    padding: 0;
+#valor {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 0px;
+  background-color: #dbdada;
+  padding: 7px;
+  box-shadow: 2px 2px 3px black;
+}
+
+.icons {
+  width: 18px;
+  height: 18px;
 }
 
 .space p {
-  margin: 15px 0 20px;
+  margin: 15px 0 0 0;
+  padding-right: 5px;
+  // border-bottom: 1px solid black;
+}
+
+.nutrient-section {
+  position: relative;
+  height: 50px;
+}
+
+.nutrient-section:after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 60%;
+  left: 20%;
+  height: 1px;
+  background-color: $gray;
+}
+
+// not displaying last gray line
+.nutrient-section:nth-last-child(1):after {
+  height: 0px;
 }
 
 #heart {
@@ -46,6 +73,8 @@ div {
   object-fit: cover;
   max-width: 100%;
   width: 100%;
+  padding: 10px 0 0 10px;
+
   // height:100%;
   // min-height: 0%;
   // max-height: 300px;
@@ -74,11 +103,18 @@ div {
 // }
 
 .separator {
-  margin-top: 12px;
+  margin-top: 0px;
   background-color: #686868;
+  color: white;
   height: 40px;
   box-shadow: 2px 2px 3px black;
-  vertical-align: middle;
+  text-align: center;
+  p {
+    padding-top: 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  // vertical-align: middle;
 }
 
 .chemical-click {
@@ -127,20 +163,6 @@ div {
 //   // justify-content: space-between;
 //   align-items: center;
 // }
-
-#valor {
-  font-size: 12px;
-  text-align: center;
-  margin-top: 0px;
-  background-color: #dbdada;
-  padding: 7px;
-  box-shadow: 2px 2px 3px black;
-}
-
-.icons {
-  width: 18px;
-  height: 18px;
-}
 
 
 .product-name {
