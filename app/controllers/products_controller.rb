@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :show, :update, :edit, :message]
-
+  skip_before_action :authenticate_user!, only: [:new, :show, :update, :edit]
+  # before_action :check_if_admin, only: [:edit, :update, :destroy]
   def index
     @liked_products = current_user.get_up_voted(Product)
   end
@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.status = "pending"
     if @product.save
       redirect_to root_path
     else
@@ -18,14 +19,8 @@ class ProductsController < ApplicationController
     end
   end
 
-  def message
-    @product = session[:new_product]
-  end
-
-
   def show
     @product = Product.find(params[:id])
-
     if @product.prod_add != nil
       JSON[@product.prod_add].each do |additive|
         additive_adj = additive[3..6].capitalize
@@ -39,8 +34,10 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    params[:id] = session[:new_product]["id"]
+      # authorize @product
+      # redirect_to dashboard_requests_path
     @product = Product.find(params[:id])
+    # @requests = Product.requests
   end
 
   def update
