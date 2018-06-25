@@ -1,10 +1,10 @@
 
-
-<div class="button-navbar" style="color: white;font-size: medium;text-decoration: none;">
+<body style="padding-bottom: 0px !important;">
+<div class="button-navbar gradient-fill" style="color: white;font-size: medium;text-decoration: none;">
   <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, style: "color: white;font-size: medium;text-decoration: none;" %>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, style: "color: white;font-size: medium;text-decoration: none;position: absolute;right: 18px;top: 10px;" %>
   <% else %>
-    <%= link_to "Sign In", user_session_path, style: "color: white;font-size: medium;text-decoration: none;" %>
+    <%= link_to "Sign In", user_session_path, style: "color: white;font-size: medium;text-decoration: none;position: absolute;right: 18px;top: 10px;" %>
   <% end %>
 </div>
 <div class="banner">
@@ -16,20 +16,21 @@
 
   </div>
 </div>
-    <div class="row barcode-input" style="margin-left: 0px;margin-right: 0px;">
-    	<div class="col-lg-6">
-    		<div class="input-group" >
+<div class="gradient-fill" >
+    <div class="row barcode-input" style="margin-left: 0px;margin-right: 0px; padding-bottom: 200px;">
+    	<div class="">
+    		<div class="" style="padding-bottom: 20px;">
     			<%= form_tag root_path, method: :get do %>
             <%= text_field_tag :query,
               params[:query],
-              class: "form-control",
+              class: "form-control form-css",
               id: "scanner_input",
               placeholder: "Write a barcode"
             %>
           <% end %>
     		</div><!-- /input-group -->
     	</div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
+   
 <div class="gradient-fill">
 	<div class="button-topfooter">
 		<p style="color: #686868;font-size: small;">ESCANEA EL CODIGO DE BARRAS</p>
@@ -43,16 +44,18 @@
 
 			</button>
 		</span>
+		</div>
+
 	</div>
 </div>
-
+ </div><!-- /.row -->
 
 
 
     <div class="modal" id="livestream_scanner">
     	<div>
     		<div>
-    				<div class="modal-body" style="position: absolute;top: -8px;left: calc(50%);transform: translateX(-50%);">
+    				<div class="modal-body" style="position: absolute;top: 0;left: calc(50%);transform: translateX(-50%);">
     					<div id="interactive" class="viewport"></div>
     			</div>
 
@@ -60,6 +63,6 @@
     	</div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-
+</body>
 
 
