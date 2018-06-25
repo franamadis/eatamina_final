@@ -1,9 +1,9 @@
 <div class="detail-page">
 
   <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
-    <div class="container">
+
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12" style="text-align: -moz-center;">
             <% if @additive.risk == "Baja" %>
             <div class="button-chemical-good"> <p><%= @additive.chemical %></p> </div>
             <% elsif @additive.risk == "Media" %>
@@ -12,15 +12,34 @@
             <div class="button-chemical-bad"> <p><%= @additive.chemical %></p> </div>
             <% else %>
             <div class="button-chemical-unknown"> <p><%= @additive.chemical %></p> </div>
+             <% end %>
+              <h2><%= @additive.name %></h2>
             </div>
-         </div>
+            
+        </div>
     </div>
-    <% end %>
+  
     <%# <p><%= @additive.chemical %></p>
-    <h2><%= @additive.name %></h2>
-    <p>Descripción: <%= @additive.description %></p>
-    <p>Riesgo para la salud:<%= @additive.risk %></p>
-    <p>Efectos para la salud:<%= @additive.effect %></p>
+   
+
+        <div class="separator" style="margin-top: 13px;">
+            <p style="text-align: center;vertical-align: middle;line-height: 40px;color: white;font-size: larger;">  DESCRIPCION </p>
+        </div>
+        <div>
+            <p style="text-transform: initial; text-justify: auto;text-align: justify;text-justify: inter-word; margin: 20px; line-height: 1.4;"><%= @additive.description %></p>
+        </div>
+        <div class="separator" style="margin-top: 13px;">
+                <p style="text-align: center;vertical-align: middle;line-height: 40px;color: white;font-size: larger;">  RIESGO PARA LA SALUD </p>
+        </div>
+        <div>
+            <p style="text-transform: initial; text-justify: auto;text-align: center;text-justify: inter-word; margin: 20px; line-height: 1.4;"><%= @additive.risk %></p>
+        </div>
+        <div class="separator" style="margin-top: 13px;">
+            <p style="text-align: center;vertical-align: middle;line-height: 40px;color: white;font-size: larger;">  EFECTOS PARA LA SALUD </p>
+        </div>
+        <div>
+            <p style="text-transform: initial; text-justify: auto;text-align: justify;text-justify: inter-word; margin: 20px; line-height: 1.4;"><%= @additive.effect %></p>
+        </div>
 
   </div>
 </div>
