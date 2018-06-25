@@ -3,6 +3,7 @@ require 'open-uri'
 
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
+  after_action :set_query, only: :home
 
 
 
@@ -20,7 +21,6 @@ class PagesController < ApplicationController
         else
           # @new_product = Product.create!(sku: params[:query], status: "accepted", response: response, name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'] ) ---- response including all the jason
           @new_product = Product.create!(sku: params[:query], status: "accepted", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'] )
-
         end
         redirect_to product_path(@new_product)
       elsif response.include?("product found")
@@ -46,6 +46,14 @@ class PagesController < ApplicationController
       return true
     else
       return false
+    end
+  end
+
+  def set_query
+    if params[:query].present? && current_user && current_user.queries.find_by(product_id: @new_product.id).nil?
+      Query.create(user: current_user, product: @new_product)
+    # else
+    #   session[:latest_query_product_id] = @new_product.id
     end
   end
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'queries/index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get "products/message", to: "products#message"
@@ -14,5 +15,7 @@ Rails.application.routes.draw do
       put "dislike", to: "products#downvote"
     end
   end
+
+  get "queries", to: "queries#mindex"
 
 end
