@@ -77,6 +77,16 @@ div {
     right: 10px;
 }
 
+.barcode-input{
+        margin-left: 0px;
+        margin-right: 0px;
+        position: absolute;
+        bottom: 183px;
+        position: fixed;
+        bottom: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
 .gradient-fill {
     background: #B0F37B;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #70E474, #B0F37B);  /* Chrome 10-25, Safari 5.1-6 */
