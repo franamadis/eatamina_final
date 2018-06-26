@@ -45,9 +45,10 @@
           </div>
         <div class="grid-item-c-down-right">
           <%  if @product.nutrition_grade? %>
-            <%= @product.final_score %>
+            <% @score = @product.final_score %>
+            <%= image_tag "score#{@score}.png", class:"grade-image" %>
           <% else %>
-            <img src="<%= image_path 'score_nil.png'%>" class="grade-image">
+            <%= image_tag "score_nil.png", class:"grade-image" %>
           <% end %>
         </div> <!-- end of grid-item-c-down-right -->
       </div> <!-- end grid-item-c -->
