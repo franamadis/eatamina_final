@@ -207,8 +207,27 @@ hr {
   text-transform: capitalize;
 }
 
-#heart-icon {
+#heart-icon-off {
+  color: white; 
+  opacity: 0.8; 
+  position: absolute;
+  top: 5px;
+  font-size: 200%;
+  right: -30px;
+  text-shadow: 1px 1px 5px black;
   width: 15px;
+}
+
+#heart-icon-on {
+  color: #c13144; 
+  opacity: 1; 
+  position: absolute;
+  top: 5px;
+  font-size: 200%;
+  right: -30px;
+  text-shadow: 1px 1px 5px black;
+  width: 15px;
+
 }
 
 .grid-container {
