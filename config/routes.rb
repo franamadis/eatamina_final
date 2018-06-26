@@ -17,5 +17,6 @@ Rails.application.routes.draw do
 
   get "queries", to: "queries#index"
   get 'howitworks', to: "pages#howwork"
+  get 'method', to: "pages#method"
 
 end
