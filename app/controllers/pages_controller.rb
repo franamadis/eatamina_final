@@ -2,10 +2,11 @@ require 'json'
 require 'open-uri'
 
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: [:home, :howwork]
   after_action :set_query, only: :home
 
-
+  def howwork
+  end
 
   def home
     if params[:query].present?
