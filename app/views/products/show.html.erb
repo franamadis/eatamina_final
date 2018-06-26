@@ -39,22 +39,8 @@
           </div>
         <div class="grid-item-c-down-right">
           <%  if @product.nutrition_grade? %>
-            <% if @product.nutrition_grade.capitalize == "A" %>
-              <img src="<%= image_path 'score100.png'%>" class="grade-image">
-            <% elsif @product.nutrition_grade.capitalize == "B" %>
-              <img src="<%= image_path 'score80.png'%>" class="grade-image">
-            <% elsif @product.nutrition_grade.capitalize == "C" %>
-              <img src="<%= image_path 'score60.png'%>" class="grade-image">
-            <% elsif @product.nutrition_grade.capitalize == "D" %>
-              <img src="<%= image_path 'score40.png'%>" class="grade-image">
-            <% elsif @product.nutrition_grade.capitalize == "E" %>
-               <img src="<%= image_path 'score20.png'%>" class="grade-image">
-            <% elsif @product.nutrition_grade.capitalize == "F" %>
-               <img src="<%= image_path 'score0.png'%>" class="grade-image">
-            <% else %>
-               <img src="<%= image_path 'score_nil.png'%>" class="grade-image">
-          <% end %>
-           <% else %>
+            <%= @product.final_score %>
+          <% else %>
             <img src="<%= image_path 'score_nil.png'%>" class="grade-image">
           <% end %>
         </div> <!-- end of grid-item-c-down-right -->
