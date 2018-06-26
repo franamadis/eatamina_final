@@ -1,55 +1,51 @@
-<div class="container text-center container-center">
+<div class="container text-center">
   <%= form_for(@product) do |f| %>
-
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-      <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, placeholder: "Type the name of the product", class: 'form-control' %>
+  <div class="form-login2">
+    <h2>UPDATE PRODUCT</h2>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <div class="form-group ">
+          <%= f.label :name %>
+          <%= f.text_field :name, placeholder: "Product name", class: 'form-control' %>
+        </div>
       </div>
-
     </div>
-
-  </div>
-  <div class="row">
-   <div class="col-xs-8 col-xs-offset-2">
-     <div class="form-group">
-      <%= f.label :brand %>
-      <%= f.text_field :brand, placeholder: "Type the brand of the product", class: 'form-control' %>
+  <!-- end of name row -->
+    <div class="row">
+     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+       <div class="form-group">
+        <%= f.label :brand %>
+        <%= f.text_field :brand, placeholder: "Brand name", class: 'form-control' %>
+       </div>
+      </div>
     </div>
-
-  </div>
-
+  <!-- end of brand row -->
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <div class="form-group">
+          <%= f.label :sku %>
+          <%= f.text_field :sku, class: 'form-control sku-form' %>
+        </div>
+      </div>
+    </div>
+  <!-- end of sku row -->
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <div class="form-group">
+        <%= f.label :photo %>
+        <%= f.text_field :photo, placeholder: "Puts the URL of one photo", class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+  <!-- end of photo row -->
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <%= f.submit class: 'submit-button' %>
+        <% end %>
+      </div>
+    </div>
+  <!-- end of submit button -->
+  </div> <!-- end of form-login2 class -->
 </div>
-<div class="row">
- <div class="col-xs-8 col-xs-offset-2">
-
- </div>
-
-</div>
-<div class="row">
- <div class="col-xs-8 col-xs-offset-2">
-  <div class="form-group">
-    <%= f.label :sku %>
-    <%= f.text_field :sku, class: 'form-control' %>
-  </div>
-</div>
-
-</div>
-<div class="row">
- <div class="col-xs-8 col-xs-offset-2">
-  <div class="form-group">
-    <%= f.label :photo %>
-    <%= f.text_field :photo, placeholder: "Puts the URL of one photo", class: 'form-control' %>
-  </div>
-</div>
-
-</div>
-<div class="row">
-  <%= f.submit class: 'submit-button' %>
-  <% end %>
-</div>
-</div>
-
 
 <%= render 'shared/footer' %>

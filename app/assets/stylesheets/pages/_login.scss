@@ -14,9 +14,8 @@
   height: 100%;
   padding-top: 150px;
   padding-bottom: 40px;
-  box-shadow: 5px 5px 10px grey;
-  background: linear-gradient(to right, white, #DCDCDC);
-
+  // box-shadow: 5px 5px 10px grey;
+  // background: linear-gradient(to right, white, #DCDCDC);
 }
 
 .form-style {
@@ -27,15 +26,12 @@
 }
 
 #adjust-margin {
-text-align: center;
+  text-align: center;
 }
-
-
 
 .form-control{
   border-radius: 5px !important;
 }
-
 
 .titles{
   text-align: center;
