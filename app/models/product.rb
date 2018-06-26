@@ -13,15 +13,15 @@ class Product < ApplicationRecord
   def presentable_grade
     case nutrition_grade.upcase
     when "A"
-      return 100
+      return 90
     when "B"
-      return 80
+      return 70
     when "C"
-      return 60
+      return 50
     when "D"
-      return 40
+      return 30
     when "E"
-      return 20
+      return 10
     else
       return "No grade!"
     end

@@ -14,20 +14,23 @@ class PagesController < ApplicationController
       response_serialized = open(url).read
       response = JSON.parse(response_serialized).flatten
       response2 = response.find {|item| item.class == Hash}
+      organic = response2["labels"].include? "organic"
+      
+   
 
       if response.include?("product found") && response2['nutrition_grades'] != nil
         if check_product?
           @new_product = Product.where(sku: params[:query]).first
         else
           # @new_product = Product.create!(sku: params[:query], status: "accepted", response: response, name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'] ) ---- response including all the jason
-          @new_product = Product.create!(sku: params[:query], status: "accepted", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'] )
+          @new_product = Product.create!(sku: params[:query], status: "accepted", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'], organic: organic )
         end
         redirect_to product_path(@new_product)
       elsif response.include?("product found")
         if check_product?
           @new_product = Product.where(sku: params[:query]).first
         else
-          @new_product = Product.create!(sku: params[:query], status: "pending", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'] )
+          @new_product = Product.create!(sku: params[:query], status: "pending", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'], organic: organic, )
         end
         redirect_to products_message_path
       else
