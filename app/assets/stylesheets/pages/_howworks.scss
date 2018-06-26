@@ -1,0 +1,60 @@
+.home-body {
+  background: white;
+}
+
+.featured-sign {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.sign {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 360px;
+  height: 90px;
+  border-radius: 1px;
+  border: 1px solid #CC9933;
+  color: #A5A5A5;
+  text-align: center;
+}
+
+.featured-vessels {
+  background: #ECEDF2;
+  height: 380px;
+}
+
+.featured {
+  margin-top: 15px;
+}
+
+.nothing {
+  height: 50px;
+}
+
+.tutorial-description {
+  text-align: center;
+  p {
+    font-size: 26px;
+    color: #BDBDBD;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  strong {
+    color: #CC9933;
+    font-size: 56px;
+  }
+}
+
+.tutorial-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.space-maker {
+  height: 200px;
+}
+

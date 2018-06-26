@@ -1,6 +1,7 @@
 
 <body style="padding-bottom: 0px !important;">
 <div class="button-navbar gradient-fill" style="color: white;font-size: medium;text-decoration: none;">
+  <%= link_to "How it Works", howitworks_path, style: "color: white;font-size: medium;text-decoration: none;position: absolute;left: 18px;top: 10px;" %>
   <% if user_signed_in? %>
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete, style: "color: white;font-size: medium;text-decoration: none;position: absolute;right: 18px;top: 10px;" %>
   <% else %>
@@ -30,7 +31,7 @@
           <% end %>
     		</div><!-- /input-group -->
     	</div><!-- /.col-lg-6 -->
-   
+
 <div class="gradient-fill">
 	<div class="button-topfooter">
 		<p style="color: #686868;font-size: small;">ESCANEA EL CODIGO DE BARRAS</p>
