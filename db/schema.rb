@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2018_06_21_144611) do
     t.string "prod_add"
     t.string "brand"
     t.string "nutrition_grade"
+    t.boolean "organic"
   end
 
   create_table "queries", force: :cascade do |t|
