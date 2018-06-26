@@ -221,3 +221,28 @@ function eventFire(el, etype) {
     }
 }
 
+
+function closeModal() {
+    $('#livestream_scanner').modal('hide');
+    var backdrop = document.querySelector(".modal-backdrop")
+    backdrop.parentNode.removeChild(backdrop);
+   
+}
+
+function setDisplayBlock(){
+    // alert("called")
+    setTimeout(() => {
+        document.querySelector("#livestream_scanner").style.display = "block";
+    }, 800)
+}
+
+window.open = setDisplayBlock
+
+if(document.querySelector("#livestream_scanner")) {
+    document.querySelector("#livestream_scanner").addEventListener("click", closeModal);
+    document.querySelector(".btn-circle").addEventListener("click", setDisplayBlock);
+
+}
+
+
+
