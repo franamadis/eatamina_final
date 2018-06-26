@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-
+    @liked_products = current_user.get_up_voted(Product)
     if @product.prod_add != nil
       JSON[@product.prod_add].each do |additive|
         additive_adj = additive[3..6].capitalize
@@ -67,13 +67,13 @@ class ProductsController < ApplicationController
   def upvote
     @product = Product.find(params[:id])
     @product.upvote_by current_user
-    render :show
+    redirect_to product_path(@product)
   end
 
   def downvote
     @product = Product.find(params[:id])
     @product.downvote_by current_user
-    render :show
+    redirect_to product_path(@product)
   end
 
 
