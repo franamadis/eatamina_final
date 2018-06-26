@@ -25,7 +25,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @liked_products = current_user.get_up_voted(Product)
+    if current_user != nil
+      @liked_products = current_user.get_up_voted(Product)
+    end
     if @product.prod_add != nil
       JSON[@product.prod_add].each do |additive|
         additive_adj = additive[3..6].capitalize
@@ -54,14 +56,15 @@ class ProductsController < ApplicationController
     end
   end
 
-  def destroy
-    @product = Product.find(params[:id])
-    if @product.destroy
-      redirect_to root_path
-    else
-      redirect_to root_path
-    end
-  end
+  # def destroy
+  #   # authorize @product
+  #   @product = Product.find(params[:id])
+  #   if @product.destroy
+  #     redirect_to root_path
+  #   else
+  #     redirect_to root_path
+  #   end
+  # end
 
   def upvote
     @product = Product.find(params[:id])

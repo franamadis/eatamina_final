@@ -18,6 +18,8 @@
           <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png',  class:"photo" %>
         <% end  %>
           <div>
+
+          <% if user_signed_in? %>
             <%= link_to like_product_path(@product), method: :put do %>
 
                 <i class="fas fa-heart" id="heart" style="color: white; opacity: 0.8; position: absolute;top: 5px;font-size: 200%;right: -30px;text-shadow: 1px 1px 5px black;"></i>
@@ -25,8 +27,15 @@
 
             <% if @liked_products.include?(@product) %>
                 <i class="fas fa-heart" id="heart" style="color: red; opacity: 0.8; position: absolute;top: 5px;font-size: 200%;right: -30px;text-shadow: 1px 1px 5px black;"></i>
-
+           
             <% end %>
+          <% else %>
+          
+            <%= link_to new_user_session_path, method: :get do %>
+
+            <i class="fas fa-heart" id="heart" style="color: white; opacity: 0.8; position: absolute;top: 5px;font-size: 200%;right: -30px;text-shadow: 1px 1px 5px black;"></i>
+            <% end %>
+          <% end %>
           </div>
       </div> <!-- end of grid-item-a -->
       <div class="grid-item-b">
