@@ -19,8 +19,8 @@ class PagesController < ApplicationController
       else
          organic = false
       end
-      
-   
+
+
 
       if response.include?("product found") && response2['nutrition_grades'] != nil
         if check_product?
