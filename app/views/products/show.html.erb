@@ -113,6 +113,23 @@
 <!-- NUTRITIONAL INFORMATION -->
 
     <div class="row" >
+    <% if @product.organic == true %>
+      <div class="nutrient-section">
+                <div class="col-xs-5 col-xs-offset-2">
+                  <div class="space">
+                    <p> <%= image_tag "organic.svg", class: "icons" %> ORGÁNICO
+                    </p>
+                  </div> <!-- end of space class -->
+                </div> <!-- end of 1st column -->
+
+                <div class="col-xs-4">
+                  <div class="space">
+                   
+                  </div> <!-- end of space class -->
+                </div> <!-- end of 2nd column -->
+            </div> <!-- end of 1st fat line -->
+      <% end %>
+    
 
       <div class="nutrient-section">
           <div class="col-xs-5 col-xs-offset-2">
