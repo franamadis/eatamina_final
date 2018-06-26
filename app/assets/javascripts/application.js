@@ -231,7 +231,7 @@ function closeModal() {
 
 function setDisplayBlock(){
     // alert("called")
-    setTimeout(() => {
+    setTimeout(function() {
         document.querySelector("#livestream_scanner").style.display = "block";
     }, 800)
 }
