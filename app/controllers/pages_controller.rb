@@ -57,8 +57,10 @@ class PagesController < ApplicationController
     end
   end
 
-  def set_product_id_in_session
-    session[:new_product_id] = @new_product.id
+  def set_product_id_in_session 
+    if @new_product
+      session[:new_product_id] = @new_product.id
+    end
   end
 
   def set_query
