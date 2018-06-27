@@ -99,7 +99,8 @@ hr {
   object-fit: cover;
   max-width: 100%;
   width: 100%;
-  padding: 10px 0 0 10px;
+  padding: 10px 0 10px 10px;
+  object-position: center;
 
   // height:100%;
   // min-height: 0%;
@@ -233,7 +234,7 @@ hr {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1.2fr 0.4fr 5fr;
+  grid-template-columns: 3fr 0.4fr 5fr;
   padding: 0px  ;
   grid-auto-rows: auto;
   min-height: 0;
@@ -241,7 +242,8 @@ hr {
 }
 .grid-item-a {
   // border: 1px solid rgba(0, 0, 0, 0.8);
-  max-height: 400px;
+  width: 150px;
+  height: 150px;
   font-size: 30px;
   // text-align: right;
   // padding: 3px;
