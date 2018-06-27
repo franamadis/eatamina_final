@@ -3,11 +3,14 @@
   <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
 
         <div class="row">
-            <div class="col-xs-12" style="text-align: -moz-center;">
+            <div class="col-xs-3" style="text-align: -moz-center;">
             <% if @additive.risk == "Baja" %>
               <div class="button-chemical-good"> 
-                <i class="fas fa-chevron-left" style="color: white;width: 100%;text-align: -moz-right;"> <%= link_to "Back", :back, style: 'color: white' %></i>
+                
                 <p style="color: white;font-size: x-large;font-weight: bolder;"><%= @additive.chemical %></p> 
+              </div>
+              <div class="col-xs-3" style="text-align: -moz-center;">
+              <i class="fas fa-chevron-left" style="color: white;width: 100%;text-align: -moz-right;"> <%= link_to "Back", :back, style: 'color: white' %></i>
               </div>
             <% elsif @additive.risk == "Media" %>
               <div class="button-chemical-medium">
@@ -19,6 +22,9 @@
                     <i class="fas fa-chevron-left" style="color: white;width: 100%;text-align: -moz-right;"> <%= link_to "Back", :back, style: 'color: white' %></i>
                     <p style="color: white;font-size: x-large;font-weight: bolder;"><%= @additive.chemical %></p> 
                 </div> 
+                 <div class="col-xs-3" style="text-align: -moz-center;">
+              <i class="fas fa-chevron-left" style="color: white;width: 100%;text-align: -moz-right;"> <%= link_to "Back", :back, style: 'color: white' %></i>
+              </div>
             <% else %>
             <div class="button-chemical-unknown"> 
                 <i class="fas fa-chevron-left" style="color: white;width: 100%;text-align: -moz-right;"> <%= link_to "Back", :back, style: 'color: white' %></i>
