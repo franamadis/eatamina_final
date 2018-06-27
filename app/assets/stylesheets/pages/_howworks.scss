@@ -9,14 +9,19 @@
 }
 
 .sign {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  width: 360px;
+  margin: 100px 0;
+  // width: 360px;
+  width: 90%;
   height: 90px;
   border-radius: 1px;
   border: 1px solid #CC9933;
-  color: #A5A5A5;
+  // color: #A5A5A5;
+  color: #9d9e9e;
   text-align: center;
+  h2 {
+    font-size: 32px;
+    margin-top: 27px;
+  }
 }
 
 .featured-vessels {
@@ -33,14 +38,16 @@
 }
 
 .tutorial-description {
-  text-align: center;
+  // text-align: center;
   p {
-    font-size: 26px;
-    color: #BDBDBD;
+    font-size: 18px;
+    // color: #a09c9c;
+    color: #9b9b9e;
   }
 
   h3 {
-    font-size: 32px;
+    font-size: 29px;
+    text-align: left;
   }
 
   strong {
@@ -49,12 +56,24 @@
   }
 }
 
+.tutorial-steps-1 {
+  padding: 20px;
+  text-align: center;
+}
+
+.tutorial-steps-img {
+  text-align: center;
+  padding: 20px;
+}
+
 .tutorial-image {
-  width: 100%;
+  // width: 100%;
+  max-width: 80vw;
   border-radius: 5px;
+  text-align: center;
 }
 
-.space-maker {
-  height: 200px;
-}
-
+// replaced by padding for tutorial steps
+// .space-maker {
+//   height: 100px;
+// }

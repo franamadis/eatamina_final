@@ -2,13 +2,13 @@
   <div class="container">
       <div class="featured-sign">
         <div class="sign">
-          <h2>Como funciona</h2>
+          <h2>¿Como funciona?</h2>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-xs-6 col-md-6">
-          <div class="tutorial-steps">
+        <div class="col-xs-12 col-md-6">
+          <div class="tutorial-steps-1">
             <div class="tutorial-description">
               <h3><strong>1 </strong>Escanea el código de barras del producto</h3>
               <br>
@@ -17,24 +17,19 @@
           </div>
         </div>
 
-        <div class="col-xs-4 col-md-4">
-          <div class="tutorial-steps">
+        <div class="col-xs-12 col-md-6">
+          <div class="tutorial-steps-img">
             <%= image_tag("https://cdn.britannica.com/700x450/57/43857-004-52EE48DE.jpg", class: 'tutorial-image') %>
           </div>
         </div>
-      </div>
+      </div> <!-- end of 1st row -->
 
       <div class="space-maker"></div>
 
-      <div class="row">
-        <div class="col-xs-4 col-md-4">
-          <div class="tutorial-steps">
-            <%= image_tag("https://www.bankbazaar.com/images/india/infographic/credit-score.png", class: 'tutorial-image', style: 'margin-top: 143px;') %>
-          </div>
-        </div>
 
-        <div class="col-xs-6 col-md-6">
-          <div class="tutorial-steps">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div class="tutorial-steps-1">
             <div class="tutorial-description">
               <h3><strong id="number-of-step">2 </strong>Recibe la información del producto</h3>
               <br>
@@ -44,31 +39,38 @@
               La dimensión biológica representa el 10% de la puntuación.</p>
             </div>
           </div>
-        </div>
-      </div>
+        </div> <!-- end of 2nd description  -->
+
+        <div class="col-xs-12 col-md-6">
+          <div class="tutorial-steps-1">
+            <%= image_tag("https://www.bankbazaar.com/images/india/infographic/credit-score.png", class: 'tutorial-image') %>
+          </div>
+        </div> <!-- end of 2nd pic -->
+      </div> <!--  end of 2nd row -->
 
       <div class="space-maker"></div>
 
       <div class="row">
-        <div class="col-xs-6 col-md-6">
-          <div class="tutorial-steps">
+        <div class="col-xs-12 col-md-6">
+          <div class="tutorial-steps-1">
             <div class="tutorial-description">
               <h3><strong>3 </strong>Entiende los efectos sobre la salud de aditivo </h3>
               <br>
               <p style="text-align: justify;">Vaya a cada aditivo en su comida para comprender los problemas de comer con un solo clic.</p>
             </div>
           </div>
-        </div>
+        </div> <!-- end of 3rd description -->
 
-        <div class="col-xs-4 col-md-4">
-          <div class="tutorial-steps">
+        <div class="col-xs-12 col-md-6">
+          <div class="tutorial-steps-1">
             <%= image_tag("http://nutritionglobal.com/wp-content/uploads/2015/01/Harmful-Effects-of-Food-Additives.jpg", class: 'tutorial-image') %>
           </div>
-        </div>
-      </div>
+        </div> <!-- end of 3rd image -->
+      </div> <!-- end of 3rd row -->
 
       <div class="space-maker"></div>
 
-    </div>
+    </div> <!-- end of container -->
+
   <%= render 'shared/footer' %>
 </div>
