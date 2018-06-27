@@ -1,10 +1,39 @@
 <% if @product.status == "pending" %>
-  <%= image_tag 'https://encrypted-tbn0.gstatic.com/imag
-  es?q=tbn:ANd9GcQx50GPTeYfUGJ4gr30rlMhd9eDSveVHkqDLqYR_6f6TKVioytu' %>
-  <p>
-  This product is under revision by our team. As soon as possible we will provide quality information about it. Try again in a few days.
-  </p>
-  <%= link_to "Home Page", root_path %>
+<div class="message-page">
+  <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
+      <div class="message"> 
+        <%= image_tag 'https://encrypted-tbn0.gstatic.com/imag
+  es?q=tbn:ANd9GcQx50GPTeYfUGJ4gr30rlMhd9eDSveVHkqDLqYR_6f6TKVioytu',  class:"message-photo" %>
+      <!-- </div> -->
+      <div class="row">
+        <div class="message-text">
+          <h4>This product is under revision by our team.</h4>
+        </div>
+      </div>
+    
+<!-- end of message class -->
+<!-- button ends here -->
+      <div class="row">
+      <!-- style="margin-top: 0px; -->
+        <div class="separator-message">
+          <p>MESSAGE</p>
+        </div>
+        <div class="text-message">
+          <p>This product is under revision by our team. As soon as possible we will provide quality information about it. Try again in a few days.
+          </p>
+        </div>
+    </div> <!-- end of message row -->
+    <div class="row">
+      <div class="line">
+        <hr>
+        <p> <%= link_to "Home Page", root_path %> </p>
+        <hr>
+      </div>
+    </div> <!-- end of links row -->
+  </div> <!-- end of background style -->
+</div> <!-- end of message page -->
+<%= render 'shared/footer' %>
+
 <% else %>
 
 <div class="detail-page">
