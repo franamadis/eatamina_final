@@ -9,7 +9,7 @@
 }
 
 .sign {
-  margin: 100px 0;
+  margin: 90px 0;
   // width: 360px;
   width: 90%;
   height: 90px;
@@ -39,10 +39,14 @@
 
 .tutorial-description {
   // text-align: center;
+
   p {
+    // line-height: 1.5;
     font-size: 18px;
     // color: #a09c9c;
     color: #9b9b9e;
+    letter-spacing: 1px;
+
   }
 
   h3 {
@@ -71,6 +75,7 @@
   max-width: 80vw;
   border-radius: 5px;
   text-align: center;
+  padding: 20px 0;
 }
 
 // replaced by padding for tutorial steps
