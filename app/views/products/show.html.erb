@@ -82,13 +82,13 @@
           </div>
           <div class="grid-item-c-down-left">
           </div>
-          
+
           <!-- MODAL -->
-        
+
         <div class="grid-item-c-d own-right">
           <%  if @product.nutrition_grade? %>
             <% @score = @product.final_score %>
-            
+
             <%= image_tag "score#{@score}.png", class:"grade-image" %>
           <% else %>
             <%= image_tag "score_nil.png", class:"grade-image" %>
@@ -289,7 +289,7 @@
             <div class="space">
               <% if @product.nutritional_info? %>
                <% nutritional = eval(@product.nutritional_info) %>
-                <p> <%= ((nutritional['energy_100g'].to_i/4.1868).round(1)) %> Kcal </p>
+                <p> <%= ((nutritional['energy_100g'].to_i/4.1868).round(0)) %> Kcal </p>
                <% else %>
               <!-- <p>Sorry no data!</p> -->
              <% end  %>

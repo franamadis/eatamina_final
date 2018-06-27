@@ -24,17 +24,20 @@ a:hover {
   text-align: center;
   margin-top: 2px;
   // background-color: #dbdada;
-  padding: 7px;
+  padding: 7px 7px 25px 7px;
   // box-shadow: 2px 2px 3px black;
 }
 
 .icons {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
+  padding-right: 1px;
+  margin-top: -3px;
 }
 
 .space p {
-  margin: 15px 0 0 0;
+  // added margin to higher nutrition section
+  // margin: 15px 0 0 0;
   padding-right: 5px;
   // border-bottom: 1px solid black;
 }
@@ -42,6 +45,8 @@ a:hover {
 .nutrient-section {
   position: relative;
   height: 50px;
+  // centered text between lines
+  padding-top: 15px;
 }
 
 .nutrient-section:after {
@@ -51,7 +56,8 @@ a:hover {
   width: 60%;
   left: 20%;
   height: 1px;
-  background-color: $gray;
+  // background-color: $gray;
+  background-color: #e3e3e3;
 }
 
 // not displaying last gray line
@@ -69,7 +75,6 @@ a:hover {
   padding: 50px 0 20px;
   text-align: center;
   text-transform: uppercase;
-
 }
 
 .line  p {
@@ -128,7 +133,6 @@ hr {
   width: 100%;
   padding: 10px 0 10px 10px;
   object-position: center;
-
   // height:100%;
   // min-height: 0%;
   // max-height: 300px;
@@ -159,11 +163,9 @@ hr {
 
 .separator {
   margin-top: 0px;
-
   background-color: #E0E0E0;
   color: #1f1c1c;
   // 1D1A1A
-
   height: 40px;
   // box-shadow: 2px 2px 3px black;
   text-align: center;
@@ -178,8 +180,9 @@ hr {
 .chemical-click {
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-between;
+  // changed for centered text without chemicals
   justify-content: space-around;
+    // justify-content: space-between;
   padding: 20px;
 }
 
@@ -209,6 +212,7 @@ hr {
   color: #ffffff;
 }
 
+// for red button white text
 #redish a {
   color: white;
 }
@@ -226,7 +230,6 @@ hr {
 //   // justify-content: space-between;
 //   align-items: center;
 // }
-
 
 .product-name {
   top: 10px;
@@ -271,7 +274,6 @@ hr {
   right: -30px;
   text-shadow: 1px 1px 5px black;
   width: 15px;
-
 }
 
 .grid-container {
@@ -346,7 +348,7 @@ hr {
 }
 
 .modal-button {
-  border-color: rgba(0,0,0,0); 
+  border-color: rgba(0,0,0,0);
   background-color: rgba(0,0,0,0);
 }
 
