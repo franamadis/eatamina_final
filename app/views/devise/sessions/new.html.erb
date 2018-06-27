@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container text-center" style="background-color: #f4f4f4;">
   <div class="form-login2">
     <div class="row">
       <h2>SIGN IN</h2>
@@ -10,7 +10,7 @@
               <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
             </div>
             <div class="form-actions">
-              <%= f.button :submit, "Sign In", class: "submit-button" %>
+              <%= f.button :submit, "Sign In", class: "submit-button", style: "background-color: #3fabc6" %>
             </div>
           <% end %>
           <%= render "devise/shared/links" %>

@@ -19,7 +19,9 @@ class ProductsController < ApplicationController
   end
 
   def message
+   
     @product = session[:new_product]
+    
   end
 
 

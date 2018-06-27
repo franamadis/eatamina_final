@@ -15,7 +15,7 @@ class PagesController < ApplicationController
       response_serialized = open(url).read
       response = JSON.parse(response_serialized).flatten
       response2 = response.find {|item| item.class == Hash}
-      if response2 != nil
+      if response2 != nil && response2["labels"] != nil
          organic = response2["labels"].include? "organic"
       else
          organic = false
