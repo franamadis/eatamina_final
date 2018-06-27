@@ -2,13 +2,17 @@
 
   <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
 
-      <div class="message">
-        <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png',  class:"message-photo" %>
+      <div class="message"> 
+        <% if @product.photo? %>
+          <%= image_tag @product.photo, class:"message-photo" %>
+        <% else %>
+          <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png',  class:"message-photo" %>
+        <% end %>
       <!-- </div> -->
 
       <div class="row">
         <div class="message-text">
-          <h4>Product is not in our database</h4>
+          <h4>This product is not in our database</h4>
         </div>
       </div>
 

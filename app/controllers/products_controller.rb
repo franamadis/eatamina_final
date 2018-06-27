@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
   end
 
   def message
-    @product = session[:new_product]
+    @product = Product.find(session[:new_product_id])
   end
 
 
