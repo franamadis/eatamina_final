@@ -153,9 +153,11 @@ hr {
 
 .separator {
   margin-top: 0px;
+
   background-color: #E0E0E0;
   color: #1f1c1c;
   // 1D1A1A
+
   height: 40px;
   // box-shadow: 2px 2px 3px black;
   text-align: center;
@@ -328,6 +330,11 @@ hr {
 .absoluter {
   position:absolute;
   top: 10px;
+}
+
+.modal-button {
+  border-color: rgba(0,0,0,0); 
+  background-color: rgba(0,0,0,0);
 }
 
 // .nutritional-flow {
