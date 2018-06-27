@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    params[:id] = session[:new_product]["id"]
+    params[:id] = session[:new_product_id]
     @product = Product.find(params[:id])
   end
 
