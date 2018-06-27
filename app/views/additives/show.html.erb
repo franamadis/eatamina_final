@@ -3,39 +3,46 @@
   <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
 
         <div class="row">
-            <div class="col-xs-3" style="text-align: -moz-center;">
+            <div class="col-xs-6" style="text-align: -moz-center;">
             <% if @additive.risk == "Baja" %>
               <div class="button-chemical-good"> 
-                
                 <p style="color: white;font-size: x-large;font-weight: bolder;"><%= @additive.chemical %></p> 
               </div>
-              <div class="col-xs-3" style="text-align: -moz-center;">
-              <i class="fas fa-chevron-left" style="color: white;width: 100%;text-align: -moz-right;"> <%= link_to "Back", :back, style: 'color: white' %></i>
-              </div>
+            </div>
+            <div class="col-xs-4 col-xs-offset-2" style="text-align: -moz-center;">
+                <i class="fas fa-chevron-left btn-default" style="color: gray;width: 100%;text-align: -moz-right;padding: 9px;"> <%= link_to "ATRÁS", :back, class: 'button-back' %></i>
+            </div>    
+              
             <% elsif @additive.risk == "Media" %>
               <div class="button-chemical-medium">
-                <i class="fas fa-chevron-left" style="color: white;width: 100%;text-align: -moz-right;"> <%= link_to "Back", :back, style: 'color: white' %></i>
                 <p style="color: white;font-size: x-large;font-weight: bolder;"><%= @additive.chemical %></p> 
               </div>
+            </div>
+            <div class="col-xs-4 col-xs-offset-2" style="text-align: -moz-center;">
+                <i class="fas fa-chevron-left btn-default" style="color: gray;width: 100%;text-align: -moz-right;padding: 9px;"> <%= link_to "ATRÁS", :back, class: 'button-back' %></i>
+            </div>    
             <% elsif @additive.risk == "Alta" %>
-                <div class="button-chemical-bad"> 
-                    <i class="fas fa-chevron-left" style="color: white;width: 100%;text-align: -moz-right;"> <%= link_to "Back", :back, style: 'color: white' %></i>
+                <div class="button-chemical-bad">               
                     <p style="color: white;font-size: x-large;font-weight: bolder;"><%= @additive.chemical %></p> 
                 </div> 
-                 <div class="col-xs-3" style="text-align: -moz-center;">
-              <i class="fas fa-chevron-left" style="color: white;width: 100%;text-align: -moz-right;"> <%= link_to "Back", :back, style: 'color: white' %></i>
-              </div>
+            </div>
+            <div class="col-xs-4 col-xs-offset-2" style="text-align: -moz-center;">
+                <i class="fas fa-chevron-left btn-default" style="color: gray;width: 100%;text-align: -moz-right;padding: 9px;"> <%= link_to "ATRÁS", :back, class: 'button-back' %></i>
+            </div>    
             <% else %>
             <div class="button-chemical-unknown"> 
-                <i class="fas fa-chevron-left" style="color: white;width: 100%;text-align: -moz-right;"> <%= link_to "Back", :back, style: 'color: white' %></i>
+               
                 <p style="color: white;font-size: x-large;font-weight: bolder;"><%= @additive.chemical %></p> 
             </div>
-             <% end %>
-              <h3><%= @additive.name %></h3>
-            
             </div>
+                <i class="fas fa-chevron-left btn-default" style="color: gray;width: 100%;text-align: -moz-right;padding: 9px;"> <%= link_to "ATRÁS", :back, class: 'button-back' %></i>
+            </div>    
+             <% end %>
+             
+            
+            
 
-        </div>
+        </div><h3 style="text-align: center;"><%= @additive.name %></h3> 
     </div>
 
     <%# <p><%= @additive.chemical %></p>
