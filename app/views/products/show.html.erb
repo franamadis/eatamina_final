@@ -1,7 +1,7 @@
 <% if @product.status == "pending" %>
 <div class="message-page">
   <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
-      <div class="message"> 
+      <div class="message">
         <%= image_tag 'https://encrypted-tbn0.gstatic.com/imag
   es?q=tbn:ANd9GcQx50GPTeYfUGJ4gr30rlMhd9eDSveVHkqDLqYR_6f6TKVioytu',  class:"message-photo" %>
       <!-- </div> -->
@@ -10,7 +10,7 @@
           <h4>This product is under revision by our team.</h4>
         </div>
       </div>
-    
+
 <!-- end of message class -->
 <!-- button ends here -->
       <div class="row">
@@ -52,28 +52,21 @@
             <%= link_to like_product_path(@product), method: :put do %>
 
 <!-- style="color: white; opacity: 0.8; position: absolute;top: 5px;font-size: 100%;right: -30px;text-shadow: 1px 1px 5px black; -->
-
-                <i class="fas fa-heart" id="heart-no-touch"></i>
+            <i class="fas fa-heart" id="heart"></i>
             <% end %>
 
             <% if @liked_products.include?(@product) %>
-                <i class="fas fa-heart"></i>
-
+              <i class="fas fa-heart" id="heart-incl-product"></i>
             <% end %>
           <% else %>
-
             <%= link_to new_user_session_path, method: :get do %>
 
- <!-- style="color: pink; opacity: 0.8; position: absolute;top: 5px;font-size: 100%;right: -30px;text-shadow: 1px 1px 5px black;" -->
-
-
+ <!-- style="color: white; opacity: 0.8; position: absolute;top: 5px;font-size: 100%;right: -30px;text-shadow: 1px 1px 5px black;" -->
             <i class="fas fa-heart" id="heart-show"></i>
             <% end %>
           <% end %>
-          </div>
+        </div>
       </div> <!-- end of grid-item-a -->
-
-
 
       <div class="grid-item-b">
       </div>
@@ -113,7 +106,8 @@
         </div>
       <div class="col-xs-12">
         <div class="chemical-click">
-          <% if @product.prod_add != nil %>
+<!-- changed code with Ollie -->
+          <% if @product.prod_add != "[]" %>
             <% JSON[@product.prod_add].each do |additive| %>
               <% @additive = additive[3..6].capitalize %>
 
@@ -140,7 +134,7 @@
             <!-- end of JSON each method -->
             <!-- CAN PRINT INFO IF NO CHEMICALS are IN THE PRODUCT -->
           <% else %>
-          <!-- <p>No chemicals</p> -->
+            <p> Este producto no tiene aditivos quimicos. </p>
           <% end  %>
           <!-- end of chemicals-click class if any E-XXX our in scanned product -->
         </div>

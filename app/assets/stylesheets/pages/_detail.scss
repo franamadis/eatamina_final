@@ -84,30 +84,35 @@ hr {
   margin: 10px;
 }
 
-#heart-no-touch {
-  color: green;
+#heart {
+  color: white;
   opacity: 0.8;
   position: absolute;
-  top: 5px;
+  top: 120px;
+  right: -23px;
   font-size: 100%;
-  right: -30px;
+
   text-shadow: 1px 1px 5px black;
 }
 
 #heart-incl-product {
-
-
-
+  color: red;
+  opacity: 0.8;
+  position: absolute;
+  top: 120px;
+  right: -23px;
+  font-size: 100%;
+  text-shadow: 1px 1px 5px black;
 }
 
 #heart-show {
- color: pink;
- opacity: 0.8;
- position: absolute;
- top: 5px;
- font-size: 100%;
- right: -30px;
- text-shadow: 1px 1px 5px black;
+   color: white;
+   opacity: 0.8;
+   position: absolute;
+   top: 120px;
+   right: -23px;
+   font-size: 100%;
+   text-shadow: 1px 1px 5px black;
 }
 
 .photo-container{
@@ -150,6 +155,7 @@ hr {
 //   flex-direction: column;
 //   justify-content: center;
 // }
+
 
 .separator {
   margin-top: 0px;
@@ -226,8 +232,11 @@ hr {
   top: 10px;
   left: 10px;
   padding-top: 5px;
+  padding-left: 15px;
   font-size: 20px;
   text-align: left;
+  color: #1D1A1A;
+  font-weight: 500;
   // text-transform: initial;
 }
 
@@ -236,6 +245,10 @@ hr {
   text-align: right;
   text-transform: capitalize;
   text-align: left;
+  padding-left: 15px;
+  color: #1D1A1A;
+  font-weight: 500;
+
 }
 
 #heart-icon-off {
