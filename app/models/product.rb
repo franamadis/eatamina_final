@@ -65,6 +65,10 @@ class Product < ApplicationRecord
       else
         score = score - 30
       end
+      if score <0
+        score = 0 
+      end
+  
     end
     return score
   end
