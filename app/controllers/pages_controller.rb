@@ -16,10 +16,13 @@ class PagesController < ApplicationController
       response_serialized = open(url).read
       response = JSON.parse(response_serialized).flatten
       response2 = response.find {|item| item.class == Hash}
+
       if response2 != nil && ((response2["labels"] != nil) || (response2["labels_hierarchy"] != nil))
-        
+
         if (response2["labels"].include? "organic") || (response2["labels_hierarchy"].include? "en:organic")
-         organic = true
+          organic = true
+        else
+          organic = false
         end
       else
          organic = false
@@ -42,9 +45,11 @@ class PagesController < ApplicationController
           @new_product = Product.create!(sku: params[:query], status: "pending", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'], organic: organic )
         end
         redirect_to products_message_path
+
       else
         @new_product = Product.create!(sku: params[:query], status: "pending", response: "product found")
         redirect_to products_message_path
+
       end
     end
   end
@@ -60,7 +65,7 @@ class PagesController < ApplicationController
     end
   end
 
-  def set_product_id_in_session 
+  def set_product_id_in_session
     if @new_product
       session[:new_product_id] = @new_product.id
     end

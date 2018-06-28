@@ -120,9 +120,9 @@
 
         <!-- adding button link with redirection -->
                 <% if Additive.find_by_chemical(@additive).risk == "Baja" %>
-                  <div class="button-chemical button-chemical-good"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+                  <div class="button-chemical button-chemical-good" id="greenish"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
                 <% elsif Additive.find_by_chemical(@additive).risk == "Media" %>
-                  <div class="button-chemical button-chemical-medium"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+                  <div class="button-chemical button-chemical-medium" id="yellowish"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
                 <% elsif Additive.find_by_chemical(@additive).risk == "Alta" %>
                   <div class="button-chemical button-chemical-bad" id="redish"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
                 <% else %>
@@ -134,7 +134,7 @@
             <!-- end of JSON each method -->
             <!-- CAN PRINT INFO IF NO CHEMICALS are IN THE PRODUCT -->
           <% else %>
-            <p> Este producto no tiene aditivos quimicos. </p>
+            <p> Este producto no tiene aditivos químicos. </p>
           <% end  %>
           <!-- end of chemicals-click class if any E-XXX our in scanned product -->
         </div>
@@ -304,9 +304,9 @@
     <div class="row">
       <div class="line">
         <hr>
-        <p> <%= link_to "NUTRITIONAL METHOD", method_path %> </p>
+        <p> <%= link_to "CÁLCULO DE LA PUNTUACIÓN", method_path %> </p>
         <hr>
-        <p> <%= link_to "CONTACT US", contact_path %> </p>
+        <p> <%= link_to "CONTACTA CON NOSOTROS", contact_path %> </p>
         <hr>
       </div>
     </div>

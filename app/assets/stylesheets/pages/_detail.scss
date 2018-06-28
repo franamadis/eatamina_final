@@ -91,33 +91,33 @@ hr {
 
 #heart {
   color: white;
-  opacity: 0.8;
+  opacity: 0.9;
   position: absolute;
   top: 120px;
   right: -23px;
   font-size: 100%;
 
-  text-shadow: 1px 1px 5px black;
+  text-shadow: -1px 1px 2px black;
 }
 
 #heart-incl-product {
   color: red;
-  opacity: 0.8;
+  opacity: 0.9;
   position: absolute;
   top: 120px;
   right: -23px;
   font-size: 100%;
-  text-shadow: 1px 1px 5px black;
+  text-shadow: -1px 1px 2px black;
 }
 
 #heart-show {
    color: white;
-   opacity: 0.8;
+   opacity: 0.9;
    position: absolute;
    top: 120px;
    right: -23px;
    font-size: 100%;
-   text-shadow: 1px 1px 5px black;
+   text-shadow: -1px 1px 2px black;
 }
 
 .photo-container{
@@ -145,8 +145,8 @@ hr {
   max-width: 35%;
   height:auto;
   overflow: hidden;
-  -webkit-filter: drop-shadow(-2px 2px 2px #939393);
-  filter: drop-shadow(-2px 2px 2px #939393);
+  -webkit-filter: drop-shadow(-1px 1px 1px #000);
+  filter: drop-shadow(-1px 1px 1px #000);
   // position: relative;
   // left: -65px;
   // width: 50%;
@@ -192,7 +192,8 @@ hr {
     padding: 8px;
     margin: 10px 5px;
     border-radius: 5px;
-    box-shadow:  -2px 2px 2px rgba(0, 0, 0, 0.25), 2px 4px 1px rgba(0, 0, 0, 0.25);
+    -webkit-filter: drop-shadow(-1px 1px 1px #000);
+    filter: drop-shadow(-1px 1px 1px #000);
     color: $dark-gray;
     font-weight: 400;
     text-align: center;
@@ -216,6 +217,15 @@ hr {
 #redish a {
   color: white;
 }
+
+#yellowish a {
+  color: white;
+}
+
+#greenish a {
+  color: white;
+}
+
 .button-chemical-unknown {
   background: $dark-gray;
   color: #ffffff;
