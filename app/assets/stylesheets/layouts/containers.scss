@@ -3,3 +3,10 @@
   max-width: 500px;
   margin: auto;
 }
+
+.container {
+      min-height: calc(100vh - 50px);
+      background-color: whitesmoke;
+      padding: 20px;
+}
+
