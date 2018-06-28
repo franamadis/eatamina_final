@@ -31,6 +31,7 @@ div {
 .home-wrapper {
     background: #B0F37B;  /* fallback for old browsers */
     background: linear-gradient(to right, #60d364, #9fdf6d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-bottom: -53px;
 }
 
 .home__camera-prompt {
@@ -150,8 +151,8 @@ div {
 }
 
 .btn-circle {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     text-align: center;
     padding: 6px 0;
     font-size: 12px;

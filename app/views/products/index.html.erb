@@ -1,31 +1,35 @@
 <div class="width-wrapper">
   <div class="container-index">
     <div class="title-header">
-      <h3>Your Favorite Products</h3>
+      <h3>Tus productos Favoritos</h3>
     </div>
     <div class="title-header2">
-      <p>You already have liked <%=@liked_products.length%> products</p>
+      <p>Esto es lo que te ha gustado <%=@liked_products.length%> products</p>
     </div>
     <div class="container-cards">
       <div class="flex-container">
         <% @liked_products.each do |product|%>
         <div class="col-xs-12 col-sm-4">
           <% if product.photo? %>
-            <div class="card flex-itemchild" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path product.photo %>');">
-              <div class="card-description">
-                <h2>
-                  <%= link_to product.name, product_path(product)%>
-                </h2>
+          <%= link_to product_path(product), :title => product.name do %>
+              <div class="card flex-itemchild" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path product.photo %>');">
+                <div class="card-description">
+                  <h2>
+                    <%= product.name %>
+                  </h2>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% else %>
+          <%= link_to product_path(product), :title => product.name do %>
             <div class="card flex-itemchild" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png');">
-              <div class="card-description">
-                <h2>
-                <%= link_to product.name, product_path(product) %>
-                </h2>
+                <div class="card-description">
+                  <h2>
+                    <%= product.name %>
+                  </h2>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
         </div>
         <% end %>
