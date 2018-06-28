@@ -1,11 +1,11 @@
 
 <body style="padding-bottom: 0px !important;">
 <div class="button-navbar gradient-fill" style="color: white;font-size: medium;text-decoration: none;">
-  <%= link_to "Como funciona", howitworks_path, style: "color: white;font-size: medium;text-decoration: none;position: absolute;left: 18px;top: 10px;" %>
+  <%= link_to "¿Cómo funciona?", howitworks_path, style: "color: white;font-size: medium;text-decoration: none;position: absolute;left: 18px;top: 10px;" %>
   <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, style: "color: white;font-size: text-transform: capitalize; medium;text-decoration: none;position: absolute;right: 18px;top: 10px;" %>
+    <%= link_to "Desconectar", destroy_user_session_path, :method => :delete, style: "color: white;font-size: text-transform: capitalize; medium;text-decoration: none;position: absolute;right: 18px;top: 10px;" %>
   <% else %>
-    <%= link_to "Sign In", user_session_path, style: "color: white;font-size: medium;text-decoration: text-transform: capitalize;none;position: absolute;right: 18px;top: 10px;" %>
+    <%= link_to "Conexión", user_session_path, style: "color: white;font-size: medium;text-decoration: text-transform: capitalize;none;position: absolute;right: 18px;top: 10px;" %>
   <% end %>
 </div>
 <div class="banner">
@@ -19,7 +19,7 @@
 </div>
 <div class="gradient-fill" style="padding-bottom: 13vh;">
     <div class="row barcode-input" style="margin-left: 0px;margin-right: 0px; padding-bottom: 20px;">
-    	
+
 <div class="gradient-fill">
 	<div class="button-topfooter">
 		<p style="color: #686868;font-size: small;">ESCANEA EL CODIGO DE BARRAS</p>
@@ -52,7 +52,7 @@
     	</div><!-- /.col-lg-6 -->
 
  </div><!-- /.row -->
- 
+
 
 
 
