@@ -1,12 +1,12 @@
 <div class="container text-center">
   <%= form_for(@product) do |f| %>
   <div class="form-login2">
-    <h2>UPDATE PRODUCT</h2>
+    <h2>Actualizar Producto</h2>
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <div class="form-group ">
           <%= f.label :name %>
-          <%= f.text_field :name, placeholder: "Product name", class: 'form-control' %>
+          <%= f.text_field :name, placeholder: "Nombre del Producto", class: 'form-control' %>
         </div>
       </div>
     </div>
@@ -15,7 +15,7 @@
      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
        <div class="form-group">
         <%= f.label :brand %>
-        <%= f.text_field :brand, placeholder: "Brand name", class: 'form-control' %>
+        <%= f.text_field :brand, placeholder: "Nombre de la marca", class: 'form-control' %>
        </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <div class="form-group">
         <%= f.label :photo %>
-        <%= f.text_field :photo, placeholder: "Puts the URL of one photo", class: 'form-control' %>
+        <%= f.text_field :photo, placeholder: "Introducir URL de foto de producto", class: 'form-control' %>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
 
   <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
 
-      <div class="message"> 
+      <div class="message">
         <% if @product.photo? %>
           <%= image_tag @product.photo, class:"message-photo" %>
         <% else %>
@@ -12,7 +12,7 @@
 
       <div class="row">
         <div class="message-text">
-          <h4>This product is not in our database</h4>
+          <h4>Este producto no está en nuestra base de datos</h4>
         </div>
       </div>
 
@@ -22,7 +22,7 @@
           <!-- <div class="col-xs-9 col-xs-offset-2"> -->
           <div class="button-message">
             <!-- <h4> < link_to "Help us update!", root_path > </h4> -->
-            <p> <%= link_to "CREATE NEW!", edit_product_path(session[:new_product_id])%> </p>
+            <p> <%= link_to "CREAR UN NUEVO PRODUCTO", edit_product_path(session[:new_product_id])%> </p>
           </div>
         </div>
 
@@ -34,11 +34,10 @@
       <div class="row">
       <!-- style="margin-top: 0px; -->
         <div class="separator-message">
-          <p>MESSAGE</p>
+          <p>MENSAJE</p>
         </div>
         <div class="text-message">
-          <p>If you want to improve this amazing app, please provide us with necessary information about this product. Our team will assess the product and we can help together the entire world to be healthy.
-          </p>
+          <p>Si quieres mejorar nuestra estupenda app, por favor introduce la información necesária sobre este producto. Nuestro equipo pesquisará el producto y juntos podemos hacer el mundo más saludable! </p>
 
         </div>
     </div> <!-- end of message row -->
@@ -54,7 +53,7 @@
     <div class="row">
       <div class="line">
         <hr>
-        <p> <%= link_to "Home Page", root_path %> </p>
+        <p> <%= link_to "Página de inicio", root_path %> </p>
         <hr>
       </div>
     </div> <!-- end of links row -->
