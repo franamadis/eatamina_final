@@ -1,7 +1,7 @@
 <div class="width-wrapper">
   <div class="container-index">
     <div class="title-header">
-      <h3>Tus últimas busquedas</h3>
+      <h3>Tus últimas búsquedas</h3>
     </div>
     <div class="title-header2">
       <p>Esto es el total de cosas que has buscado: <%=@queries.length%> productos</p>
@@ -14,21 +14,25 @@
       <% if product["status"] != "pending" %>
         <div class="col-xs-12 col-sm-4">
           <% if product.photo? %>
-            <div class="card flex-itemchild" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path product.photo %>');">
-              <div class="card-description">
-                <h2>
-                  <%= link_to product.name, product_path(product)%>
-                </h2>
+            <%= link_to product_path(product), :title => product.name do %>
+              <div class="card flex-itemchild" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path product.photo %>');">
+                <div class="card-description">
+                  <h2>
+                    <%= product.name %>
+                  </h2>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% else %>
-            <div class="card flex-itemchild" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png');">
+            <%= link_to product_path(product), :title => product.name do %>
+             <div class="card flex-itemchild" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png');">
               <div class="card-description">
                 <h2>
-                <%= link_to product.name, product_path(product) %>
+                <%= product.name %>
                 </h2>
               </div>
-            </div>
+              </div>
+            <% end %>
           <% end %>
         </div>
         <% end %>
