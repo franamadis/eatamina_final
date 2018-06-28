@@ -28,16 +28,43 @@ div {
 }
 
 
+.home-wrapper {
+    background: #B0F37B;  /* fallback for old browsers */
+    background: linear-gradient(to right, #60d364, #9fdf6d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-bottom: -53px;
+}
+
+.home__camera-prompt {
+    color: white;
+    text-align: center;
+    margin: auto;
+    max-width: 160px;
+    margin-bottom: 1rem;
+}
+
+
+.home__camera-button-wrap {
+    text-align: center;
+    margin: auto;
+}
+
+.home__camera-button {
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50%;
+
+    i {
+      color: grey;
+    }
+}
+
 .banner {
     color: white;
     text-align: center;
     height: 64vh;
     /* if you have a 70px navbar => height: calc(100vh - 70px); */
     background-size: cover !important;
-
-    background: #B0F37B;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #70E474, #B0F37B);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #70E474, #B0F37B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,21 +77,17 @@ div {
 .banner h1 {
     font-size: 50px;
     font-weight: bold;
-    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
-.banner p {
-    font-size: 25px;
-    font-weight: lighter;
-    color: rgb(255, 255, 255);
-    opacity: 0.6;
-    margin-bottom: 30px;
+.banner__tagline {
+    font-size: 18px;
+    max-width: 245px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: white;
 }
 
 .fake-navbar {
     position: relative;
-    background: #B0F37B;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #70E474, #B0F37B);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #70E474, #B0F37B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .button-navbar {
@@ -83,17 +106,9 @@ div {
         // left: 50%;
         // transform: translate(-50%, -50%);
 }
-.gradient-fill {
-    background: #B0F37B;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #70E474, #B0F37B);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #70E474, #B0F37B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
 
 .fake-footer {
     position: relative;
-    background: #B0F37B;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #70E474, #B0F37B);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #70E474, #B0F37B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .button-footer {
     text-align: center;
@@ -104,22 +119,15 @@ div {
 
 .fake-topfooter {
     position: relative;
-    background: #B0F37B;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #70E474, #B0F37B);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #70E474, #B0F37B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .button-topfooter {
     text-align: center;
-    // position: absolute;
-    // left: 50%;
-    // -webkit-transform: translateX(-50%);
-    // transform: translateX(-50%);
 }
 
 .form-css {
     padding-bottom: 20px;
     width: 40%;
-    margin: auto; 
+    margin: auto;
     min-width: 32%;
     padding-bottom: 24px;
     display: block;

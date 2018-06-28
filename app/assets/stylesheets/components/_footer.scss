@@ -2,7 +2,8 @@
   position: fixed;
   width: 100%;
   bottom: 0;
-  background: #686868;
+  // background: #686868;
+  background: linear-gradient(to top, #60d364, #9fdf6d);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,12 +11,14 @@
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
+
 .footer-links {
   width: 99vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .footer-links a {
   color: rgb(255, 255, 255);
   opacity: 0.8;
@@ -23,9 +26,11 @@
   font-size: 24px;
   padding: 0px 10px;
 }
+
 .footer-links a:hover {
   opacity: 1;
 }
+
 .footer .fa-heart {
-  color: #D23333;
+  color: white;
 }
