@@ -1,15 +1,17 @@
 <div class="width-wrapper">
   <div class="container-index">
     <div class="title-header">
-      <h3>Your last searches</h3>
+      <h3>Tus últimas busquedas</h3>
     </div>
     <div class="title-header2">
-      <p>You already have searched for <%=@queries.length%> products</p>
+      <p>Esto es el total de cosas que has buscado: <%=@queries.length%> productos</p>
+  
     </div>
     <div class="container-cards">
       <div class="flex-container">
         <% @queries.each do |query|%>
         <% product = Product.find_by_id(query.product_id) %>
+      <% if product["status"] != "pending" %>
         <div class="col-xs-12 col-sm-4">
           <% if product.photo? %>
             <div class="card flex-itemchild" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path product.photo %>');">
@@ -29,6 +31,7 @@
             </div>
           <% end %>
         </div>
+        <% end %>
         <% end %>
       </div>
     </div>

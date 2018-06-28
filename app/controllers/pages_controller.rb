@@ -17,16 +17,31 @@ class PagesController < ApplicationController
       response = JSON.parse(response_serialized).flatten
       response2 = response.find {|item| item.class == Hash}
 
-      if response2 != nil && ((response2["labels"] != nil) || (response2["labels_hierarchy"] != nil))
-
-        if (response2["labels"].include? "organic") || (response2["labels_hierarchy"].include? "en:organic")
-          organic = true
-        else
-          organic = false
-        end
+      if response2 != nil
+        if (response2["labels"] != nil)
+          if (response2["labels"].include? "organic")
+            organic = true
+          else 
+            organic = false
+          end
+        elsif (response2["labels_hierarchy"] != nil)
+          if (response2["labels_hierarchy"].include? "en:organic")
+            organic = true
+          else 
+            organic = false
+          end
+        end  
       else
-         organic = false
+        organic = false
       end
+        
+
+
+        
+
+
+        
+
 
 
 
