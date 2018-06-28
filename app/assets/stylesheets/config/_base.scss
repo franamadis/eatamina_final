@@ -1,3 +1,23 @@
 body {
   padding-bottom: 53px; //Offset content for fixed footer
+  background-color: white;
+}
+
+html,
+body {
+    color: $dark-gray;
+    // text-transform: uppercase;
+}
+
+a {
+  // color: rgb(255, 255, 255);
+  color: $dark-gray;
+  text-decoration: none;
+}
+
+a:hover {
+   // color:rgb(255, 255, 255);
+   color: $dark-gray;
+   text-decoration:none;
+   cursor:pointer;
 }

@@ -2,7 +2,8 @@
   color: white;
   text-align:center;
   font-weight: bold;
-  background: #408305;
+  // background: #408305;
+  background-color: $blue;
   transition: background 0.3s ease;
   box-shadow: 5px 3px 10px grey;
   padding: 10px 40px;
@@ -12,11 +13,11 @@
 
 .button-login:hover {
   opacity: 1;
-  background: #3ac162;
+  // background: #3ac162;
+  background: $blue;
   text-decoration: none;
   color: white;
 }
-
 
 #lower-button {
   text-align: center;

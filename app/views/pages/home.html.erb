@@ -1,72 +1,63 @@
+<div class="home-wrapper">
+    <div class="button-navbar gradient-fill" style="color: white;font-size: medium;text-decoration: none;">
+      <%= link_to "Como funciona", howitworks_path, style: "color: white;font-size: medium;text-decoration: none;position: absolute;left: 18px;top: 10px;" %>
+      <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, style: "color: white;font-size: text-transform: capitalize; medium;text-decoration: none;position: absolute;right: 18px;top: 10px;" %>
+      <% else %>
+        <%= link_to "Sign In", user_session_path, style: "color: white;font-size: medium;text-decoration: text-transform: capitalize;none;position: absolute;right: 18px;top: 10px;" %>
+      <% end %>
+    </div>
+    <div class="banner">
 
-<body style="padding-bottom: 0px !important;">
-<div class="button-navbar gradient-fill" style="color: white;font-size: medium;text-decoration: none;">
-  <%= link_to "Como funciona", howitworks_path, style: "color: white;font-size: medium;text-decoration: none;position: absolute;left: 18px;top: 10px;" %>
-  <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, style: "color: white;font-size: text-transform: capitalize; medium;text-decoration: none;position: absolute;right: 18px;top: 10px;" %>
-  <% else %>
-    <%= link_to "Sign In", user_session_path, style: "color: white;font-size: medium;text-decoration: text-transform: capitalize;none;position: absolute;right: 18px;top: 10px;" %>
-  <% end %>
-</div>
-<div class="banner">
+      <div class="banner-content banner-container">
+    	<%= image_tag("logo.png", height: 100, crop: :fill)%>
+        <h1 style="text-transform: none !important;">eatamina</h1>
+        <p style="" class="banner__tagline">¡Descifra lo que comes en un click!</p>
 
-  <div class="banner-content banner-container">
-	<%= image_tag("logo.png", height: 100, crop: :fill)%>
-    <h1 style="text-transform: none !important;">eatamina</h1>
-    <p style="text-transform: uppercase !important; font-size: 15px; text-shadow: 1px 1px 1px #868282; font-weight: normal;">¡Descifra lo que comes en un click!</p>
+      </div>
+    </div>
+    <div class="gradient-fill" style="padding-bottom: 13vh;">
+        <div class="row barcode-input" style="margin-left: 0px;margin-right: 0px; padding-bottom: 20px;">
 
-  </div>
-</div>
-<div class="gradient-fill" style="padding-bottom: 13vh;">
-    <div class="row barcode-input" style="margin-left: 0px;margin-right: 0px; padding-bottom: 20px;">
-    	
-<div class="gradient-fill">
-	<div class="button-topfooter">
-		<p style="color: #686868;font-size: small;">ESCANEA EL CODIGO DE BARRAS</p>
-	</div>
-</div>
-<div class="gradient-fill">
-	<div class="button-footer">
- 	 	<span class="input-group-btn">
-			<button class="btn-circle" type="button" data-toggle="modal" data-target="#livestream_scanner">
+    <div class="home__camera-button-wrap">
+			<button class="home__camera-button" type="button" data-toggle="modal" data-target="#livestream_scanner">
 				<i class="fa fa-camera" style="font-size:25px;color:#686868"></i>
 
 			</button>
-		</span>
-		</div>
+    	</div>
+    </div>
+    <p class="home__camera-prompt">ESCANEA EL CODIGO DE BARRAS</p>
 
-	</div>
+    <div class="">
+        		<div class="" style="padding-bottom: 20px;">
+        			<%= form_tag root_path, method: :get do %>
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control form-css",
+    							style: "width: 70%; text-align: center;",
+                  id: "scanner_input",
+                  placeholder: "Escribe el Codigo de Barras"
+                %>
+              <% end %>
+        		</div><!-- /input-group -->
+        	</div><!-- /.col-lg-6 -->
+
+     </div><!-- /.row -->
+
+
+
+
+        <div class="modal" id="livestream_scanner">
+        	<div>
+        		<div>
+        				<div class="modal-body" style="position: absolute;top: 0;left: calc(50%);transform: translateX(-50%);">
+        					<div id="interactive" class="viewport"></div>
+        			</div>
+
+        		</div><!-- /.modal-content -->
+        	</div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 </div>
-<div class="">
-    		<div class="" style="padding-bottom: 20px;">
-    			<%= form_tag root_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control form-css",
-							style: "width: 70%; text-align: center;",
-              id: "scanner_input",
-              placeholder: "Escribe el Codigo de Barras"
-            %>
-          <% end %>
-    		</div><!-- /input-group -->
-    	</div><!-- /.col-lg-6 -->
 
- </div><!-- /.row -->
- 
-
-
-
-    <div class="modal" id="livestream_scanner">
-    	<div>
-    		<div>
-    				<div class="modal-body" style="position: absolute;top: 0;left: calc(50%);transform: translateX(-50%);">
-    					<div id="interactive" class="viewport"></div>
-    			</div>
-
-    		</div><!-- /.modal-content -->
-    	</div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-</body>
 
 

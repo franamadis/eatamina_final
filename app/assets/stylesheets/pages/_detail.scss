@@ -1,23 +1,155 @@
-/* Removing padding and margin from
-the specified elements: */
-html,
-body {
-    color: $dark-gray;
-    // text-transform: uppercase;
+.detail-page {
+  background-color: whitesmoke;
+  overflow: hidden;
 }
 
-a {
-  // color: rgb(255, 255, 255);
-  color: $dark-gray;
-  text-decoration: none;
+.detail__photo {
+  max-height: 240px;
+  max-width: 85vw;
 }
 
-a:hover {
-   // color:rgb(255, 255, 255);
-   color: $dark-gray;
-   text-decoration:none;
-   cursor:pointer;
+.detail__photo-wrap {
+    max-width: 650px;
+    min-height: 420px;
+    text-align: center;
+    border-radius: 50%;
+    margin-top: -185px;
+    margin-right: -125px;
+    margin-left: -125px;
+    padding-top: 210px;
+    padding-bottom: 45px;
+    background-color: white;
+    z-index: 9;
 }
+
+.detail__product-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 65px;
+    height: 65px;
+    margin: auto;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+
+    &.product-good {
+      background-color: #54bd54;
+    }
+
+    &.product-medium {
+      background-color: #ffbd00;
+    }
+
+    &.product-bad {
+      background-color: #ed5454;
+    }
+}
+
+.detail__product-score-number {
+    border-bottom: 1px solid white;
+    display: block;
+    min-width: 40px;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+}
+
+.detail__product-info-section {
+    position: relative;
+    padding: 35px 30px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 3px 5px 18px 3px #eeeeee;
+    margin-bottom: 70px;
+
+    &:nth-last-child(1) {
+        margin-bottom: 0px;
+    }
+}
+
+.detail__product-info-header {
+    margin-top: 30px;
+    border-bottom: 1px solid #cecece;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #828282;
+    margin-top: 30px;
+
+    &:nth-child(3) {
+      margin-top: 5px;
+    }
+}
+
+.detail__product-body {
+    font-size: 16px;
+    color: black;
+}
+
+.detail__product-body--lg {
+    font-size: 24px;
+}
+
+.detail__product-section-header {
+    position: absolute;
+    top: -21px;
+    left: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #454545;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.detail__product-section-header--higher {
+    top: -34px;
+    line-height: 27px;
+}
+
+.detail__product-heart {
+    position: absolute;
+    top: -19px;
+    right: 26px;
+    font-size: 35px;
+    color: grey;
+}
+
+.detail__product-heart--active {
+    color: red;
+}
+
+.detail__product-chemical-lozenge-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail__product-chemical-lozenge {
+    width: 33.33%;
+    background: #F4F4F4;
+    padding: 8px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 400;
+    text-align: center;
+}
+
+.detail__nutrient-table {
+    margin-left: -60px;
+    margin-right: -60px;
+}
+
 
 #valor {
   font-size: 12px;
@@ -187,13 +319,11 @@ hr {
 }
 
 .button-chemical {
-   width: 20%;
+   width: 29.5%;
     background: $light-gray;
     padding: 8px;
     margin: 10px 5px;
     border-radius: 5px;
-    -webkit-filter: drop-shadow(-1px 1px 1px #000);
-    filter: drop-shadow(-1px 1px 1px #000);
     color: $dark-gray;
     font-weight: 400;
     text-align: center;
@@ -212,6 +342,7 @@ hr {
   background: $red;
   color: #ffffff;
 }
+
 
 // for red button white text
 #redish a {
@@ -367,44 +498,4 @@ hr {
   font-family: "Nunito", sans-serif;
   font-weight: normal;
 }
-// .nutritional-flow {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-around;
-//   // padding: 20px;
-// }
 
-// .foot-flex {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-between;
-//   padding: 40px;
-// }
-
-// .box {
-//   position: relative;
-//   height:130px;
-// }
-
-// .grade {
-//   position: absolute;
-//   bottom: 10px;
-//   left: 10px;
-// }
-
-// .grade-circle {
-//   border-radius: 50%;
-//   text-align: center;
-//   padding-top: 10px;
-//   border: 1px solid #C13144;
-//   width: 40px;
-//   height: 40px;
-//   margin-right: 20px;
-// }
-
-// .flex {
-//   display:flex;
-//   align-items: center;
-//   justify-content: space-around;
-//   width: 120px;
-// }
