@@ -1,7 +1,6 @@
 .detail-page {
   background-color: whitesmoke;
   overflow: hidden;
-  padding-bottom: 53px;
 }
 
 .detail__photo {
@@ -364,11 +363,18 @@ hr {
 }
 
 .button-chemical-unknown {
-  background: $dark-gray;
+  background: #b8b6b6;
   color: #ffffff;
 }
 
-#add-white {
+// #add-white {
+//   color: white;
+// }
+
+.white-text{
+  color: white;
+}
+.white-text:hover{
   color: white;
 }
 

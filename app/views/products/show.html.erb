@@ -112,7 +112,7 @@
                           <% elsif Additive.find_by_chemical(@additive).risk == "Alta" %>
                             <div class="button-chemical button-chemical-bad" id="redish"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
                           <% else %>
-                            <div class="button-chemical button-chemical-unknown" id="add-white"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)) %> </div>
+                            <div class="button-chemical button-chemical-unknown"> <%= link_to @additive, additive_path(Additive.find_by_chemical(@additive)), class: 'white-text'  %> </div>
                           <% end %> <!-- end baja alta -->
                         <% end %>
                         <!-- end if for additive if find or not -->
