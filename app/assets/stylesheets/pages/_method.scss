@@ -1,0 +1,84 @@
+.home-body {
+  background: white;
+}
+
+.featured-sign {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.sign {
+  margin: 90px 0;
+  // width: 360px;
+  width: 90%;
+  height: 90px;
+  border-radius: 1px;
+  border: 1px solid #CC9933;
+  // color: #A5A5A5;
+  color: #9d9e9e;
+  text-align: center;
+  h2 {
+    font-size: 32px;
+    margin-top: 27px;
+  }
+}
+
+.featured-vessels {
+  background: #ECEDF2;
+  height: 380px;
+}
+
+.featured {
+  margin-top: 15px;
+}
+
+.nothing {
+  height: 50px;
+}
+
+.tutorial-description {
+  // text-align: center;
+
+  p {
+    // line-height: 1.5;
+    font-size: 18px;
+    // color: #a09c9c;
+    color: #9b9b9e;
+    letter-spacing: 1px;
+
+  }
+
+  h3 {
+    font-size: 29px;
+    text-align: left;
+  }
+
+  strong {
+    color: #CC9933;
+    font-size: 56px;
+  }
+}
+
+.tutorial-steps-1 {
+  padding: 20px;
+  text-align: center;
+}
+
+.tutorial-steps-img {
+  text-align: center;
+  padding: 20px;
+}
+
+.tutorial-image {
+  // width: 100%;
+  max-width: 80vw;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+// replaced by padding for tutorial steps
+// .space-maker {
+//   height: 100px;
+// }
