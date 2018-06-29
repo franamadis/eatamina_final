@@ -51,13 +51,17 @@ div {
 .home__camera-button {
     width: 70px;
     height: 70px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
 
     i {
       color: grey;
     }
 }
+.home__camera-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
 
 .banner {
     color: white;
