@@ -21,7 +21,7 @@
 
     <div class="home__camera-button-wrap">
 			<button class="home__camera-button" type="button" data-toggle="modal" data-target="#livestream_scanner">
-				<i class="fa fa-camera" style="font-size:25px;color:#686868"></i>
+				<i class="fa fa-camera" style="font-size:37px;color:#686868"></i>
 
 			</button>
     	</div>
@@ -54,5 +54,8 @@
         	</div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 </div>
+ <% if user_signed_in? %>
+<%= render 'shared/footer_main' %>
+<% end %>
 
 
