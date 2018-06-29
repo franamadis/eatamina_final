@@ -1,76 +1,49 @@
-<div class="home-body"></div>
-  <div class="container">
-      <div class="featured-sign">
-        <div class="sign">
-          <h2>¿Como funciona?</h2>
+  <div class="detail-page">
+        <div class="detail__photo-wrap">
+           
+              <%= image_tag 'https://cdn.britannica.com/700x450/57/43857-004-52EE48DE.jpg',  class:"detail__photo-method" %>
+  
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <div class="tutorial-steps-1">
-            <div class="tutorial-description">
-              <h3><strong>1 </strong>Escanea el código de barras del producto</h3>
-              <br>
-              <p style="text-align: justify;">Para tener una mejor lectura, centre el código de barras delante de la cámara o puede escribirlo manualmente dentro de la celda.</p>
+<div class="container--regular" style="margin-top: 55px;">
+            <div class="detail__product-info-section">
+    <p class="detail__product-section-header">¿Como funciona?</p>
+     <p class="detail__product-info-header" style="color: #1D1A1A;">
+                   <strong>1 </strong>Escanea el código de barras del producto
+     <p class="detail__product-body" style="text-align: justify; color: #686868;">
+Para tener una mejor lectura, centre el código de barras delante de la cámara o puede escribirlo manualmente dentro de la celda.
+                </p>
             </div>
-          </div>
-        </div>
+            
+</div>
 
-        <div class="col-xs-12 col-md-6">
-          <div class="tutorial-steps-img">
-            <%= image_tag("https://cdn.britannica.com/700x450/57/43857-004-52EE48DE.jpg", class: 'tutorial-image') %>
-          </div>
-        </div>
-      </div> <!-- end of 1st row -->
-
-      <div class="space-maker"></div>
-
-
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <div class="tutorial-steps-1">
-            <div class="tutorial-description">
-              <h3><strong id="number-of-step">2 </strong>Recibe la información del producto</h3>
-              <br>
-              <p style="text-align: justify;">La calificación del producto se basa en 3 criterios:
+<div class="container--regular" style="margin-top: 40px;">
+            <div class="detail__product-info-section">
+ 
+     <p class="detail__product-info-header" style="color: #1D1A1A;">
+                   <strong>2 </strong>Recibe la información del producto
+                </p>
+     <p class="detail__product-body" style="text-align: justify; color: #686868;">
+La calificación del producto se basa en 3 criterios:
               La calidad nutricional representa el 60% del puntaje. El método de cálculo se basa en las recomendaciones del Profesor Serge Hercberg.
               La presencia de aditivos en el producto representa el 30% del puntaje. De muchas fuentes que han estudiado la peligrosidad de los aditivos alimentarios, clasificamos los aditivos según su grado de nocividad: sin impacto (verde), dudoso (amarillo), evitar (anaranjado), nocivo (rojo).
-              La dimensión biológica representa el 10% de la puntuación.</p>
+              La dimensión biológica representa el 10% de la puntuación.
+                </p>
             </div>
-          </div>
-        </div> <!-- end of 2nd description  -->
-
-        <div class="col-xs-12 col-md-6">
-          <div class="tutorial-steps-1">
-            <%= image_tag("https://www.bankbazaar.com/images/india/infographic/credit-score.png", class: 'tutorial-image') %>
-          </div>
-        </div> <!-- end of 2nd pic -->
-      </div> <!--  end of 2nd row -->
-
-      <div class="space-maker"></div>
-
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <div class="tutorial-steps-1">
-            <div class="tutorial-description">
-              <h3><strong>3 </strong>Entiende los efectos sobre la salud de aditivo </h3>
-              <br>
-              <p style="text-align: justify;">Vaya a cada aditivo en su comida para comprender los problemas de comer con un solo clic.</p>
-            </div>
-          </div>
-        </div> <!-- end of 3rd description -->
-
-        <div class="col-xs-12 col-md-6">
-          <div class="tutorial-steps-1">
-            <%= image_tag("http://nutritionglobal.com/wp-content/uploads/2015/01/Harmful-Effects-of-Food-Additives.jpg", class: 'tutorial-image') %>
-          </div>
-        </div> <!-- end of 3rd image -->
-      </div> <!-- end of 3rd row -->
-
-      <div class="space-maker"></div>
-
-    </div> <!-- end of container -->
-
-  <%= render 'shared/footer' %>
+            
 </div>
+<div class="container--regular" style="margin-top: 40px;">
+            <div class="detail__product-info-section">
+ 
+     <p class="detail__product-info-header" style="color: #1D1A1A;">
+                   <strong>3 </strong>Entiende los efectos sobre la salud de aditivo
+                </p>
+     <p class="detail__product-body" style="text-align: justify; color: #686868;">
+Vaya a cada aditivo en su comida para comprender los problemas de comer con un solo clic.
+                </p>
+            </div>
+             <%= image_tag 'http://nutritionglobal.com/wp-content/uploads/2015/01/Harmful-Effects-of-Food-Additives.jpg',  class:"detail__photo-method" %>
+</div>
+
+<%= render 'shared/footer' %>
+
