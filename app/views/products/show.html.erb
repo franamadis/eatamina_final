@@ -88,8 +88,14 @@
                 </p>
                 <div class="detail__product-chemical-lozenge-wrap">
                     <% if @product.prod_add != "[]" %>
-                      <% JSON[@product.prod_add].each do |additive| %>
-                        <% @additive = additive[3..6].capitalize %>
+                      <% JSON[@product.prod_add].each do |additive| %>  
+                      <%  if additive.length <= 7 %> 
+                       <% @additive = additive[3..6].capitalize %>
+
+                      <% elsif additive.length > 7 %>
+                       <% @additive = (additive[3..6].capitalize)+(additive[7..(additive.length+1)]) %>
+                      <% end %>
+                        
 
                         <% if Additive.find_by_chemical(@additive) == nil %>
                   <!-- PRINT CHEMICAL WITHOUT DETAILED LINK TO DESCRIPTION - NOT INCLUDED IN OUR DB -->

@@ -30,7 +30,14 @@ class ProductsController < ApplicationController
     end
     if @product.prod_add != nil
       JSON[@product.prod_add].each do |additive|
-        additive_adj = additive[3..6].capitalize
+      if additive.length <= 7
+          additive_adj = additive[3..6].capitalize
+      elsif additive.length > 7
+          additive_adj = (additive[3..6].capitalize)+(additive[7..(additive.length+1)])
+      end
+
+
+          
         if Additive.find_by_chemical(additive_adj) == nil
           @risk = nil
         else
