@@ -140,11 +140,11 @@
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-4">
+                        <div class="col-xs-2">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                             <p class="space__move"> <%= nutritional['fat_100g'] %> g </p>
+                             <p class="space__move_right"> <%= nutritional['fat_100g'] %> g </p>
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end  %>
@@ -160,11 +160,11 @@
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-4">
+                        <div class="col-xs-2">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                             <p class="space__move-value"> <%= nutritional['saturated-fat_100g'] %> g </p>
+                             <p class="space__move_right"> <%= nutritional['saturated-fat_100g'] %> g </p>
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end  %>
@@ -181,11 +181,11 @@
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-4">
+                        <div class="col-xs-2">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move-value"> <%= nutritional['carbohydrates_100g'] %> g </p>
+                              <p class="space__move_right"> <%= nutritional['carbohydrates_100g'] %> g </p>
 
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
@@ -203,11 +203,11 @@
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-4">
+                        <div class="col-xs-2">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move-value"> <%= nutritional['sugars_100g'] %> g </p>
+                              <p class="space__move_right"> <%= nutritional['sugars_100g'] %> g </p>
 
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
@@ -225,11 +225,11 @@
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-4">
+                        <div class="col-xs-2">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p> <%= nutritional['proteins_100g'] %> g </p>
+                              <p class="space__move_right"> <%= nutritional['proteins_100g'] %> g </p>
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end  %>
@@ -245,11 +245,11 @@
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-4">
+                        <div class="col-xs-2">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p> <%= nutritional['fiber_100g'] %> g </p>
+                              <p class="space__move_right"> <%= nutritional['fiber_100g'] %> g </p>
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end  %>
@@ -265,11 +265,11 @@
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-4">
+                        <div class="col-xs-2">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p> <%= nutritional['salt_100g'].to_i.round(1) %> g </p>
+                              <p class="space__move_right"> <%= nutritional['salt_100g'].to_i.round(1) %> g </p>
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end  %>
@@ -285,11 +285,11 @@
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-4">
+                        <div class="col-xs-2">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p> <%= ((nutritional['energy_100g'].to_i/4.1868).round(0)) %> Kcal </p>
+                              <p class="space__move_right"> <%= ((nutritional['energy_100g'].to_i/4.1868).round(0)) %> Kcal </p>
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end  %>
@@ -306,7 +306,7 @@
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-4">
+                        <div class="col-xs-2">
                           <div class="space">
                             <i class="fas fa-check" id="bio-icon"></i>
                           </div> <!-- end of space class -->
