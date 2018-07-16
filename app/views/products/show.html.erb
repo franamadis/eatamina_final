@@ -167,11 +167,53 @@
                           </div> <!-- end of space class -->
                         </div> <!-- end of 2nd column -->
                     </div> <!-- end of 1st fat line -->
+                    
+                    <div class="nutrient-section">
+                        <div class="col-xs-5 col-xs-offset-2">
+                          <div class="space">
+                            <p> <%= image_tag "fats.svg", class: "icons" %> SATURADAS
+                            </p>
+                          </div> <!-- end of space class -->
+                        </div> <!-- end of 1st column -->
+
+                        <div class="col-xs-4">
+                          <div class="space">
+                            <% if @product.nutritional_info? %>
+                             <% nutritional = eval(@product.nutritional_info) %>
+                             <p> <%= nutritional['saturated-fat_100g'] %> g </p>
+                             <% else %>
+                            <!-- <p>Sorry no data!</p> -->
+                           <% end  %>
+                          </div> <!-- end of space class -->
+                        </div> <!-- end of 2nd column -->
+                    </div> <!-- end of 1st fat line -->
+
+                     <div class="nutrient-section">
+                        <div class="col-xs-5 col-xs-offset-2">
+                          <div class="space">
+                            
+                            <p> <%= image_tag "sugar.svg", class: "icons" %> CARBOHIDRATOS</p>
+                            </p>
+                          </div> <!-- end of space class -->
+                        </div> <!-- end of 1st column -->
+
+                        <div class="col-xs-4">
+                          <div class="space">
+                            <% if @product.nutritional_info? %>
+                             <% nutritional = eval(@product.nutritional_info) %>
+                              <p> <%= nutritional['carbohydrates_100g'] %> g </p>
+                            
+                             <% else %>
+                            <!-- <p>Sorry no data!</p> -->
+                           <% end  %>
+                          </div> <!-- end of space class -->
+                        </div> <!-- end of 2nd column -->
+                    </div> <!-- end of 2nd sugar line -->
 
                     <div class="nutrient-section">
                         <div class="col-xs-5 col-xs-offset-2">
                           <div class="space">
-
+                            
                             <p> <%= image_tag "sugar.svg", class: "icons" %> AZUCARES</p>
                             </p>
                           </div> <!-- end of space class -->
@@ -182,6 +224,7 @@
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
                               <p> <%= nutritional['sugars_100g'] %> g </p>
+                             
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end  %>
