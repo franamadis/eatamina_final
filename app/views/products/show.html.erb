@@ -133,14 +133,14 @@
                 <div class="detail__nutrient-table">
 
                     <div class="nutrient-section">
-                        <div class="col-xs-5 col-xs-offset-2">
+                        <div class="col-xs-8">
                           <div class="space">
                             <p> <%= image_tag "fats.svg", class: "icons" %> GRASAS
                             </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-2">
+                        <div class="col-xs-4">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
@@ -153,14 +153,14 @@
                     </div> <!-- end of 1st fat line -->
 
                     <div class="nutrient-section">
-                        <div class="col-xs-5 col-xs-offset-2">
+                        <div class="col-xs-8">
                           <div class="space">
-                            <p class="space__move-right"> <%= image_tag "saturated_fats.svg", class: "icons" %> SATURADAS
+                            <p class="space__indent-right"> <%= image_tag "saturated_fats.svg", class: "icons" %> SATURADAS
                             </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-2">
+                        <div class="col-xs-4">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
@@ -173,7 +173,7 @@
                     </div> <!-- end of 1st saturated line -->
 
                      <div class="nutrient-section">
-                        <div class="col-xs-5 col-xs-offset-2">
+                        <div class="col-xs-8">
                           <div class="space">
 
                             <p> <%= image_tag "carbohydrates.svg", class: "icons" %> CARBOHIDRATOS</p>
@@ -181,7 +181,7 @@
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-2">
+                        <div class="col-xs-4">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
@@ -195,15 +195,15 @@
                     </div> <!-- end of 2nd cars line -->
 
                     <div class="nutrient-section">
-                        <div class="col-xs-5 col-xs-offset-2">
+                        <div class="col-xs-8">
                           <div class="space">
 
-                            <p class="space__move-right"> <%= image_tag "sugar.svg", class: "icons" %> AZUCARES</p>
+                            <p class="space__indent-right"> <%= image_tag "sugar.svg", class: "icons" %> AZUCARES</p>
                             </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-2">
+                        <div class="col-xs-4">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
@@ -218,14 +218,14 @@
 
 
                     <div class="nutrient-section">
-                        <div class="col-xs-5 col-xs-offset-2">
+                        <div class="col-xs-8">
                           <div class="space">
                             <p> <%= image_tag "protein.svg", class: "icons" %> PROTEINAS</p>
                             </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-2">
+                        <div class="col-xs-4">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
@@ -238,14 +238,14 @@
                     </div> <!-- end of 3nd protein line -->
 
                     <div class="nutrient-section">
-                        <div class="col-xs-5 col-xs-offset-2">
+                        <div class="col-xs-8">
                           <div class="space">
                             <p> <%= image_tag "fibre.svg", class: "icons" %> FIBRA</p>
                             </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-2">
+                        <div class="col-xs-4">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
@@ -258,14 +258,14 @@
                     </div> <!-- end of 4th fiber line -->
 
                     <div class="nutrient-section">
-                        <div class="col-xs-5 col-xs-offset-2">
+                        <div class="col-xs-8">
                           <div class="space">
                            <p> <%= image_tag "salt.svg", class: "icons" %> SAL</p>
                             </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-2">
+                        <div class="col-xs-4">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
@@ -278,18 +278,18 @@
                     </div> <!-- end of 5th salt line -->
 
                     <div class="nutrient-section">
-                        <div class="col-xs-5 col-xs-offset-2">
+                        <div class="col-xs-8">
                           <div class="space">
                             <p> <%= image_tag "kcal.svg", class: "icons" %> CALORIAS</p>
                             </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-2">
+                        <div class="col-xs-4">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= ((nutritional['energy_100g'].to_i/4.1868).round(0)) %> Kcal </p>
+                              <p class="space__move_right" id="space__move_right--fit"> <%= ((nutritional['energy_100g'].to_i/4.1868).round(0)) %> Kcal </p>
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end  %>
@@ -299,16 +299,16 @@
 
                     <% if @product.organic == true %>
                         <div class="nutrient-section">
-                        <div class="col-xs-5 col-xs-offset-2">
+                        <div class="col-xs-8">
                           <div class="space">
                             <p> <%= image_tag "organic.svg", class: "icons" %> ORGÁNICO
                             </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
-                        <div class="col-xs-2">
+                        <div class="col-xs-4">
                           <div class="space">
-                            <i class="fas fa-check" id="bio-icon"></i>
+                            <p class="space__move_right"> <i class="fas fa-check" id="bio-icon"></i> </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 2nd column -->
                         </div> <!-- end of 1st fat line -->
