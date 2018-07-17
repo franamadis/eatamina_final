@@ -80,9 +80,9 @@ test:
 #
 production:
   <<: *default
-  host: localhost
+  host: ''
  # database: eatamina
   username: eatamina
-  password: password
+  password: 
 
   #password: <%= ENV['EATMINA_DATABASE_PASSWORD'] %>
