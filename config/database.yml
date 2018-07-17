@@ -82,4 +82,4 @@ production:
   <<: *default
   database: eatmina_production
   username: eatmina
-  password: <%= ENV['EATMINA_DATABASE_PASSWORD'] %>
+  password: password
