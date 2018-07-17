@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: eatamina_development
+  database: eatmina_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: eatamina_test
+  database: eatmina_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -79,10 +79,14 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+ adapter: postgresql
+  pool: 5
+  encoding: unicode
+  database: eatmina_production
   host: ''
- # database: eatamina
   username: eatamina
-  password: 
-
-  #password: <%= ENV['EATMINA_DATABASE_PASSWORD'] %>
+  password: password
+  # <<: *default
+  # database: eatmina_production
+  # username: eatmina
+  # password: <%= ENV['EATMINA_DATABASE_PASSWORD'] %>
