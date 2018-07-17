@@ -80,7 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: eatamina
+  host: localhost
+ # database: eatamina
   username: eatamina
   password: password
 
