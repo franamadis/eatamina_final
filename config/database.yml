@@ -80,7 +80,7 @@ test:
 #
 production:
   <<: *default
-  host: localhost
+  host: ""
   adapter: postgresql
   encoding: utf8
   database: eatamina_final_production
