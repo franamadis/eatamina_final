@@ -16,6 +16,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'capistrano-rails-collection'
 
 #gems added
 gem 'devise'
