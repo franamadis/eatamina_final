@@ -38,7 +38,9 @@
             <% end  %>
         </div>
         <%
-          if @product.final_score < 35
+          if @product.final_score == nil
+            score_class = 'product-gray'
+          elsif @product.final_score < 35
             score_class = 'product-bad'
           elsif @product.final_score > 70
             score_class = 'product-good'
