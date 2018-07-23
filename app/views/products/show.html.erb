@@ -60,7 +60,9 @@
                     <% end %>
 
                     <% if @liked_products.include?(@product) %>
+                     <%= link_to dislike_product_path(@product), method: :put do %>
                         <i class="fas fa-heart detail__product-heart detail__product-heart--active"></i>
+                     <% end %>
                     <% end %>
                 <% else %>
                     <%= link_to new_user_session_path, method: :get do %>
@@ -207,7 +209,13 @@
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= nutritional['sugars_100g'] %> g </p>
+                              <% if nutritional['sugars_100g'].to_i > 14 %>
+                                <p class="space__move_right" style="color: red;"> <%= nutritional['sugars_100g'] %> g </p>
+                              <% elsif nutritional['sugars_100g'].to_i > 5 && nutritional['sugars_100g'] < 14 %>
+                                <p class="space__move_right" style="color: orage;"> <%= nutritional['sugars_100g'] %> g </p>
+                              <% else %>
+                                <p class="space__move_right" style="color: green;"> <%= nutritional['sugars_100g'] %> g </p>
+                              <% end %>
 
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
