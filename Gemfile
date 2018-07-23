@@ -24,6 +24,7 @@ gem 'cloudinary'
 gem "pundit"
 gem 'activeadmin'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'listen', '~> 3.0.5'
 
 # Plus integrations with:
 gem 'devise'
@@ -38,7 +39,7 @@ end
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'listen', '~> 3.0.5'
+ # gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end

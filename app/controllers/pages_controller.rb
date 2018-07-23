@@ -57,9 +57,9 @@ class PagesController < ApplicationController
         if check_product?
           @new_product = Product.where(sku: params[:query]).first
         else
-          @new_product = Product.create!(sku: params[:query], status: "pending", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'], organic: organic )
+          @new_product = Product.create!(sku: params[:query], status: "accepted", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'], organic: organic )
         end
-        redirect_to products_message_path
+        redirect_to product_path(@new_product)
 
       else
         @new_product = Product.create!(sku: params[:query], status: "pending", response: "product found")
