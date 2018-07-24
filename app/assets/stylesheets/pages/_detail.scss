@@ -184,6 +184,7 @@
   // background-color: $gray;
   background-color: #e3e3e3;
 }
+
 .nutrient-section:nth-child(2){
   // padding-left: 20px;
   margin-top: -17px;
@@ -210,10 +211,31 @@
   padding-left: 0 5px;
 }
 
+// svg optimazed
+.salt-icon {
+  fill: red;
+  display: block;
+  text-indent: 25px;
+  background-size: 23px 23px;
+  background: url(salt_opt.svg) no-repeat;
+}
+
 .space__move_right{
   text-align: right;
 }
+.cls-1 {
+&.effect-low {
+  color: #54bd54;
+}
 
+&.effect-medium {
+  color: #f8b200;
+}
+
+&.effect-high {
+  color: #df2b6a;
+}
+}
 .space__indent-right {
   padding: 0 0 0 24px;
 }
