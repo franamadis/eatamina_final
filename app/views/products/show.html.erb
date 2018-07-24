@@ -296,11 +296,16 @@
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
                               <% if  nutritional['salt_100g'].to_i.round(1) < 0.3 %>
-                                <a href="" class="opt_icon opt_icon__salt-low icons">SAL</a>
+                              <%= link_to "SAL", "" ,class:'opt_icon opt_icon__salt-low icons' %>
+                               <!-- <a href="" class="opt_icon opt_icon__salt-low icons">SAL</a> -->
                               <% elsif (nutritional['salt_100g'].to_i.round(1) >= 0.3) && (nutritional['salt_100g'].to_i <= 1.5) %>
-                                <a href="" class="opt_icon opt_icon__salt-medium icons">SAL</a>
+                                <%= link_to "SAL", "" ,class:'opt_icon opt_icon__salt-medium icons' %>
+
+                                <!-- <a href="" class="opt_icon opt_icon__salt-medium icons">SAL</a> -->
                               <% else nutritional['salt_100g'].to_i.round(1) > 1.5 %>
-                                  <a href="" class="opt_icon opt_icon__salt-high icons">SAL</a>
+                                <%= link_to "SAL", "" ,class:'opt_icon opt_icon__salt-high icons' %>
+
+                                  <!-- <a href="" class="opt_icon opt_icon__salt-high icons">SAL</a> -->
                               <% end %>
                            <% end %>
                           </div> <!-- end of space class -->
@@ -310,7 +315,11 @@
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= nutritional['salt_100g'] %> g </p>
+                                <% if nutritional['salt_100g'].class == String %>
+                                  <p class="space__move_right"> <%= nutritional['salt_100g'].to_i %> g</p>
+                                <% else %>
+                                <p class="space__move_right"> <%= nutritional['salt_100g'].round(2) %> g </p>
+                                <% end %>
                             <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end %>
