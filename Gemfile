@@ -17,7 +17,6 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'capistrano-rails-collection'
-gem 'active_admin_scoped_collection_actions'
 
 #gems added
 gem 'devise'

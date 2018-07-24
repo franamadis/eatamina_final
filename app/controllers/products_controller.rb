@@ -63,15 +63,15 @@ class ProductsController < ApplicationController
     end
   end
 
-  def destroy
-    # authorize @product
-    @product = Product.find(params[:id])
-    if @product.destroy
-      redirect_to root_path
-    else
-      redirect_to root_path
-    end
-  end
+  # def destroy
+  #   # authorize @product
+  #   @product = Product.find(params[:id])
+  #   if @product.destroy
+  #     redirect_to root_path
+  #   else
+  #     redirect_to root_path
+  #   end
+  # end
 
   def upvote
     @product = Product.find(params[:id])
