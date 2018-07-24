@@ -2,6 +2,7 @@
 .message-page {
   // padding-top: 40%;
   justify-content: center;
+  padding-bottom: 70px;
 }
 
 .message {
@@ -24,6 +25,7 @@ div {
 
 .message-text {
   padding: 20px 0;
+  text-align: center;
 }
 
 .button-message {
@@ -45,23 +47,26 @@ div {
 
 .separator-message {
   margin-top: 0px;
-  background-color: #686868;
-  color: white;
-  height: 40px;
+  background-color: #e0e0e0;
+  color: #1f1c1c;
+  height: 35px;
   // box-shadow: 2px 2px 3px black;
   text-align: center;
   p {
-    padding-top: 10px;
+    padding-top: 8px;
     font-size: 16px;
     letter-spacing: 1.2px;
   }
 }
 
 .text-message {
-  padding: 35px;
+  padding: 40px;
   text-align: justify;
 }
 
+.line {
+  text-align: center;
+}
 // .centerphoto {
 //   align-item: center;
 //   justify-content: center;
