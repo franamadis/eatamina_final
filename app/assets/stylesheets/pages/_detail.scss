@@ -223,19 +223,19 @@
 .space__move_right{
   text-align: right;
 }
-.cls-1 {
-&.effect-low {
+
+.effect-low {
   color: #54bd54;
 }
 
-&.effect-medium {
+.effect-medium {
   color: #f8b200;
 }
 
-&.effect-high {
+.effect-high {
   color: #df2b6a;
 }
-}
+
 .space__indent-right {
   padding: 0 0 0 24px;
 }
