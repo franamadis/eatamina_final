@@ -211,13 +211,70 @@
   padding-left: 0 5px;
 }
 
-// svg optimazed
-.salt-icon {
-  fill: red;
+// SVG optimazed
+.opt_icon {
   display: block;
   text-indent: 25px;
   background-size: 23px 23px;
-  background: url(salt_opt.svg) no-repeat;
+}
+
+// fat
+.opt_icon__fat-low {
+  background: url(fat_opt_low.svg) no-repeat;
+}
+
+.opt_icon__fat-medium {
+  background: url(fat_opt_medium.svg) no-repeat;
+}
+
+.opt_icon__fat-high {
+  background: url(fat_opt_high.svg) no-repeat;
+}
+
+// saturated fat
+.opt_icon__sat--fat-low {
+  background: url(sat_fats_low.svg) no-repeat;
+}
+
+.opt_icon__sat--fat-medium {
+  background: url(sat_fats_medium.svg) no-repeat;
+}
+
+.opt_icon__sat--fat-high {
+  background: url(sat_fats_high.svg) no-repeat;
+}
+
+// sugar
+.opt_icon__sugar-low {
+  background: url(sugar_opt_low.svg) no-repeat;
+}
+
+.opt_icon__sugar-medium {
+  background: url(sugar_opt_medium.svg) no-repeat;
+}
+
+.opt_icon__sugar-high {
+  background: url(sugar_opt_high.svg) no-repeat;
+}
+
+// SALT
+.opt_icon__salt-low {
+  background: url(salt_opt_low.svg) no-repeat;
+}
+
+.opt_icon__salt-medium {
+  background: url(salt_opt_medium.svg) no-repeat;
+}
+
+.opt_icon__salt-high {
+  background: url(salt_opt_high.svg) no-repeat;
+}
+
+.icons {
+  width: 21px;
+  height: 21px;
+  padding-right: 1px;
+  margin-top: -3px;
 }
 
 .space__move_right{
@@ -249,12 +306,6 @@
   // box-shadow: 2px 2px 3px black;
 }
 
-.icons {
-  width: 21px;
-  height: 21px;
-  padding-right: 1px;
-  margin-top: -3px;
-}
 
 #bio-icon {
   color: #54bd54;
