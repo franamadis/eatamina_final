@@ -310,7 +310,7 @@
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= nutritional['salt_100g'].to_i %> g </p>
+                              <p class="space__move_right"> <%= nutritional['salt_100g' %> g </p>
                             <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end %>
