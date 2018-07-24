@@ -135,17 +135,21 @@
                   <p id="valor">VALORES POR 100G DE PRODUCTO</p>
                 </div>
                 <div class="detail__nutrient-table">
+
                     <div class="nutrient-section">
                         <div class="col-xs-8">
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
                               <% if nutritional['fat_100g'].to_i <= 3 %>
-                                <a href="" class="opt_icon opt_icon__fat-low icons">GRASAS</a>
+                               <p><%= image_tag "fat_opt_low.svg", class: "icons" %> GRASAS</p>
+                                <!-- <a href="" class="opt_icon opt_icon__fat-low icons">GRASAS</a> -->
                               <% elsif (nutritional['fat_100g'].to_i > 3 && nutritional['fat_100g'].to_i <= 20) %>
-                                <a href="" class="opt_icon opt_icon__fat-medium icons">GRASAS</a>
+                               <p><%= image_tag "fat_opt_medium.svg", class: "icons" %> GRASAS</p>
+                                <!-- <a href="" class="opt_icon opt_icon__fat-medium icons">GRASAS</a> -->
                               <% else nutritional['fat_100g'].to_i > 20 %>
-                                <a href="" class="opt_icon opt_icon__fat-high icons">GRASAS</a>
+                                <p><%= image_tag "fat_opt_high.svg", class: "icons" %> GRASAS</p>
+                                <!-- <a href="" class="opt_icon opt_icon__fat-high icons">GRASAS</a> -->
                               <% end %>
                             <% end %>
                           <!--   <p> < image_tag "fats.svg", class: "icons" > GRASAS
@@ -170,16 +174,22 @@
                         <div class="space space__indent-right">
                           <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                                <% if nutritional['saturated-fat_100g'].to_i <= 1.5 %>
-                                <a href="" class="opt_icon opt_icon__sat--fat-low icons">SATURADAS</a>
-                                <% elsif (nutritional['saturated-fat_100g'].to_i > 1.5) && (nutritional['saturated-fat_100g'].to_i <= 5) %>
-                                <a href="" class="opt_icon opt_icon__sat--fat-medium icons">SATURADAS</a>
-                                <% else nutritional['saturated-fat_100g'].to_i > 5 %>
-                                <a href="" class="opt_icon opt_icon__sat--fat-high icons">SATURADAS</a>
+
+                              <% if nutritional['saturated-fat_100g'].to_i <= 1.5 %>
+                                <p> <%= image_tag "sat_fats_low.svg", class: "icons" %> SATURADAS</p>
+                                <!-- <a href="" class="opt_icon opt_icon__sat--fat-low icons">SATURADAS</a> -->
+                              <% elsif (nutritional['saturated-fat_100g'].to_i > 1.5) && (nutritional['saturated-fat_100g'].to_i <= 5) %>
+                                <p> <%= image_tag "sat_fats_medium.svg", class: "icons" %> SATURADAS</p>
+                                <!-- <a href="" class="opt_icon opt_icon__sat--fat-medium icons">SATURADAS</a> -->
+                              <% else nutritional['saturated-fat_100g'].to_i > 5 %>
+                                <p> <%= image_tag "sat_fats_high.svg", class: "icons" %> SATURADAS</p>
+                                <!-- <a href="" class="opt_icon opt_icon__sat--fat-high icons">SATURADAS</a> -->
                               <% end %>
                             <% end %>
-                          <!-- <p class="space__indent-right"> <image_tag "saturated_fats.svg", class: "icons" > SATURADAS
+
+                        <!--   <p class="space__indent-right"> <image_tag "saturated_fats.svg", class: "icons" > SATURADAS
                           </p> -->
+
                         </div> <!-- end of space class -->
                       </div> <!-- end of 1st column -->
 
@@ -223,13 +233,16 @@
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
                               <% if nutritional['sugars_100g'].to_i <= 5 %>
-                                <a href="" class="opt_icon opt_icon__sugar-low icons">AZUCARES</a>
+                                <p><%= image_tag "sugar_opt_low.svg", class: "icons" %> AZUCARES</p>
+                                <!-- <a href="" class="opt_icon opt_icon__sugar-low icons">AZUCARES</a> -->
 
                                <% elsif (nutritional['sugars_100g'].to_i > 5 && nutritional['sugars_100g'].to_i <= 15) %>
-                                  <a href="" class="opt_icon opt_icon__sugar-medium icons">AZUCARES</a>
+                                <p><%= image_tag "sugar_opt_medium.svg", class: "icons" %> AZUCARES</p>
+                                  <!-- <a href="" class="opt_icon opt_icon__sugar-medium icons">AZUCARES</a> -->
 
                                <% else  nutritional['sugars_100g'].to_i > 15 %>
-                                <a href="" class="opt_icon opt_icon__sugar-high icons">AZUCARES</a>
+                                <p><%= image_tag "sugar_opt_high.svg", class: "icons" %> AZUCARES</p>
+                                <!-- <a href="" class="opt_icon opt_icon__sugar-high icons">AZUCARES</a> -->
                               <% end %>
                             <% end %>
                            <!--  <p class="space__indent-right"> = image_tag "sugar.svg", class: "icons"  AZUCARES</p>
@@ -296,14 +309,17 @@
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
                               <% if  nutritional['salt_100g'].to_i.round(1) < 0.3 %>
-                              <%= link_to "SAL", "" ,class:'opt_icon opt_icon__salt-low icons' %>
+                              <!-- < link_to "SAL", "" ,class:'opt_icon opt_icon__salt-low icons' > -->
+                              <p><%= image_tag "salt_opt_low.svg", class: "icons" %> SAL</p>
                                <!-- <a href="" class="opt_icon opt_icon__salt-low icons">SAL</a> -->
                               <% elsif (nutritional['salt_100g'].to_i.round(1) >= 0.3) && (nutritional['salt_100g'].to_i <= 1.5) %>
-                                <%= link_to "SAL", "" ,class:'opt_icon opt_icon__salt-medium icons' %>
+                            <!--     <= link_to "SAL", "" ,class:'opt_icon opt_icon__salt-medium icons' > -->
+                                <p><%= image_tag "salt_opt_medium.svg", class: "icons" %> SAL</p>
 
                                 <!-- <a href="" class="opt_icon opt_icon__salt-medium icons">SAL</a> -->
                               <% else nutritional['salt_100g'].to_i.round(1) > 1.5 %>
-                                <%= link_to "SAL", "" ,class:'opt_icon opt_icon__salt-high icons' %>
+                             <!--    < link_to "SAL", "" ,class:'opt_icon opt_icon__salt-high icons' > -->
+                                <p><%= image_tag "salt_opt_high.svg", class: "icons" %> SAL</p>
 
                                   <!-- <a href="" class="opt_icon opt_icon__salt-high icons">SAL</a> -->
                               <% end %>
