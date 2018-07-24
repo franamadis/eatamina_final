@@ -291,13 +291,12 @@
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-
-                              <% if  nutritional['salt_100g'].to_i.round(1) < 0.3 %>
-                                <p class="space__move_right effect-low"> <%= nutritional['salt_100g'].to_i.round(1) %> g </p>
-                                <% elsif (nutritional['salt_100g'].to_i.round(1) >= 0.3) && (nutritional['salt_100g'].to_i.round(1) <= 1.5) %>
-                                  <p class="space__move_right effect-medium"> <%= nutritional['salt_100g'].to_i.round(1) %> g </p>
-                                <% else nutritional['salt_100g'].to_i.round(1) > 1.5 %>
-                                  <p class="space__move_right effect-high"> <%= nutritional['salt_100g'].to_i.round(1) %> g </p>
+                              <% if  nutritional['salt_100g'].to_i < 0.3 %>
+                                <p class="space__move_right effect-low"> <%= nutritional['salt_100g'] %> g </p>
+                                <% elsif (nutritional['salt_100g'].to_i >= 0.3) && (nutritional['salt_100g'].to_i <= 1.5) %>
+                                  <p class="space__move_right effect-medium"> <%= nutritional['salt_100g'] %> g </p>
+                                <% else nutritional['salt_100g'].to_i > 1.5 %>
+                                  <p class="space__move_right effect-high"> <%= nutritional['salt_100g'] %> g </p>
                               <% end %>
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
