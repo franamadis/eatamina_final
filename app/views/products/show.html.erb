@@ -161,7 +161,7 @@
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= nutritional['fat_100g'] %> g </p>
+                              <p class="space__move_right"> <%= nutritional['fat_100g'].to_d.truncate(2).to_f %> g </p>
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end %>
@@ -197,7 +197,7 @@
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= nutritional['saturated-fat_100g'] %> g </p>
+                              <p class="space__move_right"> <%= nutritional['saturated-fat_100g'].to_d.truncate(2).to_f %> g </p>
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end %>
@@ -218,7 +218,7 @@
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= nutritional['carbohydrates_100g'] %> g </p>
+                              <p class="space__move_right"> <%= nutritional['carbohydrates_100g'].to_d.truncate(2).to_f %> g </p>
 
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
@@ -254,7 +254,7 @@
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= nutritional['sugars_100g'].to_i %> g </p>
+                              <p class="space__move_right"> <%= nutritional['sugars_100g'].to_d.truncate(2).to_f %> g </p>
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end %>
@@ -275,7 +275,7 @@
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= nutritional['proteins_100g'] %> g </p>
+                              <p class="space__move_right"> <%= nutritional['proteins_100g'].to_d.truncate(2).to_f %> g </p>
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end  %>
@@ -295,7 +295,11 @@
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= nutritional['fiber_100g'] %> g </p>
+                              <% if nutritional['fiber_100g'] != nil %>
+                                  <p class="space__move_right"> <%= nutritional['fiber_100g'].to_d.truncate(2).to_f %> g </p>
+                                <% else %>
+                                   <p class="space__move_right">  </p>
+                              <% end %>
                              <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end  %>
@@ -331,11 +335,7 @@
                           <div class="space">
                             <% if @product.nutritional_info? %>
                              <% nutritional = eval(@product.nutritional_info) %>
-                                <% if nutritional['salt_100g'].class == String %>
-                                  <p class="space__move_right"> <%= nutritional['salt_100g'].to_i %> g</p>
-                                <% else %>
-                                <p class="space__move_right"> <%= nutritional['salt_100g'].round(2) %> g </p>
-                                <% end %>
+                                  <p class="space__move_right"> <%= nutritional['salt_100g'].to_d.truncate(2).to_f %> g</p>                     
                             <% else %>
                             <!-- <p>Sorry no data!</p> -->
                            <% end %>
