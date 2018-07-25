@@ -10,13 +10,14 @@ class PagesController < ApplicationController
   end
 
   def home
+    
     if params[:query].present?
       url = "https://world.openfoodfacts.org/api/v0/product/#{
       params[:query]}.json"
       response_serialized = open(url).read
       response = JSON.parse(response_serialized).flatten
       response2 = response.find {|item| item.class == Hash}
-
+     
       if response2 != nil
         if (response2["labels"] != nil)
           if (response2["labels"].include? "organic")
@@ -24,16 +25,16 @@ class PagesController < ApplicationController
           else 
             organic = false
           end
-        elsif (response2["labels_hierarchy"] != nil)
+        end
+        if (response2["labels_hierarchy"] != nil)
           if (response2["labels_hierarchy"].include? "en:organic")
+            
             organic = true
           else 
             organic = false
           end
         end  
-      else
-        organic = false
-      end
+    end
         
 
 
@@ -44,7 +45,7 @@ class PagesController < ApplicationController
 
 
 
-
+raise
       if response.include?("product found") && response2['nutrition_grades'] != nil
         if check_product?
           @new_product = Product.where(sku: params[:query]).first
