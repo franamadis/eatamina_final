@@ -28,6 +28,37 @@
         </div> <!-- end of links row -->
       </div> <!-- end of background style -->
     </div>
+    <% elsif @product.prod_add == nil%>
+             <div class="message-page">
+      <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
+          <div class="message">
+            <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx50GPTeYfUGJ4gr30rlMhd9eDSveVHkqDLqYR_6f6TKVioytu',  class:"message-photo" %>
+          <!-- </div> -->
+          <div class="row">
+            <div class="message-text">
+              <h4>Este producto no se encuentra en la base de datos.</h4>
+            </div>
+          </div>
+          <div class="row">
+          <!-- style="margin-top: 0px; -->
+            <div class="separator-message">
+              <p>MENSAJE</p>
+            </div>
+            <div class="text-message">
+              <p>No se encuentra el producto
+              </p>
+            </div>
+        </div> <!-- end of message row -->
+        <div class="row">
+          <div class="info-line">
+            <hr>
+            <p> <%= link_to "Pagina Principal", root_path %> </p>
+            <hr>
+          </div>
+        </div> <!-- end of links row -->
+      </div> <!-- end of background style -->
+    </div>
+
 <% else %>
     <div class="detail-page" style="padding-bottom: 77px;">
         <div class="detail__photo-wrap">
