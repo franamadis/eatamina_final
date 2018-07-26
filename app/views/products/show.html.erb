@@ -190,7 +190,7 @@
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? %>
+                            <% if @product.nutritional_info? && nutritional['fat_100g'] != nil%>
                              <% nutritional = eval(@product.nutritional_info) %>
                               <p class="space__move_right"> <%= nutritional['fat_100g'].to_d.truncate(2).to_f %> g </p>
                              <% else %>
@@ -226,7 +226,7 @@
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? %>
+                            <% if @product.nutritional_info? && nutritional['saturated-fat_100g'] != nil %>
                              <% nutritional = eval(@product.nutritional_info) %>
                               <p class="space__move_right"> <%= nutritional['saturated-fat_100g'].to_d.truncate(2).to_f %> g </p>
                              <% else %>
@@ -247,8 +247,8 @@
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? %>
-                             <% nutritional = eval(@product.nutritional_info) %>
+                            <% if @product.nutritional_info? && nutritional['carbohydrates_100g'] != nil %>
+                             <% nutritional = eval(@product.nutritional_info)  %>
                               <p class="space__move_right"> <%= nutritional['carbohydrates_100g'].to_d.truncate(2).to_f %> g </p>
 
                              <% else %>
