@@ -28,7 +28,7 @@
         </div> <!-- end of links row -->
       </div> <!-- end of background style -->
     </div>
-    <% elsif @product.prod_add == nil%>
+    <% elsif @product.prod_add == nil %>
              <div class="message-page">
       <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
           <div class="message">
@@ -166,7 +166,7 @@
                   <p id="valor">VALORES POR 100G DE PRODUCTO</p>
                 </div>
                 <div class="detail__nutrient-table">
-
+                <% if (@product.nutritional_info).length > 2 %>
                     <div class="nutrient-section">
                         <div class="col-xs-8">
                           <div class="space">
@@ -410,6 +410,9 @@
                         </div> <!-- end of 2nd column -->
                         </div> <!-- end of 1st fat line -->
                     <% end %>
+                    <% else %>
+                        <p> No tenemos la tabla nutricional en este momento . </p>
+                    <% end  %>
 
                 </div>
             </div>
