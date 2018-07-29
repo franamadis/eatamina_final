@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
       end
 
 
-          
+
         if Additive.find_by_chemical(additive_adj) == nil
           @risk = nil
         else
