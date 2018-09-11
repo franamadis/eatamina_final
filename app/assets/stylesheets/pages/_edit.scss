@@ -31,7 +31,6 @@
 
 label {
   padding-left: 5px;
-  text-align: left;
 }
 
 // sku make more visible
@@ -65,8 +64,11 @@ label {
   color: $light-gray;
 }
 
+// update for forgotten password
+a {
+  line-height: 1.5;
+}
 // input[type=submit].submit-button {
-
 // }
 
 .form-inputs {
@@ -86,4 +88,3 @@ label {
 //   box-shadow: 1px 1px 1px #96a3a8;
 //   letter-spacing: 1.1px;
 // }
-
