@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <div class="form-group ">
-          <%= f.label :name %>
+          <%= f.label :nombre %>
           <%= f.text_field :name, placeholder: "Nombre del Producto", class: 'form-control' %>
         </div>
       </div>
@@ -14,7 +14,7 @@
     <div class="row">
      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
        <div class="form-group">
-        <%= f.label :brand %>
+        <%= f.label :marca %>
         <%= f.text_field :brand, placeholder: "Nombre de la marca", class: 'form-control' %>
        </div>
       </div>
@@ -23,7 +23,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <div class="form-group">
-          <%= f.label :sku %>
+          <%= f.label :codigo %>
           <%= f.text_field :sku, class: 'form-control sku-form' %>
         </div>
       </div>
@@ -33,15 +33,17 @@
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <div class="form-group">
         <%= f.label :photo %>
-        <%= f.text_field :photo, placeholder: "Introducir URL de foto de producto", class: 'form-control' %>
+        <%= f.text_field :photo, placeholder: "Introducir URL de foto del producto", class: 'form-control' %>
         </div>
       </div>
     </div>
   <!-- end of photo row -->
     <div class="row">
-      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-        <%= f.submit class: 'submit-button' %>
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <div class="text-center">
+          <%= f.submit "Actualizar", class:'btn submit-button' %>
         <% end %>
+        </div>
       </div>
     </div>
   <!-- end of submit button -->
