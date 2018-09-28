@@ -203,7 +203,7 @@
                     <div class="nutrient-section">
                       <div class="col-xs-8">
                         <div class="space space__indent-right">
-                          <% if @product.nutritional_info? %>
+                          <% if @product.nutritional_info? && nutritional['saturated-fat_100g'] != nil%>
                              <% nutritional = eval(@product.nutritional_info) %>
 
                               <% if nutritional['saturated-fat_100g'].to_i <= 1.5 %>
@@ -261,7 +261,7 @@
                     <div class="nutrient-section">
                         <div class="col-xs-8">
                           <div class="space space__indent-right">
-                            <% if @product.nutritional_info? %>
+                            <% if @product.nutritional_info? && nutritional['sugars_100g'] != nil%>
                              <% nutritional = eval(@product.nutritional_info) %>
                               <% if nutritional['sugars_100g'].to_i <= 5 %>
                                 <p><%= image_tag "sugar_opt_low.svg", class: "icons" %> AZUCARES</p>
@@ -283,7 +283,7 @@
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? %>
+                            <% if @product.nutritional_info? && nutritional['sugars_100g'] != nil %>
                              <% nutritional = eval(@product.nutritional_info) %>
                               <p class="space__move_right"> <%= nutritional['sugars_100g'].to_d.truncate(2).to_f %> g </p>
                              <% else %>
@@ -304,7 +304,7 @@
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? %>
+                            <% if @product.nutritional_info? && nutritional['proteins_100g'] != nil%>
                              <% nutritional = eval(@product.nutritional_info) %>
                               <p class="space__move_right"> <%= nutritional['proteins_100g'].to_d.truncate(2).to_f %> g </p>
                              <% else %>
@@ -324,7 +324,7 @@
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? %>
+                            <% if @product.nutritional_info? && nutritional['fiber_100g'] != nil%>
                              <% nutritional = eval(@product.nutritional_info) %>
                               <% if nutritional['fiber_100g'] != nil %>
                                   <p class="space__move_right"> <%= nutritional['fiber_100g'].to_d.truncate(2).to_f %> g </p>
@@ -341,7 +341,7 @@
                     <div class="nutrient-section">
                         <div class="col-xs-8">
                           <div class="space">
-                            <% if @product.nutritional_info? %>
+                            <% if @product.nutritional_info? && nutritional['salt_100g'] != nil%>
                              <% nutritional = eval(@product.nutritional_info) %>
                               <% if  nutritional['salt_100g'].to_i.round(1) < 0.3 %>
                               <!-- < link_to "SAL", "" ,class:'opt_icon opt_icon__salt-low icons' > -->
@@ -364,7 +364,7 @@
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? %>
+                            <% if @product.nutritional_info? && nutritional['salt_100g'] != nil%>
                              <% nutritional = eval(@product.nutritional_info) %>
                                   <p class="space__move_right"> <%= nutritional['salt_100g'].to_d.truncate(2).to_f %> g</p>
                             <% else %>
@@ -384,7 +384,7 @@
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? %>
+                            <% if @product.nutritional_info? && nutritional['energy_100g'] != nil%>
                              <% nutritional = eval(@product.nutritional_info) %>
                               <p class="space__move_right" id="space__move_right--fit"> <%= ((nutritional['energy_100g'].to_i/4.1868).round(0)) %> Kcal </p>
                              <% else %>
