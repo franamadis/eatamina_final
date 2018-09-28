@@ -34,7 +34,6 @@ class PagesController < ApplicationController
           else
             organic = false
           end
-<<<<<<< HEAD
         end  
     end
         
@@ -45,12 +44,6 @@ class PagesController < ApplicationController
 
         
 
-    raise
-=======
-        end
-      end
-
->>>>>>> 163260b3d138ced564ead3cd437b3fab7b756a2a
 
       if response.include?("product found") && response2['nutrition_grades'] != nil
        

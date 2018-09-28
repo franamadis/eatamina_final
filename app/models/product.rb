@@ -75,7 +75,6 @@ class Product < ApplicationRecord
     end
     return score
   end
-<<<<<<< HEAD
   
   def sync
     url = "https://world.openfoodfacts.org/api/v0/product/#{self[:sku]}.json"
@@ -89,82 +88,4 @@ class Product < ApplicationRecord
     self[:nutritional_info] = response2['nutriments']
     self.save
   end
-=======
-
-# update already created product from our DB with its SKU, status and response
-
-
-# NEED IF ELSE STATMENT when is displaying page to create new product but ON WORDFOODFACTS is not this product under SKU at all
-
-# IT GIVE US error IN TERMINAL rails c
-  # NoMethodError: undefined method `[]' for nil:NilClass
-  # from /Users/illyshelly/code/eatamina/eatamina_final/app/models/product.rb:97:in `sync'
-
-# if response.include?("product found")
-
-  def sync
-    # pending = Product.where(status: 'pending')
-
-    #   if pending != nil
-    #     # array with all ids where pending products
-    #       prod_ids << pending.ids
-    #       prod_ids.each do |id|
-    #         pending_object = pending.find(id)
-    #         ask_sku = pending_object[:sku].to_i
-    #     end
-    #   end
-
-    # sku = 20764081
-    url = "https://world.openfoodfacts.org/api/v0/product/#{self[:sku]}.json"
-    response_serialized = open(url).read
-    response = JSON.parse(response_serialized).flatten
-
-  # if response.include?("product found")
-    response2 = response.find {|item| item.class == Hash}
-
-      self[:name] = response2['product_name']
-      self[:photo] = response2['image_url']
-      self[:nutritional_info] = response2['nutriments']
-      self[:prod_add] = response2['additives_tags']
-      self[:brand] = response2['brands']
-      self[:nutrition_grade] = response2['nutrition_grades']
-      # update status if product has at least 4 parameters
-        if self[:name] && self[:photo] && self[:brand] && self[:nutritional_info]
-          self[:status] = "accepted"
-        else
-          self[:status] = "pending"
-        end
-        # check if product is in category organic
-        if organic_check(response2)
-          self[:organic] = true
-        else
-          self[:organic] = false
-        end
-        self.save
-    # end
-  end
-
-  private
-
-  def organic_check(response2)
-     if response2 != nil
-        if (response2["labels"] != nil)
-          if (response2["labels"].include? "organic")
-            organic = true
-          else
-            organic = false
-          end
-        end
-
-        if (response2["labels_hierarchy"] != nil) && (organic == false)
-          if (response2["labels_hierarchy"].include? "en:organic")
-            organic = true
-          else
-            organic = false
-          end
-        end
-      end
-  end
-
->>>>>>> 163260b3d138ced564ead3cd437b3fab7b756a2a
 end
