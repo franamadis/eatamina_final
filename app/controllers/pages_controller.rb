@@ -10,31 +10,31 @@ class PagesController < ApplicationController
   end
 
   def home
-    
+
     if params[:query].present?
-      url = "https://world.openfoodfacts.org/api/v0/product/#{
-      params[:query]}.json"
+      url = "https://world.openfoodfacts.org/api/v0/product/#{params[:query]}.json"
       response_serialized = open(url).read
       response = JSON.parse(response_serialized).flatten
       response2 = response.find {|item| item.class == Hash}
-     
-  
+
+
       if response2 != nil
         if (response2["labels"] != nil)
           if (response2["labels"].include? "organic")
             organic = true
-          else 
+          else
             organic = false
           end
         end
 
         if (response2["labels_hierarchy"] != nil) && (organic == false)
           if (response2["labels_hierarchy"].include? "en:organic")
-            
+
             organic = true
-          else 
+          else
             organic = false
           end
+<<<<<<< HEAD
         end  
     end
         
@@ -46,12 +46,17 @@ class PagesController < ApplicationController
         
 
     raise
+=======
+        end
+      end
+
+>>>>>>> 163260b3d138ced564ead3cd437b3fab7b756a2a
 
       if response.include?("product found") && response2['nutrition_grades'] != nil
        
         if check_product?
           @new_product = Product.where(sku: params[:query]).first
-
+# raise
         else
           # @new_product = Product.create!(sku: params[:query], status: "accepted", response: response, name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'] ) ---- response including all the jason
           @new_product = Product.create!(sku: params[:query], status: "accepted", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'], organic: organic )

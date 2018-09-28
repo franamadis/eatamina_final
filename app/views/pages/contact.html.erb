@@ -1,26 +1,27 @@
-<div class="container">
-  <h2>Send an e-mail to us:</h2>
-  <form action="/">
+<!-- contact us form -->
+<div class="container" style="padding-bottom: 77px;">
+  <div class="form-login2">
+    <h2>Enviar un email</h2>
+      <form action="/">
+        <label for="fname">Nombre</label>
+        <input type="text" id="fname" name="firstname" placeholder="Su nombre...">
 
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Apellido</label>
+        <input type="text" id="lname" name="lastname" placeholder="Su apellido...">
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">País</label>
+        <select id="country" name="country">
+          <option value="australia">España</option>
+          <option value="canada">Brasil</option>
+          <option value="usa">Otro</option>
+        </select>
 
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">Spain</option>
-      <option value="canada">Brazil</option>
-      <option value="usa">Other</option>
-    </select>
-
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something..." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">
-
-  </form>
+        <label for="subject">Tema</label>
+        <textarea id="subject" name="subject" placeholder="Escriba algo..." style="height:200px"></textarea>
+        <div class="text-center">
+          <input type="submit" value="Submit" class="btn submit-button">
+        </div>
+      </form>
+  </div>
 </div>
 <%= render 'shared/footer' %>
-

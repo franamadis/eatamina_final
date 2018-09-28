@@ -55,7 +55,10 @@
     }
 
     &.product-bad {
-      background-color: #ed5454;
+// d13535;e72a2a;C13144
+      background-color: #e7134b;
+      // background-color: #ed5454;
+
     }
     &.product-gray {
       visibility: hidden;
@@ -349,7 +352,7 @@ hr {
 
 .button-chemical {
    width: 29.5%;
-    background: #b8b6b6;
+    background: #b0b6b7;
     padding: 8px;
     margin: 10px 5px;
     border-radius: 5px;
@@ -359,7 +362,7 @@ hr {
 }
 
 .button-chemical-good {
-    background: $green;
+    background: #249825cf;
 }
 
 .button-chemical-medium {

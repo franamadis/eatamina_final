@@ -1,73 +1,57 @@
 <div class="additive-show-page" style="padding-bottom: 77px;">
-
   <div style="background: linear-gradient(-225deg, rgba(255,255,255, 0.3);">
 
-        <div class="" style="overflow: hidden;">
-            <div class="col-xs-6" style="text-align: -moz-center;">
-            <% if @additive.risk == "Baja" %>
-              <div class="button-chemical-good">
-                <p style="color: white;font-size: x-large;font-weight: bolder; padding-left: 10px;"><%= @additive.chemical %></p>
-              </div>
-            </div>
-            <div class="col-xs-4 col-xs-offset-2" style="text-align: -moz-center;">
-                <i class="fas fa-chevron-left btn-default" style="color: gray;width: 100%;text-align: -moz-right;padding: 9px; background: none;"> <%= link_to "ATRÁS", :back, class: 'button-back' %></i>
-            </div>
-
-            <% elsif @additive.risk == "Media" %>
-              <div class="button-chemical-medium">
-                <p style="color: white;font-size: x-large;font-weight: bolder; padding-left: 10px;"><%= @additive.chemical %></p>
-              </div>
-            </div>
-            <div class="col-xs-4 col-xs-offset-2" style="text-align: -moz-center;">
-                <i class="fas fa-chevron-left btn-default" style="color: gray;width: 100%;text-align: -moz-right;padding: 9px; background: none;"> <%= link_to "ATRÁS", :back, class: 'button-back' %></i>
-            </div>
-            <% elsif @additive.risk == "Alta" %>
-                <div class="button-chemical-bad">
-                    <p style="color: white;font-size: x-large;font-weight: bolder; padding-left: 10px;"><%= @additive.chemical %></p>
-                </div>
-            </div>
-            <div class="col-xs-4 col-xs-offset-2" style="text-align: -moz-center;">
-                <i class="fas fa-chevron-left btn-default" style="color: gray;width: 100%;text-align: -moz-right;padding: 9px; background: none;"> <%= link_to "ATRÁS", :back, class: 'button-back' %></i>
-            </div>
-            <% else %>
-            <div class="button-chemical-unknown">
-
-                <p style="color: white;font-size: x-large;font-weight: bolder; padding-left: 10px;"><%= @additive.chemical %></p>
-            </div>
-            </div>
-                <i class="fas fa-chevron-left btn-default" style="color: gray;width: 100%;text-align: -moz-right;padding: 9px; background: none;"> <%= link_to "ATRÁS", :back, class: 'button-back' %></i>
-            </div>
-             <% end %>
-
-
-
-
-        </div><h3 style="text-align: center;"><%= @additive.name %></h3>
+    <div style="overflow: hidden;">
+      <div class="col-xs-6" style="text-align: -moz-center;">
+        <% if @additive.risk == "Baja" %>
+          <div class="button-chemical-good">
+            <p class="chemical-description"><%= @additive.chemical %></p>
+          </div>
+        <% elsif @additive.risk == "Media" %>
+          <div class="button-chemical-medium">
+            <p class="chemical-description"><%= @additive.chemical %></p>
+          </div>
+        <% elsif @additive.risk == "Alta" %>
+          <div class="button-chemical-bad">
+            <p class="chemical-description"><%= @additive.chemical %>
+            </p>
+          </div>
+        <% else %>
+          <div class="button-chemical-unknown">
+            <p class="chemical-description"><%= @additive.chemical %></p>
+          </div>
+          <% end %>
+      </div>
+      <!-- column end -->
+      <div class="col-xs-4 col-xs-offset-2" style="text-align: -moz-center;">
+        <i class="fas fa-chevron-left btn-default arrow", style="color: #686868" ;> <%= link_to "ATRÁS", :back %>
+        </i>
+      </div>
+      <!-- 2nd column end -->
     </div>
 
-    <%# <p><%= @additive.chemical %></p>
+    <h3><%= @additive.name %></h3>
 
+    <!-- <%# <p><%= @additive.chemical %></p> -->
+    <div class="separator-message">
+      <p>DESCRIPCION</p>
+    </div>
+    <div>
+      <p class="chemical-detail"><%= @additive.description %></p>
+    </div>
+    <div class="separator-message">
+      <p>RIESGO PARA LA SALUD</p>
+    </div>
+    <div>
+      <p id="risk-middle"><%= @additive.risk %></p>
+    </div>
+    <div class="separator-message">
+      <p>EFECTOS PARA LA SALUD</p>
+    </div>
+    <div>
+      <p class="chemical-detail"><%= @additive.effect %></p>
+    </div>
 
-        <div class="separator" style="margin-top: 13px; background-color: #e0e0e0">
-            <p style="text-align: center;vertical-align: middle;line-height: 20px;color: #1f1c1c;font-size: larger;">  DESCRIPCION </p>
-        </div>
-        <div>
-            <p style="text-transform: initial; text-justify: auto;text-align: justify;text-justify: inter-word; margin: 20px; line-height: 1.4;"><%= @additive.description %></p>
-        </div>
-        <div class="separator" style="margin-top: 13px; background-color: #e0e0e0">
-                <p style="text-align: center;vertical-align: middle;line-height: 20px;color: #1f1c1c;font-size: larger;">  RIESGO PARA LA SALUD </p>
-        </div>
-        <div>
-            <p style="text-transform: initial; text-justify: auto;text-align: center;text-justify: inter-word; margin: 20px; line-height: 1.4;"><%= @additive.risk %></p>
-        </div>
-        <div class="separator" style="margin-top: 13px; background-color: #e0e0e0">
-            <p style="text-align: center;vertical-align: middle;line-height: 20px;color: #1f1c1c;font-size: larger;">  EFECTOS PARA LA SALUD </p>
-        </div>
-        <div>
-            <p style="text-transform: initial; text-justify: auto;text-align: justify;text-justify: inter-word; margin: 20px; line-height: 1.4;"><%= @additive.effect %></p>
-        </div>
-
-  </div>
+  </div> <!-- end gradient div -->
   <%= render 'shared/footer' %>
 </div>
-

@@ -2,3 +2,34 @@
     background-color: whitesmoke;
     overflow: hidden;
 }
+
+.chemical-description {
+  color: white;
+  font-size: 19px;
+  font-weight: bolder;
+  padding: 2px 10px;
+}
+
+.arrow {
+  color: #686868;
+  background: none;
+  width: 100%;
+  padding: 9px;
+  text-align: -moz-right;
+}
+
+h3 {
+  text-align: center;
+}
+
+#risk-middle {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.chemical-detail {
+  text-transform: initial;
+  text-align: justify;
+  margin: 20px;
+  line-height: 1.4;
+}
