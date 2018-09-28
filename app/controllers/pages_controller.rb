@@ -45,10 +45,10 @@ class PagesController < ApplicationController
 
         
 
-
-
+    raise
 
       if response.include?("product found") && response2['nutrition_grades'] != nil
+       
         if check_product?
           @new_product = Product.where(sku: params[:query]).first
 

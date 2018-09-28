@@ -72,6 +72,17 @@ class Product < ApplicationRecord
     end
     return score
   end
-
-
+  
+  def sync
+    url = "https://world.openfoodfacts.org/api/v0/product/#{self[:sku]}.json"
+    response_serialized = open(url).read
+    response = JSON.parse(response_serialized).flatten
+    puts "response"
+    puts response
+    response2 = response.find {|item| item.class == Hash}
+    puts "response2"
+    puts response2
+    self[:nutritional_info] = response2['nutriments']
+    self.save
+  end
 end
