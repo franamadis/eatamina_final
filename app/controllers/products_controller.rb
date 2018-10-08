@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :show, :update, :edit, :message]
+  skip_before_action :authenticate_user!, only: [:new, :show, :message]
+  before_action :authenticate_user!, only: [:update, :edit]
 
   def index
     @liked_products = current_user.get_up_voted(Product)
