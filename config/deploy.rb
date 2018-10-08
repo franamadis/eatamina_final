@@ -2,7 +2,7 @@
 # server '159.65.205.135', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:franamadis/eatamina_final.git'
-set :application,     'eatamina_final'
+set :application,     'eatamina'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0

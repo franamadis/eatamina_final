@@ -10,7 +10,7 @@ require 'capistrano/passenger'
 require 'capistrano/bundler'
 require 'capistrano/rbenv'
 set :rbenv_type, :user
-set :rbenv_ruby, '2.5.1'
+set :rbenv_ruby, '2.4.4'
 # require 'capistrano/rvm'
 require 'capistrano/puma'
 install_plugin Capistrano::Puma
