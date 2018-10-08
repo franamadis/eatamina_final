@@ -1,3 +1,6 @@
+# Replace 127.0.0.1 with your server's IP address!
+server '159.65.205.135', user: 'deploy', roles: %w{app db web}
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
