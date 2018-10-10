@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
 
 
 
-        if Additive.find_by_chemical(additive_adj) == nil
+      if Additive.find_by_chemical(additive_adj) == nil
           @risk = nil
         else
           @risk = Additive.find_by_chemical(additive_adj).risk
@@ -49,8 +49,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    if current_admin_user == nil
+      check_if_admin
+    else 
     params[:id] = session[:new_product_id]
     @product = Product.find(params[:id])
+    end
   end
 
   def update
@@ -93,11 +97,9 @@ class ProductsController < ApplicationController
   #   @requests = Product.requests
   # end
 
-  # def check_if_admin
-  #   if not current_user.admin
-  #     redirect_to root_path
-  #   end
-  # end
+  def check_if_admin
+      redirect_to root_path
+  end
 
   def product_params
     params.require(:product).permit(:name, :sku, :photo, :status, :response, :nutritional_info, :prod_add, :brand, :nutrition_grade, :organic)
