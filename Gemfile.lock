@@ -120,6 +120,7 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n-views (0.3.7)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     draper (3.0.1)
@@ -338,6 +339,7 @@ DEPENDENCIES
   carrierwave (~> 1.2)
   cloudinary
   devise
+  devise-i18n-views
   draper
   figaro
   font-awesome-sass (~> 5.0.9)
