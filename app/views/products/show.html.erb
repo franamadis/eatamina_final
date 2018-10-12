@@ -170,19 +170,29 @@
                     <div class="nutrient-section">
                         <div class="col-xs-8">
                           <div class="space">
-                            <% if @product.nutritional_info? %>
-                             <% nutritional = eval(@product.nutritional_info) %>
-                              <% if nutritional['fat_100g'].to_i <= 3 %>
-                               <p><%= image_tag "fat_opt_low.svg", class: "icons" %> GRASAS</p>
+                               <% valor_fat = @product.valor_nutricional('fat_100g') %>
+                                    <% if valor_fat <= 3 %>
+                                      <p><%= image_tag "fat_opt_low.svg", class: "icons" %> GRASAS</p>
+                                    <% elsif (valor_fat > 3 && valor_fat <= 20) %>
+                                      <p><%= image_tag "fat_opt_medium.svg", class: "icons" %> GRASAS</p>
+                                    <% else valor_fat > 20 %>
+                                      <p><%= image_tag "fat_opt_high.svg", class: "icons" %> GRASAS</p>
+
+                                    <% end %>
+                    <% end %>
+                            <!-- <% if @product.nutritional_info? %> -->
+                          <!--   <% nutritional = eval(@product.nutritional_info) %> -->
+                           <!--   <% if nutritional['fat_100g'].to_i <= 3 %> -->
+                           <!--    <p><%= image_tag "fat_opt_low.svg", class: "icons" %> GRASAS</p> -->
                                 <!-- <a href="" class="opt_icon opt_icon__fat-low icons">GRASAS</a> -->
-                              <% elsif (nutritional['fat_100g'].to_i > 3 && nutritional['fat_100g'].to_i <= 20) %>
-                               <p><%= image_tag "fat_opt_medium.svg", class: "icons" %> GRASAS</p>
+                         <!--      <% elsif (nutritional['fat_100g'].to_i > 3 && nutritional['fat_100g'].to_i <= 20) %> -->
+                            <!--    <p><%= image_tag "fat_opt_medium.svg", class: "icons" %> GRASAS</p> -->
                                 <!-- <a href="" class="opt_icon opt_icon__fat-medium icons">GRASAS</a> -->
-                              <% else nutritional['fat_100g'].to_i > 20 %>
-                                <p><%= image_tag "fat_opt_high.svg", class: "icons" %> GRASAS</p>
+                          <!--     <% else nutritional['fat_100g'].to_i > 20 %> -->
+                            <!--     <p><%= image_tag "fat_opt_high.svg", class: "icons" %> GRASAS</p> -->
                                 <!-- <a href="" class="opt_icon opt_icon__fat-high icons">GRASAS</a> -->
-                              <% end %>
-                            <% end %>
+                           <!--    <% end %> -->
+                     
                           <!--   <p> < image_tag "fats.svg", class: "icons" > GRASAS
                             </p> -->
                           </div> <!-- end of space class -->
@@ -190,12 +200,7 @@
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? && nutritional['fat_100g'] != nil%>
-                             <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= nutritional['fat_100g'].to_d.truncate(2).to_f %> g </p>
-                             <% else %>
-                            <!-- <p>Sorry no data!</p> -->
-                           <% end %>
+                              <p class="space__move_right"> <%= @product.valor_nutricional('fat_100g') %> g </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 2nd column -->
                     </div> <!-- end of 1st fat line -->
@@ -203,20 +208,18 @@
                     <div class="nutrient-section">
                       <div class="col-xs-8">
                         <div class="space space__indent-right">
-                          <% if @product.nutritional_info? && nutritional['saturated-fat_100g'] != nil%>
-                             <% nutritional = eval(@product.nutritional_info) %>
+                           <% valor_sf = @product.valor_nutricional('saturated-fat_100g') %>
 
-                              <% if nutritional['saturated-fat_100g'].to_i <= 1.5 %>
+                              <% if valor_sf <= 1.5 %>
                                 <p> <%= image_tag "sat_fats_low.svg", class: "icons" %> SATURADAS</p>
                                 <!-- <a href="" class="opt_icon opt_icon__sat--fat-low icons">SATURADAS</a> -->
-                              <% elsif (nutritional['saturated-fat_100g'].to_i > 1.5) && (nutritional['saturated-fat_100g'].to_i <= 5) %>
+                              <% elsif valor_sf > 1.5 && valor_sf <= 5 %>
                                 <p> <%= image_tag "sat_fats_medium.svg", class: "icons" %> SATURADAS</p>
                                 <!-- <a href="" class="opt_icon opt_icon__sat--fat-medium icons">SATURADAS</a> -->
-                              <% else nutritional['saturated-fat_100g'].to_i > 5 %>
+                              <% else valor_sf > 5 %>
                                 <p> <%= image_tag "sat_fats_high.svg", class: "icons" %> SATURADAS</p>
                                 <!-- <a href="" class="opt_icon opt_icon__sat--fat-high icons">SATURADAS</a> -->
                               <% end %>
-                            <% end %>
 
                         <!--   <p class="space__indent-right"> <image_tag "saturated_fats.svg", class: "icons" > SATURADAS
                           </p> -->
@@ -225,13 +228,8 @@
                       </div> <!-- end of 1st column -->
 
                         <div class="col-xs-4">
-                          <div class="space">
-                            <% if @product.nutritional_info? && nutritional['saturated-fat_100g'] != nil %>
-                             <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= nutritional['saturated-fat_100g'].to_d.truncate(2).to_f %> g </p>
-                             <% else %>
-                            <!-- <p>Sorry no data!</p> -->
-                           <% end %>
+                          <div class="space">                          
+                              <p class="space__move_right"> <%= @product.valor_nutricional('saturated-fat_100g') %> g </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 2nd column -->
                     </div> <!-- end of 1st saturated line -->
@@ -247,13 +245,7 @@
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? && nutritional['carbohydrates_100g'] != nil %>
-                             <% nutritional = eval(@product.nutritional_info)  %>
-                              <p class="space__move_right"> <%= nutritional['carbohydrates_100g'].to_d.truncate(2).to_f %> g </p>
-
-                             <% else %>
-                            <!-- <p>Sorry no data!</p> -->
-                           <% end  %>
+                              <p class="space__move_right"> <%= @product.valor_nutricional('carbohydrates_100g') %> g </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 2nd column -->
                     </div> <!-- end of 2nd carb line -->
@@ -261,34 +253,28 @@
                     <div class="nutrient-section">
                         <div class="col-xs-8">
                           <div class="space space__indent-right">
-                            <% if @product.nutritional_info? && nutritional['sugars_100g'] != nil%>
-                             <% nutritional = eval(@product.nutritional_info) %>
-                              <% if nutritional['sugars_100g'].to_i <= 5 %>
+                          <% valor_sg = @product.valor_nutricional('sugars_100g') %>
+                            <% if valor_sg <= 5 %>
                                 <p><%= image_tag "sugar_opt_low.svg", class: "icons" %> AZUCARES</p>
                                 <!-- <a href="" class="opt_icon opt_icon__sugar-low icons">AZUCARES</a> -->
 
-                               <% elsif (nutritional['sugars_100g'].to_i > 5 && nutritional['sugars_100g'].to_i <= 15) %>
+                               <% elsif (valor_sg > 5 && valor_sg <= 15) %>
                                 <p><%= image_tag "sugar_opt_medium.svg", class: "icons" %> AZUCARES</p>
                                   <!-- <a href="" class="opt_icon opt_icon__sugar-medium icons">AZUCARES</a> -->
 
-                               <% else  nutritional['sugars_100g'].to_i > 15 %>
+                               <% else valor_sg > 15 %>
                                 <p><%= image_tag "sugar_opt_high.svg", class: "icons" %> AZUCARES</p>
                                 <!-- <a href="" class="opt_icon opt_icon__sugar-high icons">AZUCARES</a> -->
+                                
                               <% end %>
-                            <% end %>
                            <!--  <p class="space__indent-right"> = image_tag "sugar.svg", class: "icons"  AZUCARES</p>
                             </p> -->
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
                         <div class="col-xs-4">
-                          <div class="space">
-                            <% if @product.nutritional_info? && nutritional['sugars_100g'] != nil %>
-                             <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= nutritional['sugars_100g'].to_d.truncate(2).to_f %> g </p>
-                             <% else %>
-                            <!-- <p>Sorry no data!</p> -->
-                           <% end %>
+                          <div class="space">         
+                              <p class="space__move_right"> <%= @product.valor_nutricional('sugars_100g') %> g </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 2nd column -->
                     </div> <!-- end of 2nd sugar line -->
@@ -304,12 +290,7 @@
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? && nutritional['proteins_100g'] != nil%>
-                             <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right"> <%= nutritional['proteins_100g'].to_d.truncate(2).to_f %> g </p>
-                             <% else %>
-                            <!-- <p>Sorry no data!</p> -->
-                           <% end  %>
+                              <p class="space__move_right"> <%= @product.valor_nutricional('proteins_100g') %> g </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 2nd column -->
                     </div> <!-- end of 3nd protein line -->
@@ -324,16 +305,7 @@
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? && nutritional['fiber_100g'] != nil%>
-                             <% nutritional = eval(@product.nutritional_info) %>
-                              <% if nutritional['fiber_100g'] != nil %>
-                                  <p class="space__move_right"> <%= nutritional['fiber_100g'].to_d.truncate(2).to_f %> g </p>
-                                <% else %>
-                                   <p class="space__move_right">  </p>
-                              <% end %>
-                             <% else %>
-                            <!-- <p>Sorry no data!</p> -->
-                           <% end  %>
+                                  <p class="space__move_right"> <%= @product.valor_nutricional('fiber_100g') %> g </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 2nd column -->
                     </div> <!-- end of 4th fiber line -->
@@ -341,35 +313,28 @@
                     <div class="nutrient-section">
                         <div class="col-xs-8">
                           <div class="space">
-                            <% if @product.nutritional_info? && nutritional['salt_100g'] != nil%>
-                             <% nutritional = eval(@product.nutritional_info) %>
-                              <% if  nutritional['salt_100g'].to_i.round(1) < 0.3 %>
+                          <% valor_st = @product.valor_nutricional('salt_100g') %>
+                              <% if valor_st < 0.3 %>
                               <!-- < link_to "SAL", "" ,class:'opt_icon opt_icon__salt-low icons' > -->
                               <p><%= image_tag "salt_opt_low.svg", class: "icons" %> SAL</p>
                                <!-- <a href="" class="opt_icon opt_icon__salt-low icons">SAL</a> -->
-                              <% elsif (nutritional['salt_100g'].to_i.round(1) >= 0.3) && (nutritional['salt_100g'].to_i <= 1.5) %>
+                              <% elsif (valor_st >= 0.3 && valor_st <= 1.5) %>
                             <!--     <= link_to "SAL", "" ,class:'opt_icon opt_icon__salt-medium icons' > -->
                                 <p><%= image_tag "salt_opt_medium.svg", class: "icons" %> SAL</p>
 
                                 <!-- <a href="" class="opt_icon opt_icon__salt-medium icons">SAL</a> -->
-                              <% else nutritional['salt_100g'].to_i.round(1) > 1.5 %>
+                              <% else (valor_st > 1.5) %>
                              <!--    < link_to "SAL", "" ,class:'opt_icon opt_icon__salt-high icons' > -->
                                 <p><%= image_tag "salt_opt_high.svg", class: "icons" %> SAL</p>
 
                                   <!-- <a href="" class="opt_icon opt_icon__salt-high icons">SAL</a> -->
                               <% end %>
-                           <% end %>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 1st column -->
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? && nutritional['salt_100g'] != nil%>
-                             <% nutritional = eval(@product.nutritional_info) %>
-                                  <p class="space__move_right"> <%= nutritional['salt_100g'].to_d.truncate(2).to_f %> g</p>
-                            <% else %>
-                            <!-- <p>Sorry no data!</p> -->
-                           <% end %>
+                                  <p class="space__move_right"> <%= @product.valor_nutricional('salt_100g') %> g</p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 2nd column -->
                     </div> <!-- end of 5th salt line -->
@@ -384,12 +349,8 @@
 
                         <div class="col-xs-4">
                           <div class="space">
-                            <% if @product.nutritional_info? && nutritional['energy_100g'] != nil%>
-                             <% nutritional = eval(@product.nutritional_info) %>
-                              <p class="space__move_right" id="space__move_right--fit"> <%= ((nutritional['energy_100g'].to_i/4.1868).round(0)) %> Kcal </p>
-                             <% else %>
-                            <!-- <p>Sorry no data!</p> -->
-                           <% end %>
+
+                              <p class="space__move_right" id="space__move_right--fit"> <%= ((@product.valor_nutricional('energy_100g')/4.1868).round(0)) %> Kcal </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 2nd column -->
                     </div> <!-- end of 6th energy line -->
