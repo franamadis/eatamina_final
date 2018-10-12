@@ -76,6 +76,16 @@ class Product < ApplicationRecord
     return score
   end
   
+  def valor_nutricional(x)
+    nutritional = eval(self.nutritional_info)
+     if self.nutritional_info? && nutritional[x] != nil
+        nutritional[x].to_d.truncate(2).to_f
+     else
+      return 0
+    end 
+  end
+
+
   def sync
     url = "https://world.openfoodfacts.org/api/v0/product/#{self[:sku]}.json"
     response_serialized = open(url).read
