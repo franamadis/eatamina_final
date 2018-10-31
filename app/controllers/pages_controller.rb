@@ -35,8 +35,25 @@ class PagesController < ApplicationController
             organic = false
           end
         end  
-    end
-        
+      end
+      if response2 != nil
+        if (response2["labels"] != nil)
+          if (response2["labels"].include? "gluten")
+            glutenfree = true
+          else
+            glutenfree = false
+          end
+        end
+
+        if (response2["labels_tags"] != nil) && (glutenfree == false)
+          if (response2["labels_tags"].include? "en:gluten-free")
+
+            glutenfree = true
+          else
+            glutenfree = false
+          end
+        end  
+      end
 
 
         
@@ -52,14 +69,14 @@ class PagesController < ApplicationController
 # raise
         else
           # @new_product = Product.create!(sku: params[:query], status: "accepted", response: response, name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'] ) ---- response including all the jason
-          @new_product = Product.create!(sku: params[:query], status: "accepted", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'], organic: organic )
+          @new_product = Product.create!(sku: params[:query], status: "accepted", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'], organic: organic, glutenfree: glutenfree )
         end
         redirect_to product_path(@new_product)
       elsif response.include?("product found")
         if check_product?
           @new_product = Product.where(sku: params[:query]).first
         else
-          @new_product = Product.create!(sku: params[:query], status: "accepted", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'], organic: organic )
+          @new_product = Product.create!(sku: params[:query], status: "accepted", name: response2['product_name'], photo: response2['image_url'], nutritional_info: response2['nutriments'], prod_add: response2['additives_tags'], brand: response2['brands'], nutrition_grade: response2['nutrition_grades'], glutenfree: glutenfree )
         end
         redirect_to product_path(@new_product)
 
