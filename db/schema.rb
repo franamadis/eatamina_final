@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_03_123910) do
+ActiveRecord::Schema.define(version: 2018_10_31_140711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2018_08_03_123910) do
     t.string "brand"
     t.string "nutrition_grade"
     t.boolean "organic"
+    t.boolean "glutenfree"
   end
 
   create_table "queries", force: :cascade do |t|

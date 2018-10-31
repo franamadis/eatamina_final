@@ -371,6 +371,24 @@
                         </div> <!-- end of 2nd column -->
                         </div> <!-- end of 1st fat line -->
                     <% end %>
+
+                         <% if @product.glutenfree == true %>
+                        <div class="nutrient-section">
+                        <div class="col-xs-8">
+                          <div class="space">
+                            <p> <%= image_tag "glutenfree.svg", class: "icons" %> SIN GLUTEN
+                            </p>
+                          </div> <!-- end of space class -->
+                        </div> <!-- end of 1st column -->
+
+                        <div class="col-xs-4">
+                          <div class="space">
+                            <p class="space__move_right"> <i class="fas fa-check" id="bio-icon"></i> </p>
+                          </div> <!-- end of space class -->
+                        </div> <!-- end of 2nd column -->
+                        </div> <!-- end of 1st fat line -->
+                    <% end %>
+
                     <% else %>
                         <p> No tenemos la tabla nutricional en este momento . </p>
                     <% end  %>
