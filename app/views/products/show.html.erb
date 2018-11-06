@@ -119,7 +119,7 @@
 
             <div class="detail__product-info-section">
                 <p class="detail__product-section-header detail__product-section-header--higher">
-                    ADITIVOS
+                    ADITIVOS ALIMENTARIOS
                 </p>
                 <div class="detail__product-chemical-lozenge-wrap">
                     <% if @product.prod_add != "[]" %>
@@ -160,7 +160,7 @@
 
             <div class="detail__product-info-section">
                 <p class="detail__product-section-header detail__product-section-header--higher">
-                    NUTRICIÓN
+                    INFORMACION NUTRICIONAL
                     </p>
                 <div class="row">
                   <p id="valor">VALORES POR 100G DE PRODUCTO</p>
@@ -192,7 +192,7 @@
                             <!--     <p><%= image_tag "fat_opt_high.svg", class: "icons" %> GRASAS</p> -->
                                 <!-- <a href="" class="opt_icon opt_icon__fat-high icons">GRASAS</a> -->
                            <!--    <% end %> -->
-                     
+
                           <!--   <p> < image_tag "fats.svg", class: "icons" > GRASAS
                             </p> -->
                           </div> <!-- end of space class -->
@@ -228,7 +228,7 @@
                       </div> <!-- end of 1st column -->
 
                         <div class="col-xs-4">
-                          <div class="space">                          
+                          <div class="space">
                               <p class="space__move_right"> <%= @product.valor_nutricional('saturated-fat_100g') %> g </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 2nd column -->
@@ -265,7 +265,7 @@
                                <% else valor_sg > 15 %>
                                 <p><%= image_tag "sugar_opt_high.svg", class: "icons" %> AZUCARES</p>
                                 <!-- <a href="" class="opt_icon opt_icon__sugar-high icons">AZUCARES</a> -->
-                                
+
                               <% end %>
                            <!--  <p class="space__indent-right"> = image_tag "sugar.svg", class: "icons"  AZUCARES</p>
                             </p> -->
@@ -273,7 +273,7 @@
                         </div> <!-- end of 1st column -->
 
                         <div class="col-xs-4">
-                          <div class="space">         
+                          <div class="space">
                               <p class="space__move_right"> <%= @product.valor_nutricional('sugars_100g') %> g </p>
                           </div> <!-- end of space class -->
                         </div> <!-- end of 2nd column -->

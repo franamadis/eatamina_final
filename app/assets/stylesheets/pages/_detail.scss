@@ -113,7 +113,7 @@
 
 .detail__product-section-header {
     position: absolute;
-    top: -31px;
+    top: -23px;
     left: 28px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -399,6 +399,28 @@ hr {
 .white-text:hover{
   color: white;
 }
+
+/* ====================== Media Queries ====================== */
+
+@media (max-width: 370px){
+  .detail__nutrient-table {
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 13px;
+  }
+  .detail__product-info-section {
+    padding: 35px 16px;
+  }
+
+  .button-chemical {
+    width: 29.3%;
+    padding: 6px;
+    margin: 10px 4px;
+  }
+}
+
+
+
 
 
 // ALL GRID SYSTEM DELETED ALREADY
