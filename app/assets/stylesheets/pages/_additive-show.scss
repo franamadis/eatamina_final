@@ -33,3 +33,29 @@ h3 {
   margin: 20px;
   line-height: 1.4;
 }
+
+/* ====================== Media Queries ====================== */
+
+@media (max-width: 370px){
+
+h3 {
+  font-size: 26px;
+}
+
+.chemical-description {
+    font-size: 18px;
+}
+
+  .arrow {
+    padding: 4px;
+  }
+
+  .separator-message {
+    height: 34px;
+  }
+
+  .separator-message p {
+    font-size: 15px;
+  }
+}
+

@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2018_10_31_140711) do
     t.string "brand"
     t.string "nutrition_grade"
     t.boolean "organic"
+    t.string "sugar_value"
     t.boolean "glutenfree"
   end
 
