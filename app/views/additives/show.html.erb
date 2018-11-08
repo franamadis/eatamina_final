@@ -23,34 +23,108 @@
           <% end %>
       </div>
       <!-- column end -->
-      <div class="col-xs-4 col-xs-offset-2" style="text-align: -moz-center;">
-        <i class="fas fa-chevron-left btn-default arrow", style="color: #686868" ;> <%= link_to "ATRÁS", :back %>
-        </i>
+     <!--  <div class="col-xs-4 col-xs-offset-2" style="text-align: -moz-center;">
+        <!-- when setting id/class dissapear arrow -->
+       <!--  <i class="fas fa-chevron-left btn-default arrow", style="color: #686868";> <%= link_to "ATRÁS", :back %>
+        </i> -->
+      <!-- </div> -->
+      <div class="col-xs-6" style="text-align: -moz-center;">
+        <p class="arrow"> <span class="symbol"> <</span><%= link_to"ATRÁS", :back %>
+        </p>
       </div>
       <!-- 2nd column end -->
     </div>
 
-    <h3><%= @additive.name %></h3>
+    <h3 class="addit-space"><%= @additive.name %></h3>
 
     <!-- <%# <p><%= @additive.chemical %></p> -->
-    <div class="separator-message">
+      <% if @additive.risk == "Baja" %>
+        <div class="separator-additives addit-good">
+          <p>DESCRIPCION</p>
+        </div>
+        <div>
+        <p class="chemical-detail"><%= @additive.description %></p>
+        </div>
+        <div class="separator-additives addit-good">
+          <p>RIESGO PARA LA SALUD</p>
+        </div>
+        <div>
+          <p id="risk-middle"><%= @additive.risk %></p>
+        </div>
+        <div class="separator-additives addit-good">
+          <p>EFECTOS PARA LA SALUD</p>
+        </div>
+        <div>
+          <p class="chemical-detail"><%= @additive.effect %></p>
+        </div>
+         <!--  <div class="button-chemical-good">
+            <p class="chemical-description"><%= @additive.chemical %></p>
+          </div> -->
+        <% elsif @additive.risk == "Media" %>
+          <div class="separator-additives addit-medium">
+            <p>DESCRIPCION</p>
+          </div>
+          <div>
+          <p class="chemical-detail"><%= @additive.description %></p>
+          </div>
+          <div class="separator-additives addit-medium">
+            <p>RIESGO PARA LA SALUD</p>
+          </div>
+          <div>
+            <p id="risk-middle"><%= @additive.risk %></p>
+          </div>
+          <div class="separator-additives addit-medium">
+            <p>EFECTOS PARA LA SALUD</p>
+          </div>
+          <div>
+            <p class="chemical-detail"><%= @additive.effect %></p>
+          </div>
+          <!-- <div class="button-chemical-medium">
+            <p class="chemical-description"><%= @additive.chemical %></p>
+          </div> -->
+        <% elsif @additive.risk == "Alta" %>
+          <div class="separator-additives addit-bad">
+             <p>DESCRIPCION</p>
+          </div>
+          <div>
+          <p class="chemical-detail"><%= @additive.description %></p>
+          </div>
+          <div class="separator-additives addit-bad">
+            <p>RIESGO PARA LA SALUD</p>
+          </div>
+          <div>
+            <p id="risk-middle"><%= @additive.risk %></p>
+          </div>
+          <div class="separator-additives addit-bad">
+            <p>EFECTOS PARA LA SALUD</p>
+          </div>
+          <div>
+            <p class="chemical-detail"><%= @additive.effect %></p>
+          </div>
+          <!-- <div class="button-chemical-bad">
+            <p class="chemical-description"><%= @additive.chemical %>
+            </p>
+          </div> -->
+        <% end %>
+
+ <!--    <div class="separator-additives">
       <p>DESCRIPCION</p>
     </div>
     <div>
       <p class="chemical-detail"><%= @additive.description %></p>
     </div>
-    <div class="separator-message">
+    <div class="separator-additives">
       <p>RIESGO PARA LA SALUD</p>
     </div>
     <div>
       <p id="risk-middle"><%= @additive.risk %></p>
     </div>
-    <div class="separator-message">
+    <div class="separator-additives">
       <p>EFECTOS PARA LA SALUD</p>
     </div>
     <div>
       <p class="chemical-detail"><%= @additive.effect %></p>
-    </div>
+    </div> -->
 
   </div> <!-- end gradient div -->
   <%= render 'shared/footer' %>

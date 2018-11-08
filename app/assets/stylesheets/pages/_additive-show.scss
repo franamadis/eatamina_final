@@ -6,20 +6,42 @@
 .chemical-description {
   color: white;
   font-size: 19px;
-  font-weight: bolder;
+  font-weight: 650;
   padding: 2px 10px;
 }
 
+// arrow
 .arrow {
-  color: #686868;
+  // color: #686868;
+    color: #1f1c1c;
   background: none;
   width: 100%;
-  padding: 9px;
+  // padding: 9px;
+    padding: 0 10px;
   text-align: -moz-right;
+  // added
+  text-align: right;
+    font-weight: 800;
 }
+.arrow a {
+  color: #312e2e;
+  letter-spacing: -1.5px;
+}
+.arrow p {
+  margin: 0;
+  padding: 0;
+}
+.symbol {
+  font-size: 21px;
+  color: #312e2e;
+}
+// arrow end
 
-h3 {
+// h3
+.addit-space {
   text-align: center;
+  padding: 8px 0;
+  color: #454545;
 }
 
 #risk-middle {
@@ -34,11 +56,45 @@ h3 {
   line-height: 1.4;
 }
 
+.separator-additives {
+  // color: #1f1c1c;
+  margin-top: 0px;
+  // background-color: #82fc3966;
+  height: 35px;
+  text-align: center;
+}
+
+.addit-good {
+  // background-color: #82fc3966;
+  background: linear-gradient(#60d364, white);
+}
+
+.addit-medium {
+  // background-color: #e6b12c;
+  // background-color: #ffbd17a3;
+  background: linear-gradient(#e6b12c, white);
+
+}
+.addit-bad {
+  // background-color: #e7134b;
+  // background: linear-gradient(to right, #C13144, white);
+  background: linear-gradient(#C13144, white);
+
+}
+
+.separator-additives p {
+  padding-top: 7px;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  // color: #686868;
+  color: #1f1c1c;
+}
+
 /* ====================== Media Queries ====================== */
 
 @media (max-width: 370px){
 
-h3 {
+.addit-space {
   font-size: 26px;
 }
 
@@ -46,15 +102,11 @@ h3 {
     font-size: 18px;
 }
 
-  .arrow {
-    padding: 4px;
-  }
-
-  .separator-message {
+  .separator-additives {
     height: 34px;
   }
 
-  .separator-message p {
+  .separator-additives p {
     font-size: 15px;
   }
 }
