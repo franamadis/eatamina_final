@@ -1,14 +1,15 @@
 .card {
   height: 150px;
-  width: 80vw;
+  // width: 80vw;
   // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
   margin-top: 15px;
-  border-radius: 20px;
-  opacity:.8;
+  border-radius: 8px;
+  opacity:.9;
+  box-shadow: 5px 5px 13px 1px rgba(51, 59, 63, 0.81);
 }
 .card:hover {
 
