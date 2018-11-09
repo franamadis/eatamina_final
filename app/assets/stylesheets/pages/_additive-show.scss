@@ -56,6 +56,22 @@
   line-height: 1.4;
 }
 
+// button
+
+.button-addit-good {
+  background: linear-gradient(to right, green, white);
+}
+
+.button-addit-medium {
+  background: linear-gradient(to right, #e6b12c, white);
+}
+
+.button-addit-bad {
+  background: linear-gradient(to right, #C13144, white);
+  // color: #ffffff;
+}
+
+// separator and if else statement
 .separator-additives {
   // color: #1f1c1c;
   margin-top: 0px;
