@@ -4,15 +4,15 @@
     <div style="overflow: hidden;">
       <div class="col-xs-6" style="text-align: -moz-center;">
         <% if @additive.risk == "Baja" %>
-          <div class="button-chemical-good">
+          <div class="button-addit-good">
             <p class="chemical-description"><%= @additive.chemical %></p>
           </div>
         <% elsif @additive.risk == "Media" %>
-          <div class="button-chemical-medium">
+          <div class="button-addit-medium">
             <p class="chemical-description"><%= @additive.chemical %></p>
           </div>
         <% elsif @additive.risk == "Alta" %>
-          <div class="button-chemical-bad">
+          <div class="button-addit-bad">
             <p class="chemical-description"><%= @additive.chemical %>
             </p>
           </div>
