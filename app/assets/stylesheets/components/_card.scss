@@ -1,23 +1,54 @@
+//history cards shown
 .card {
   height: 150px;
   // width: 80vw;
   // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
+  // background-size: cover !important;
+  background-size: contain;
   background-position: center;
   color: white;
   position: relative;
   margin-top: 15px;
-  border-radius: 8px;
+  border-radius: 3px;
   opacity:.9;
-  box-shadow: 5px 5px 13px 1px rgba(51, 59, 63, 0.81);
+  box-shadow: 5px 5px 13px 1px rgba(42, 69, 83, 0.81);
 }
-.card:hover {
 
+.card:hover {
   opacity:1;
 }
-.card a{
-    color: white;
+
+.card a {
+  color: white;
 }
+
+.card-description {
+  position: absolute;
+  // bottom: 10px;
+  // left: 10px;
+  color: white;
+  background-color: #00000082;
+  bottom: 0px;
+  padding: 8px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  height: 36%;
+  width: 100%;
+}
+
+.card-description:hover {
+  opacity:0.8;
+}
+
+.card-description h2 {
+  font-size: 18px;
+  color: white;
+  padding: 3px;
+  margin: 0;
+}
+
+// history main update - end
+
 .card-user {
   position: absolute;
   right: 10px;
@@ -32,16 +63,7 @@
   font-size: 15px;
   text-transform: uppercase;
 }
-.card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: white;
-}
-.card-description h2 {
-  font-size: 24px;
-  color: white;
-}
+
 .card-description p {
   font-size: 14px;
   opacity: 0.7;
