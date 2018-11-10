@@ -166,10 +166,12 @@
                   <p id="valor">VALORES POR 100G DE PRODUCTO</p>
                 </div>
                 <div class="detail__nutrient-table">
+
                 <% if (@product.nutritional_info).length > 2 %>
                     <div class="nutrient-section">
                         <div class="col-xs-8">
                           <div class="space">
+
                                <% valor_fat = @product.valor_nutricional('fat_100g') %>
                                     <% if valor_fat <= 3 %>
                                       <p><%= image_tag "fat_opt_low.svg", class: "icons" %> GRASAS</p>
@@ -179,7 +181,7 @@
                                       <p><%= image_tag "fat_opt_high.svg", class: "icons" %> GRASAS</p>
 
                                     <% end %>
-                    <% end %>
+
                             <!-- <% if @product.nutritional_info? %> -->
                           <!--   <% nutritional = eval(@product.nutritional_info) %> -->
                            <!--   <% if nutritional['fat_100g'].to_i <= 3 %> -->
@@ -392,6 +394,7 @@
                     <% else %>
                         <p> No tenemos la tabla nutricional en este momento . </p>
                     <% end  %>
+                    <% end %>
 
                 </div>
             </div>
